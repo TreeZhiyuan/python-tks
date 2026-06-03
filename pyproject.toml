@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-tks"
+version = "0.1.0"
+description = "Scheduled Python tasks for Tushare data collection"
+requires-python = ">=3.10"
+dependencies = [
+    "tushare>=1.4.16",
+    "pandas>=2.0.0",
+    "python-dotenv>=1.0.1",
+    "APScheduler>=3.10.4",
+]
