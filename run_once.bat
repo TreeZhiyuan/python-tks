@@ -3,7 +3,6 @@ setlocal
 
 set "SCRIPT_DIR=%~dp0"
 set "PYTHON_EXE=C:\Users\cuizy52127\AppData\Local\miniconda3\envs\python3.10\python.exe"
-set "OUTPUT_DIR=%SCRIPT_DIR%data\moneyflow_cnt_ths"
 
 if not exist "%PYTHON_EXE%" (
     echo Python executable not found:
@@ -32,15 +31,7 @@ if not "%EXIT_CODE%"=="0" (
 )
 
 echo Task completed successfully.
-
-if exist "%OUTPUT_DIR%" (
-    echo Opening CSV output directory:
-    echo %OUTPUT_DIR%
-    start "" "%OUTPUT_DIR%"
-) else (
-    echo CSV output directory not found:
-    echo %OUTPUT_DIR%
-)
+echo Data has been written to Cloudflare D1.
 
 popd
 pause

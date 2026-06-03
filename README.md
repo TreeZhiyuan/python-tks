@@ -4,7 +4,7 @@
 
 当前已包含任务：
 
-- `moneyflow_cnt_ths`：获取同花顺概念板块每日资金流向数据，并保存为 CSV 文件。
+- `moneyflow_cnt_ths`：获取同花顺概念板块每日资金流向数据，并写入 Cloudflare D1 数据库。
 
 ## 环境
 
@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ## 配置
 
-复制环境变量模板并填写 `TUSHARE_TOKEN`：
+复制环境变量模板并填写：
 
 ```bash
 copy .env.example .env
@@ -31,11 +31,14 @@ copy .env.example .env
 ```env
 TUSHARE_TOKEN=REPLACE_WITH_YOUR_TUSHARE_TOKEN
 OUTPUT_DIR=data
+CLOUDFLARE_API_TOKEN=REPLACE_WITH_YOUR_CLOUDFLARE_API_TOKEN
+CLOUDFLARE_ACCOUNT_ID=REPLACE_WITH_YOUR_CLOUDFLARE_ACCOUNT_ID
+CLOUDFLARE_D1_DATABASE_ID=REPLACE_WITH_YOUR_D1_DATABASE_ID
 ```
 
 ## 单次执行任务
 
-默认执行“昨天”的同花顺概念板块资金流向抓取：
+默认执行“昨天”的同花顺概念板块资金流向抓取，并写入 D1：
 
 ```bash
 python -m src.main
@@ -60,7 +63,13 @@ run_once.bat --dates 20240506 20240507 20240508
 run_once.bat --start-date 20240501 --end-date 20240531
 ```
 
-程序会为每个日期分别生成一个 CSV 文件。
+## 读取数据库
+
+按交易日读取已写入的 D1 数据：
+
+```bash
+python -m src.read_moneyflow_cnt_ths --trade-date 20240506
+```
 
 ## 定时执行
 
@@ -83,14 +92,13 @@ run_scheduler.bat
 
 只有在你主动启动调度器后，才会开始每天 `01:00` 自动抓取昨天数据。你可以先通过单次执行把预期日期的数据补齐，再启动定时任务。
 
-如果希望在 Windows 下常驻运行，可以配合任务计划程序、nssm 或服务方式启动。
+## 数据库表
 
-## 输出
+请先在 Cloudflare D1 中执行建表脚本：
 
-CSV 文件默认输出到：
+- MySQL 版：`DDL/001_create_moneyflow_cnt_ths.sql`
+- D1 版：`DDL/001_create_moneyflow_cnt_ths_d1.sql`
 
-- `data/moneyflow_cnt_ths/`
+当前程序写入的目标表为：
 
-文件名格式：
-
-- `moneyflow_cnt_ths_YYYYMMDD.csv`
+- `moneyflow_cnt_ths`

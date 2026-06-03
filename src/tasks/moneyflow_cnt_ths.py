@@ -2,14 +2,15 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
-from pathlib import Path
 from typing import Any, Iterable, List, Optional
 
 import pandas as pd
 import tushare as ts
 
-from src.config import OUTPUT_DIR, TUSHARE_TOKEN
-from src.utils import ensure_directory, yesterday
+from src.config import TUSHARE_TOKEN
+from src.db.d1 import D1Client
+from src.repositories.moneyflow_cnt_ths_repository import MoneyflowCntThsRepository
+from src.utils import yesterday
 
 
 MAX_LIMIT = 5000
@@ -18,14 +19,14 @@ MAX_LIMIT = 5000
 @dataclass
 class MoneyflowCntThsResult:
     trade_date: str
-    output_file: Path
+    written_count: int
     row_count: int
 
 
 @dataclass
 class MoneyflowCntThsTask:
     token: str = TUSHARE_TOKEN
-    output_dir: Path = OUTPUT_DIR
+    repository: MoneyflowCntThsRepository | None = None
 
     def run(self, trade_date: Optional[date] = None) -> MoneyflowCntThsResult:
         pro = self._create_client()
@@ -68,12 +69,10 @@ class MoneyflowCntThsTask:
 
         result = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
         row_count = len(result.index)
-
-        output_dir = ensure_directory(self.output_dir)
-        output_file = output_dir / f"moneyflow_cnt_ths_{trade_date_str}.csv"
-        result.to_csv(output_file, index=False, encoding="utf-8-sig")
+        repository = self.repository or MoneyflowCntThsRepository(D1Client())
+        written_count = repository.upsert_rows(result.to_dict(orient="records"))
         return MoneyflowCntThsResult(
             trade_date=trade_date_str,
-            output_file=output_file,
+            written_count=written_count,
             row_count=row_count,
         )

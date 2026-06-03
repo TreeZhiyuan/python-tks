@@ -39,7 +39,7 @@ def unique_dates(dates: Iterable[date]) -> List[date]:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Fetch moneyflow_cnt_ths data and save one CSV per trade date.",
+        description="Fetch moneyflow_cnt_ths data and write rows into Cloudflare D1.",
     )
     parser.add_argument(
         "--dates",
@@ -89,7 +89,7 @@ def main() -> None:
         print(
             f"trade_date={result.trade_date}, "
             f"rows={result.row_count}, "
-            f"csv={result.output_file}"
+            f"written={result.written_count}"
         )
 
     print(f"Completed {len(results)} date(s).")

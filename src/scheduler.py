@@ -21,10 +21,10 @@ def run_moneyflow_cnt_ths() -> None:
     logger.info("Starting scheduled task: moneyflow_cnt_ths")
     result = MoneyflowCntThsTask().run()
     logger.info(
-        "Task finished, trade_date=%s, rows=%s, csv=%s",
+        "Task finished, trade_date=%s, rows=%s, written=%s",
         result.trade_date,
         result.row_count,
-        result.output_file,
+        result.written_count,
     )
 
 
