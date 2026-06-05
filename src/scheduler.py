@@ -4,9 +4,10 @@ import logging
 import time
 
 from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.triggers.interval import IntervalTrigger
 from apscheduler.triggers.cron import CronTrigger
 
-from src.tasks.moneyflow_cnt_ths import MoneyflowCntThsTask
+from src.tasks.registry import available_task_definitions, build_task
 
 
 logging.basicConfig(
@@ -17,12 +18,14 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def run_moneyflow_cnt_ths() -> None:
-    logger.info("Starting scheduled task: moneyflow_cnt_ths")
-    result = MoneyflowCntThsTask().run()
+def run_registered_task(task_name: str) -> None:
+    logger.info("Starting scheduled task: %s", task_name)
+    result = build_task(task_name).run()
+    target = f"trade_date={result.trade_date}" if result.trade_date else "scope=snapshot"
     logger.info(
-        "Task finished, trade_date=%s, rows=%s, written=%s",
-        result.trade_date,
+        "Task finished, task=%s, %s, rows=%s, written=%s",
+        result.task_name,
+        target,
         result.row_count,
         result.written_count,
     )
@@ -30,14 +33,28 @@ def run_moneyflow_cnt_ths() -> None:
 
 def main() -> None:
     scheduler = BlockingScheduler(timezone="Asia/Shanghai")
-    scheduler.add_job(
-        run_moneyflow_cnt_ths,
-        CronTrigger(hour=1, minute=0),
-        id="moneyflow_cnt_ths_daily",
-        replace_existing=True,
-    )
+    for task_definition in available_task_definitions():
+        trigger = (
+            IntervalTrigger(
+                days=task_definition.interval_days,
+                start_date=task_definition.interval_start_date,
+                timezone="Asia/Shanghai",
+            )
+            if task_definition.interval_days
+            else CronTrigger(
+                hour=task_definition.schedule_hour,
+                minute=task_definition.schedule_minute,
+            )
+        )
+        scheduler.add_job(
+            run_registered_task,
+            trigger,
+            args=[task_definition.name],
+            id=task_definition.schedule_id,
+            replace_existing=True,
+        )
 
-    logger.info("Scheduler started. Job runs daily at 01:00 Asia/Shanghai.")
+    logger.info("Scheduler started. Jobs use registry schedule rules in Asia/Shanghai.")
 
     try:
         scheduler.start()

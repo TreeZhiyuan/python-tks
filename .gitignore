@@ -1,5 +1,10 @@
 .env
+.codex/
 __pycache__/
 *.pyc
 .pytest_cache/
-data/
+!data/
+data/*
+!data/stock_basic/
+!data/stock_basic/.gitkeep
+!data/stock_basic/stock_basic.json

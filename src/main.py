@@ -4,7 +4,13 @@ import argparse
 from datetime import date, datetime, timedelta
 from typing import Iterable, List
 
-from src.tasks.moneyflow_cnt_ths import MoneyflowCntThsTask
+from src.core.models import TaskRunResult
+from src.tasks.registry import (
+    available_task_names,
+    build_task,
+    get_task_definition,
+    resolve_task_names,
+)
 from src.utils import yesterday
 
 
@@ -38,8 +44,21 @@ def unique_dates(dates: Iterable[date]) -> List[date]:
 
 
 def parse_args() -> argparse.Namespace:
+    task_choices = ["all", *available_task_names()]
     parser = argparse.ArgumentParser(
-        description="Fetch moneyflow_cnt_ths data and write rows into Cloudflare D1.",
+        description="Fetch Tushare board moneyflow data and write rows into Cloudflare D1.",
+    )
+    parser.add_argument(
+        "--tasks",
+        nargs="+",
+        choices=task_choices,
+        default=["moneyflow_cnt_ths"],
+        help="One or more tasks to run. Use 'all' to run every registered task.",
+    )
+    parser.add_argument(
+        "--task",
+        choices=task_choices,
+        help="Deprecated alias for --tasks. Accepts one task name or 'all'.",
     )
     parser.add_argument(
         "--dates",
@@ -66,6 +85,9 @@ def parse_args() -> argparse.Namespace:
     if bool(args.start_date) != bool(args.end_date):
         parser.error("--start-date and --end-date must be used together.")
 
+    if args.task:
+        args.tasks = [args.task]
+
     return args
 
 
@@ -82,17 +104,31 @@ def resolve_trade_dates(args: argparse.Namespace) -> List[date]:
 def main() -> None:
     args = parse_args()
     trade_dates = resolve_trade_dates(args)
-    task = MoneyflowCntThsTask()
-    results = task.run_many(trade_dates)
+    task_names = resolve_task_names(args.tasks)
+    completed_count = 0
 
-    for result in results:
-        print(
-            f"trade_date={result.trade_date}, "
-            f"rows={result.row_count}, "
-            f"written={result.written_count}"
-        )
+    for task_name in task_names:
+        task_definition = get_task_definition(task_name)
+        task = build_task(task_name)
+        results = task.run_many(trade_dates) if task_definition.uses_trade_date else [task.run()]
+        completed_count += len(results)
 
-    print(f"Completed {len(results)} date(s).")
+        for result in results:
+            print(format_result(result))
+
+    print(f"Completed {completed_count} task/date run(s).")
+
+
+def format_result(result: TaskRunResult) -> str:
+    target = f"trade_date={result.trade_date}" if result.trade_date else "scope=snapshot"
+    output = f", output={result.output_path}" if result.output_path else ""
+    return (
+        f"task={result.task_name}, "
+        f"{target}, "
+        f"rows={result.row_count}, "
+        f"written={result.written_count}"
+        f"{output}"
+    )
 
 
 if __name__ == "__main__":

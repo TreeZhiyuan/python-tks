@@ -8,12 +8,12 @@ from src.repositories.base import BaseD1Repository
 
 
 @dataclass
-class MoneyflowCntThsRepository(BaseD1Repository):
+class MoneyflowThsRepository(BaseD1Repository):
     d1_client: D1Client
 
     @property
     def table_name(self) -> str:
-        return "moneyflow_cnt_ths"
+        return "moneyflow_ths"
 
     @property
     def select_columns(self) -> Sequence[str]:
@@ -21,15 +21,16 @@ class MoneyflowCntThsRepository(BaseD1Repository):
             "trade_date",
             "ts_code",
             "name",
-            "lead_stock",
-            "close_price",
             "pct_change",
-            "industry_index",
-            "company_num",
-            "pct_change_stock",
-            "net_buy_amount",
-            "net_sell_amount",
+            "latest_price",
             "net_amount",
+            "net_d5_amount",
+            "buy_lg_amount",
+            "buy_lg_amount_rate",
+            "buy_md_amount",
+            "buy_md_amount_rate",
+            "buy_sm_amount",
+            "buy_sm_amount_rate",
         )
 
     @property
@@ -38,13 +39,14 @@ class MoneyflowCntThsRepository(BaseD1Repository):
             ("trade_date", "trade_date"),
             ("ts_code", "ts_code"),
             ("name", "name"),
-            ("lead_stock", "lead_stock"),
-            ("close", "close_price"),
             ("pct_change", "pct_change"),
-            ("index", "industry_index"),
-            ("company_num", "company_num"),
-            ("pct_change_stock", "pct_change_stock"),
-            ("net_buy_amount", "net_buy_amount"),
-            ("net_sell_amount", "net_sell_amount"),
+            ("latest", "latest_price"),
             ("net_amount", "net_amount"),
+            ("net_d5_amount", "net_d5_amount"),
+            ("buy_lg_amount", "buy_lg_amount"),
+            ("buy_lg_amount_rate", "buy_lg_amount_rate"),
+            ("buy_md_amount", "buy_md_amount"),
+            ("buy_md_amount_rate", "buy_md_amount_rate"),
+            ("buy_sm_amount", "buy_sm_amount"),
+            ("buy_sm_amount_rate", "buy_sm_amount_rate"),
         )
