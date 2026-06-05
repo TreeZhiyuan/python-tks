@@ -31,6 +31,8 @@ STOCK_BASIC_FIELDS = ",".join(
         "act_ent_type",
     ]
 )
+DEFAULT_LIST_STATUS = "L"
+DEFAULT_MARKETS = ("主板", "创业板")
 
 
 class StockBasicTask:
@@ -49,7 +51,16 @@ class StockBasicTask:
         df = self.fetch(pro)
         result = df if df is not None else pd.DataFrame()
         rows = result.to_dict(orient="records")
-        output_file = self.snapshot_store.write_snapshot(self.task_name, rows)
+        output_file = self.snapshot_store.write_snapshot(
+            self.task_name,
+            rows,
+            request_params={
+                "exchange": "",
+                "list_status": DEFAULT_LIST_STATUS,
+                "market": list(DEFAULT_MARKETS),
+                "fields": STOCK_BASIC_FIELDS.split(","),
+            },
+        )
         return TaskRunResult(
             task_name=self.task_name,
             trade_date=None,
@@ -62,18 +73,12 @@ class StockBasicTask:
         return [self.run()]
 
     def fetch(self, pro: Any) -> pd.DataFrame:
-        frames: list[pd.DataFrame] = []
-        for list_status in ("L", "D", "P"):
-            df = pro.stock_basic(
-                exchange="",
-                list_status=list_status,
-                fields=STOCK_BASIC_FIELDS,
-            )
-            if df is not None and not df.empty:
-                frames.append(df)
-
-        if not frames:
+        df = pro.stock_basic(
+            exchange="",
+            list_status=DEFAULT_LIST_STATUS,
+            fields=STOCK_BASIC_FIELDS,
+        )
+        if df is None or df.empty:
             return pd.DataFrame()
-
-        result = pd.concat(frames, ignore_index=True)
-        return result.drop_duplicates(subset=["ts_code"], keep="last")
+        filtered = df[df["market"].isin(DEFAULT_MARKETS)]
+        return filtered.drop_duplicates(subset=["ts_code"], keep="last")

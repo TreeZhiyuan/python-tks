@@ -12,11 +12,12 @@ from src.tushare_client import TushareClientFactory
 from src.utils import yesterday
 
 
-MAX_LIMIT = 5000
+DEFAULT_PAGE_SIZE = 5000
 
 
 class BaseMoneyflowTask(ABC):
     task_name: str
+    page_size: int = DEFAULT_PAGE_SIZE
 
     def __init__(
         self,
@@ -42,17 +43,17 @@ class BaseMoneyflowTask(ABC):
         offset = 0
 
         while True:
-            df = self.fetch_page(pro, trade_date_str, offset, MAX_LIMIT)
+            df = self.fetch_page(pro, trade_date_str, offset, self.page_size)
 
             if df is None or df.empty:
                 break
 
             frames.append(df)
 
-            if len(df) < MAX_LIMIT:
+            if len(df) < self.page_size:
                 break
 
-            offset += MAX_LIMIT
+            offset += self.page_size
 
         result = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
         row_count = len(result.index)
@@ -67,4 +68,3 @@ class BaseMoneyflowTask(ABC):
     @abstractmethod
     def fetch_page(self, pro: Any, trade_date: str, offset: int, limit: int) -> pd.DataFrame:
         raise NotImplementedError
-

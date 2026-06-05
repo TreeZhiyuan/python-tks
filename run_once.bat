@@ -13,7 +13,7 @@ if not exist "%PYTHON_EXE%" (
 
 pushd "%SCRIPT_DIR%"
 
-echo Running moneyflow_cnt_ths task...
+echo Running Tushare task...
 echo.
 "%PYTHON_EXE%" -m src.main %*
 set "EXIT_CODE=%ERRORLEVEL%"
@@ -31,7 +31,7 @@ if not "%EXIT_CODE%"=="0" (
 )
 
 echo Task completed successfully.
-echo Data has been written to Cloudflare D1.
+echo Data output has been completed.
 
 popd
 pause

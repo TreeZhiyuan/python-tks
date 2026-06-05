@@ -8,12 +8,13 @@
 
 | 任务名 | Tushare 接口 | 功能描述 | 文档 | 定时执行时间 | 执行说明 |
 | --- | --- | --- | --- | --- | --- |
-| `stock_basic` | `stock_basic` | 股票基础信息，包括股票代码、名称、上市日期、退市日期等 | [doc_id=25](https://tushare.pro/document/2?doc_id=25) | 每 7 天执行一次，从 `2026-06-05 00:30` 开始 | 快照类接口，不按交易日；每次执行拉取当前股票基础信息并保存到 `data/stock_basic/stock_basic.json` |
+| `stock_basic` | `stock_basic` | 股票基础信息，包括股票代码、名称、上市日期、退市日期等 | [doc_id=25](https://tushare.pro/document/2?doc_id=25) | 每 7 天执行一次，从 `2026-06-05 00:30` 开始 | 快照类接口，不按交易日；默认只保留 `list_status=L` 且 `market` 为主板/创业板的上市股票，并保存到 `data/stock_basic/stock_basic.json` |
 | `moneyflow_cnt_ths` | `moneyflow_cnt_ths` | 同花顺概念板块每日资金流向 | [doc_id=371](https://tushare.pro/document/2?doc_id=371) | 每天 `01:00` | 日频接口；每次执行拉取昨天的资金流向数据 |
 | `moneyflow_ind_dc` | `moneyflow_ind_dc` | 东财概念及行业板块每日资金流向 | [doc_id=344](https://tushare.pro/document/2?doc_id=344) | 每天 `01:05` | 日频接口；每次执行拉取昨天的资金流向数据 |
 | `moneyflow` | `moneyflow` | 沪深A股个股每日资金流向 | [doc_id=170](https://tushare.pro/document/2?doc_id=170) | 每天 `01:10` | 日频接口；每次执行拉取昨天的个股资金流向数据 |
 | `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | [doc_id=349](https://tushare.pro/document/2?doc_id=349) | 每天 `01:15` | 日频接口；每次执行拉取昨天的个股资金流向数据 |
 | `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | [doc_id=348](https://tushare.pro/document/2?doc_id=348) | 每天 `01:20` | 日频接口；每次执行拉取昨天的个股资金流向数据 |
+| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每天 `00:45` | 日频接口；每次执行拉取昨天的A股日线行情数据 |
 
 ## 环境要求
 
@@ -60,6 +61,8 @@ CLOUDFLARE_D1_DATABASE_ID=REPLACE_WITH_YOUR_D1_DATABASE_ID
 - `DDL/005_create_moneyflow_dc_d1.sql`
 - `DDL/006_create_moneyflow_ths.sql`
 - `DDL/006_create_moneyflow_ths_d1.sql`
+- `DDL/007_create_daily.sql`
+- `DDL/007_create_daily_d1.sql`
 
 当前程序写入的目标表：
 
@@ -68,6 +71,7 @@ CLOUDFLARE_D1_DATABASE_ID=REPLACE_WITH_YOUR_D1_DATABASE_ID
 - `moneyflow`
 - `moneyflow_dc`
 - `moneyflow_ths`
+- `daily`
 
 `stock_basic` 不写入 Cloudflare D1，也不需要建表脚本。它会保存为仓库内 JSON 文件：
 
@@ -99,7 +103,7 @@ python -m src.main --tasks moneyflow_cnt_ths moneyflow_ind_dc
 python -m src.main --tasks all
 ```
 
-`stock_basic` 是快照类接口，不按交易日拉取。即使命令中传入 `--dates`，该任务也只会执行一次当前基础信息快照，并保存到 `data/stock_basic/stock_basic.json`。
+`stock_basic` 是快照类接口，不按交易日拉取。即使命令中传入 `--dates`，该任务也只会执行一次当前基础信息快照。默认请求入参为 `list_status=L`，并只保存 `market` 为主板/创业板的上市股票到 `data/stock_basic/stock_basic.json`。
 
 指定多个日期：
 
@@ -149,7 +153,7 @@ python -m src.read_moneyflow_cnt_ths --trade-date 20240506
 python -m src.read_moneyflow_ind_dc --trade-date 20240506
 ```
 
-股票基础信息读取来源是 JSON 快照文件：`data/stock_basic/stock_basic.json`。
+股票基础信息读取来源是 JSON 快照文件：`data/stock_basic/stock_basic.json`。该文件的 `request_params` 会记录本次请求入参。
 
 读取个股资金流向数据：
 
@@ -157,6 +161,12 @@ python -m src.read_moneyflow_ind_dc --trade-date 20240506
 python -m src.read_moneyflow --trade-date 20240506
 python -m src.read_moneyflow_dc --trade-date 20240506
 python -m src.read_moneyflow_ths --trade-date 20240506
+```
+
+读取 A股日线行情数据：
+
+```bash
+python -m src.read_daily --trade-date 20240506
 ```
 
 ## 定时任务
@@ -171,6 +181,7 @@ python -m src.read_moneyflow_ths --trade-date 20240506
 - `moneyflow`：每天 `01:10`
 - `moneyflow_dc`：每天 `01:15`
 - `moneyflow_ths`：每天 `01:20`
+- `daily`：每天 `00:45`
 
 调度任务来源于 `src/tasks/registry.py`。新增接口时，在 registry 中配置 `schedule_hour` 和 `schedule_minute` 后，调度器会自动注册对应任务。
 
@@ -203,6 +214,7 @@ src/
   read_moneyflow.py
   read_moneyflow_dc.py
   read_moneyflow_ths.py
+  read_daily.py
   storage/             JSON 快照存储封装
 ```
 

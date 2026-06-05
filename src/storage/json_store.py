@@ -11,12 +11,18 @@ from typing import Any
 class JsonSnapshotStore:
     output_dir: Path
 
-    def write_snapshot(self, task_name: str, rows: list[dict[str, Any]]) -> Path:
+    def write_snapshot(
+        self,
+        task_name: str,
+        rows: list[dict[str, Any]],
+        request_params: dict[str, Any] | None = None,
+    ) -> Path:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         output_file = self.output_dir / f"{task_name}.json"
         payload = {
             "task_name": task_name,
             "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "request_params": request_params or {},
             "row_count": len(rows),
             "rows": rows,
         }

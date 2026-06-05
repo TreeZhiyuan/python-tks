@@ -8,10 +8,11 @@
 | --- | --- | --- | --- |
 | `moneyflow_cnt_ths` | `moneyflow_cnt_ths` | 同花顺概念板块每日资金流向 | https://tushare.pro/document/2?doc_id=371 |
 | `moneyflow_ind_dc` | `moneyflow_ind_dc` | 东财概念及行业板块每日资金流向 | https://tushare.pro/document/2?doc_id=344 |
-| `stock_basic` | `stock_basic` | 股票基础信息，包括股票代码、名称、上市日期、退市日期等 | https://tushare.pro/document/2?doc_id=25 |
+| `stock_basic` | `stock_basic` | 股票基础信息，默认只保留 `list_status=L` 且 `market` 为主板/创业板的上市股票 | https://tushare.pro/document/2?doc_id=25 |
 | `moneyflow` | `moneyflow` | 沪深A股个股每日资金流向 | https://tushare.pro/document/2?doc_id=170 |
 | `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | https://tushare.pro/document/2?doc_id=349 |
 | `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | https://tushare.pro/document/2?doc_id=348 |
+| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | https://tushare.pro/document/2?doc_id=27 |
 
 ## 架构约定
 

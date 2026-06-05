@@ -4,6 +4,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
+from src.tasks.daily import DailyTask
 from src.tasks.moneyflow import MoneyflowTask
 from src.tasks.moneyflow_cnt_ths import MoneyflowCntThsTask
 from src.tasks.moneyflow_dc import MoneyflowDcTask
@@ -84,6 +85,14 @@ TASK_REGISTRY: dict[str, TaskDefinition] = {
         uses_trade_date=False,
         interval_days=7,
         interval_start_date="2026-06-05 00:30:00",
+    ),
+    "daily": TaskDefinition(
+        name="daily",
+        description="A股日线行情，未复权行情，停牌期间不提供数据",
+        doc_url="https://tushare.pro/document/2?doc_id=27",
+        factory=DailyTask,
+        schedule_hour=0,
+        schedule_minute=45,
     ),
 }
 
