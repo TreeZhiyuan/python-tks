@@ -8,13 +8,13 @@
 
 | 任务名 | Tushare 接口 | 功能描述 | 文档 | 定时执行时间 | 执行说明 |
 | --- | --- | --- | --- | --- | --- |
-| `stock_basic` | `stock_basic` | 股票基础信息，包括股票代码、名称、上市日期、退市日期等 | [doc_id=25](https://tushare.pro/document/2?doc_id=25) | 每 7 天执行一次，从 `2026-06-05 00:30` 开始 | 快照类接口，不按交易日；默认只保留 `list_status=L` 且 `market` 为主板/创业板的上市股票，并保存到 `data/stock_basic/stock_basic.json` |
-| `moneyflow_cnt_ths` | `moneyflow_cnt_ths` | 同花顺概念板块每日资金流向 | [doc_id=371](https://tushare.pro/document/2?doc_id=371) | 每天 `01:00` | 日频接口；每次执行拉取昨天的资金流向数据 |
-| `moneyflow_ind_dc` | `moneyflow_ind_dc` | 东财概念及行业板块每日资金流向 | [doc_id=344](https://tushare.pro/document/2?doc_id=344) | 每天 `01:05` | 日频接口；每次执行拉取昨天的资金流向数据 |
-| `moneyflow` | `moneyflow` | 沪深A股个股每日资金流向 | [doc_id=170](https://tushare.pro/document/2?doc_id=170) | 每天 `01:10` | 日频接口；每次执行拉取昨天的个股资金流向数据 |
-| `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | [doc_id=349](https://tushare.pro/document/2?doc_id=349) | 每天 `01:15` | 日频接口；每次执行拉取昨天的个股资金流向数据 |
-| `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | [doc_id=348](https://tushare.pro/document/2?doc_id=348) | 每天 `01:20` | 日频接口；每次执行拉取昨天的个股资金流向数据 |
-| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每天 `00:45` | 日频接口；每次执行拉取昨天的A股日线行情数据 |
+| `stock_basic` | `stock_basic` | 股票基础信息，包括股票代码、名称、上市日期、退市日期等 | [doc_id=25](https://tushare.pro/document/2?doc_id=25) | 每周日 `01:00` | 快照类接口，不按交易日；默认只保留 `list_status=L` 且 `market` 为主板/创业板的上市股票，并保存到 `data/stock_basic/stock_basic.json`；GitHub Actions 定时执行后会提交快照变更 |
+| `moneyflow_cnt_ths` | `moneyflow_cnt_ths` | 同花顺概念板块每日资金流向 | [doc_id=371](https://tushare.pro/document/2?doc_id=371) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
+| `moneyflow_ind_dc` | `moneyflow_ind_dc` | 东财概念及行业板块每日资金流向 | [doc_id=344](https://tushare.pro/document/2?doc_id=344) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
+| `moneyflow` | `moneyflow` | 沪深A股个股每日资金流向 | [doc_id=170](https://tushare.pro/document/2?doc_id=170) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
+| `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | [doc_id=349](https://tushare.pro/document/2?doc_id=349) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
+| `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | [doc_id=348](https://tushare.pro/document/2?doc_id=348) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
+| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每个工作日 `20:00` | 日频接口；GitHub Actions 按北京时间当天日期执行；任务先读取 `stock_basic` 快照中的 `ts_code` 股票池，再按多股票代码批量拉取 `daily` 并分批写入 D1 |
 
 ## 环境要求
 
@@ -169,35 +169,40 @@ python -m src.read_moneyflow_ths --trade-date 20240506
 python -m src.read_daily --trade-date 20240506
 ```
 
-## 定时任务
-
-项目使用 `APScheduler`。
-
-当前调度规则也可在“已接入 Tushare 接口”表中查看：
-
-- `moneyflow_cnt_ths`：每天 `01:00`
-- `moneyflow_ind_dc`：每天 `01:05`
-- `stock_basic`：每 7 天执行一次，从 `2026-06-05 00:30` 开始
-- `moneyflow`：每天 `01:10`
-- `moneyflow_dc`：每天 `01:15`
-- `moneyflow_ths`：每天 `01:20`
-- `daily`：每天 `00:45`
-
-调度任务来源于 `src/tasks/registry.py`。新增接口时，在 registry 中配置 `schedule_hour` 和 `schedule_minute` 后，调度器会自动注册对应任务。
-
-启动调度器：
+`daily` 写入逻辑会先读取 `data/stock_basic/stock_basic.json` 中的 `ts_code` 列表作为股票池，再按批次把多个股票代码用英文逗号拼接后请求 Tushare `daily`。如果该快照不存在，请先执行：
 
 ```bash
-python -m src.scheduler
+python -m src.main --tasks stock_basic
 ```
 
-或使用：
+## GitHub Actions 定时任务
 
-```bash
-run_scheduler.bat
-```
+项目使用 GitHub Actions 负责线上定时执行，workflow 文件是 `.github/workflows/tushare-tasks.yml`。GitHub Actions 的 cron 使用 UTC，当前北京时间调度规则如下：
 
-只有在你主动启动调度器后，才会开始按计划执行。
+| 任务范围 | 北京时间 | GitHub Actions cron | 执行命令 |
+| --- | --- | --- | --- |
+| `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | `python -m src.main --tasks stock_basic` |
+| 资金流任务组 | 每个工作日 `01:00` | `0 17 * * 0-4` | `python -m src.main --tasks moneyflow_cnt_ths moneyflow_ind_dc moneyflow moneyflow_dc moneyflow_ths --dates <最近一个工作日>` |
+| `daily` | 每个工作日 `20:00` | `0 12 * * 1-5` | `python -m src.main --tasks daily --dates <北京时间当天>` |
+
+资金流任务组包含：
+
+- `moneyflow_cnt_ths`
+- `moneyflow_ind_dc`
+- `moneyflow`
+- `moneyflow_dc`
+- `moneyflow_ths`
+
+GitHub Actions 需要在仓库 `Settings` -> `Secrets and variables` -> `Actions` 中配置：
+
+- `TUSHARE_TOKEN`
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_D1_DATABASE_ID`
+
+workflow 同时支持手动触发 `workflow_dispatch`。手动执行时可以填写 `tasks`，例如 `stock_basic`、`daily`、`moneyflow_cnt_ths moneyflow_ind_dc` 或 `all`；也可以填写 `dates` 指定一个或多个 `YYYYMMDD` 日期。
+
+本地不再维护长驻定时调度器。如需本地调试，请继续使用“单次执行”中的 `run_once.bat`。
 
 ## 项目结构
 
@@ -208,7 +213,6 @@ src/
   repositories/        数据表仓储层
   tasks/               Tushare 任务实现和任务注册表
   main.py              单次执行入口
-  scheduler.py         定时调度入口
   read_moneyflow_cnt_ths.py
   read_moneyflow_ind_dc.py
   read_moneyflow.py
@@ -225,7 +229,8 @@ src/
 - `Template Method`：统一“分页抓取 Tushare -> 汇总 -> 写入 D1”的任务流程
 - `JSON Snapshot Task`：支持不依赖交易日、适合保存为仓库 JSON 快照的基础信息接口
 - `Repository`：统一数据库写入和查询操作
-- `Task Registry`：统一管理已接入任务、接口描述、文档链接和调度时间，供单次执行、定时调度和文档维护复用
+- `Code Batch Task`：支持先读取股票池，再按多个 `ts_code + trade_date` 批量拉取数据的接口，例如 `daily`
+- `Task Registry`：统一管理已接入任务、接口描述和文档链接，供单次执行、GitHub Actions 和文档维护复用
 
 新增接口时，通常需要补：
 
@@ -234,6 +239,7 @@ src/
 - MySQL 版和 Cloudflare D1 版建表脚本；如果该接口明确保存为仓库 JSON 快照，则不需要数据库 DDL
 - 在 `src/tasks/registry.py` 注册任务元数据
 - 在 README 的“已接入 Tushare 接口”清单补充接口信息、定时执行时间和执行说明
+- 如需定时执行，在 `.github/workflows/tushare-tasks.yml` 中补充对应 GitHub Actions 调度规则
 
 ## 新增 Tushare 接口接入步骤
 
@@ -242,9 +248,9 @@ src/
 3. 对写入 Cloudflare D1 的接口，在 `src/repositories/` 下新增仓储类，继承 `BaseD1Repository`，配置 `table_name`、`select_columns`、`source_to_db_field_map`。
 4. 对保存为 JSON 快照的接口，使用 `src/storage/json_store.py` 写入仓库内 JSON 文件，并在 `.gitignore` 中确保该 JSON 文件可提交。
 5. 在 `src/tasks/` 下新增任务类。日频分页接口继承 `BaseMoneyflowTask` 并实现 `fetch_page()`；JSON 快照接口自行实现 `run()` 并返回 `TaskRunResult`。
-6. 在 `src/tasks/registry.py` 注册任务名、描述、文档链接、factory 和调度规则。
+6. 在 `src/tasks/registry.py` 注册任务名、描述、文档链接、factory 和 `uses_trade_date`。
 7. 如需要独立读取入口，在 `src/read_<task_name>.py` 下新增读取脚本。
-8. 更新 README 的接口清单、定时执行时间、执行说明和数据库脚本清单。
+8. 更新 README 的接口清单、定时执行时间、执行说明和数据库脚本清单；如需定时执行，同步更新 `.github/workflows/tushare-tasks.yml`。
 9. 运行 `python -m compileall src`，再用 `python -m src.main --tasks <task_name> --dates YYYYMMDD` 做单接口验证。
 
 建表脚本要求：

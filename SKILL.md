@@ -52,18 +52,23 @@ Add a new Tushare task with the smallest maintainable change set:
    - `description`
    - `doc_url`
    - `factory`
-   - `schedule_hour`
-   - `schedule_minute`
+   - `uses_trade_date`
 
 6. Update `README.md`:
    - Add the interface to “已接入 Tushare 接口”.
    - Add the new DDL scripts to “数据库准备”.
    - Confirm the README table list includes the new target database table.
+   - Add the scheduled execution time and execution notes if the interface is scheduled.
    - Add run examples only if the interface requires special parameters.
 
-7. Optional: add `src/read_<task_name>.py` if users need a dedicated read command.
+7. Update `.github/workflows/tushare-tasks.yml` if the interface needs scheduled execution in GitHub Actions:
+   - GitHub Actions cron uses UTC.
+   - Convert the desired `Asia/Shanghai` schedule to UTC.
+   - Pass explicit `--dates` when the scheduled task should not use the default yesterday date.
 
-8. Verify:
+8. Optional: add `src/read_<task_name>.py` if users need a dedicated read command.
+
+9. Verify:
    - Review both DDL files against the Tushare output parameter table.
    - `python -m compileall src`
    - `python -m src.main --help`
@@ -74,7 +79,9 @@ Add a new Tushare task with the smallest maintainable change set:
 - Use Template Method through `BaseMoneyflowTask` for shared Tushare pagination flow.
 - Use JSON snapshot storage for Tushare interfaces that return current snapshot data, do not depend on `trade_date`, and do not need Cloudflare D1 persistence.
 - Use Repository through `BaseD1Repository` for shared D1 write/read behavior.
-- Use Task Registry in `src/tasks/registry.py` as the single source of truth for task discovery and scheduling.
+- Use a code-batch task when an interface should first load a stock/code pool and then fetch by multiple `ts_code + trade_date`, such as `daily`.
+- Use Task Registry in `src/tasks/registry.py` as the single source of truth for task discovery.
+- Use GitHub Actions workflow `.github/workflows/tushare-tasks.yml` as the source of truth for scheduled execution.
 
 ## When Not To Use `BaseMoneyflowTask`
 

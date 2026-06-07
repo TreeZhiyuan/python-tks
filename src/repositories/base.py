@@ -44,6 +44,25 @@ class BaseD1Repository(ABC):
         self.d1_client.executemany(self.build_upsert_sql(), payload)
         return len(payload)
 
+    def upsert_rows_in_batches(
+        self,
+        rows: Iterable[dict[str, Any]],
+        batch_size: int = 100,
+    ) -> int:
+        total_count = 0
+        batch: List[dict[str, Any]] = []
+
+        for row in rows:
+            batch.append(row)
+            if len(batch) >= batch_size:
+                total_count += self.upsert_rows(batch)
+                batch = []
+
+        if batch:
+            total_count += self.upsert_rows(batch)
+
+        return total_count
+
     def find_by_trade_date(self, trade_date: str) -> list[dict[str, Any]]:
         sql = self.build_select_by_trade_date_sql()
         return self.d1_client.fetch_all(sql, [trade_date])

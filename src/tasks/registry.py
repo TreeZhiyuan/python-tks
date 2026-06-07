@@ -22,16 +22,7 @@ class TaskDefinition:
     description: str
     doc_url: str
     factory: TaskFactory
-    schedule_hour: int
-    schedule_minute: int
     uses_trade_date: bool = True
-    interval_days: int | None = None
-    interval_start_date: str | None = None
-
-    @property
-    def schedule_id(self) -> str:
-        suffix = f"every_{self.interval_days}_days" if self.interval_days else "daily"
-        return f"{self.name}_{suffix}"
 
 
 TASK_REGISTRY: dict[str, TaskDefinition] = {
@@ -40,69 +31,49 @@ TASK_REGISTRY: dict[str, TaskDefinition] = {
         description="同花顺概念板块每日资金流向",
         doc_url="https://tushare.pro/document/2?doc_id=371",
         factory=MoneyflowCntThsTask,
-        schedule_hour=1,
-        schedule_minute=0,
     ),
     "moneyflow_ind_dc": TaskDefinition(
         name="moneyflow_ind_dc",
         description="东财概念及行业板块每日资金流向",
         doc_url="https://tushare.pro/document/2?doc_id=344",
         factory=MoneyflowIndDcTask,
-        schedule_hour=1,
-        schedule_minute=5,
     ),
     "moneyflow": TaskDefinition(
         name="moneyflow",
         description="沪深A股个股每日资金流向",
         doc_url="https://tushare.pro/document/2?doc_id=170",
         factory=MoneyflowTask,
-        schedule_hour=1,
-        schedule_minute=10,
     ),
     "moneyflow_dc": TaskDefinition(
         name="moneyflow_dc",
         description="东方财富个股每日资金流向",
         doc_url="https://tushare.pro/document/2?doc_id=349",
         factory=MoneyflowDcTask,
-        schedule_hour=1,
-        schedule_minute=15,
     ),
     "moneyflow_ths": TaskDefinition(
         name="moneyflow_ths",
         description="同花顺个股每日资金流向",
         doc_url="https://tushare.pro/document/2?doc_id=348",
         factory=MoneyflowThsTask,
-        schedule_hour=1,
-        schedule_minute=20,
     ),
     "stock_basic": TaskDefinition(
         name="stock_basic",
-        description="股票基础信息，包括股票代码、名称、上市日期、退市日期等",
+        description="股票基础信息，默认只保留 list_status=L 且 market 为主板/创业板的上市股票",
         doc_url="https://tushare.pro/document/2?doc_id=25",
         factory=StockBasicTask,
-        schedule_hour=0,
-        schedule_minute=30,
         uses_trade_date=False,
-        interval_days=7,
-        interval_start_date="2026-06-05 00:30:00",
     ),
     "daily": TaskDefinition(
         name="daily",
         description="A股日线行情，未复权行情，停牌期间不提供数据",
         doc_url="https://tushare.pro/document/2?doc_id=27",
         factory=DailyTask,
-        schedule_hour=0,
-        schedule_minute=45,
     ),
 }
 
 
 def available_task_names() -> list[str]:
     return list(TASK_REGISTRY.keys())
-
-
-def available_task_definitions() -> list[TaskDefinition]:
-    return list(TASK_REGISTRY.values())
 
 
 def get_task_definition(task_name: str) -> TaskDefinition:

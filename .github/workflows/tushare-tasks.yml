@@ -1,0 +1,110 @@
+name: Tushare Tasks
+
+on:
+  schedule:
+    # Asia/Shanghai Sunday 01:00.
+    - cron: "0 17 * * 6"
+    # Asia/Shanghai Monday-Friday 01:00.
+    - cron: "0 17 * * 0-4"
+    # Asia/Shanghai Monday-Friday 20:00.
+    - cron: "0 12 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      tasks:
+        description: "Task names separated by spaces, or all."
+        required: true
+        default: "moneyflow_cnt_ths"
+      dates:
+        description: "Optional trade dates separated by spaces, for example: 20240506 20240507."
+        required: false
+        default: ""
+      commit_stock_basic_snapshot:
+        description: "Commit data/stock_basic/stock_basic.json after stock_basic runs."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  run-tushare-task:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_DATABASE_ID }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Resolve scheduled task arguments
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            RUN_ARGS="--tasks ${{ inputs.tasks }}"
+            if [ -n "${{ inputs.dates }}" ]; then
+              RUN_ARGS="$RUN_ARGS --dates ${{ inputs.dates }}"
+            fi
+            COMMIT_STOCK_BASIC="${{ inputs.commit_stock_basic_snapshot }}"
+          else
+            case "${{ github.event.schedule }}" in
+              "0 17 * * 6")
+                RUN_ARGS="--tasks stock_basic"
+                COMMIT_STOCK_BASIC="true"
+                ;;
+              "0 17 * * 0-4")
+                TRADE_DATE="$(python -c 'from src.utils import previous_china_workday; print(previous_china_workday().strftime("%Y%m%d"))')"
+                RUN_ARGS="--tasks moneyflow_cnt_ths moneyflow_ind_dc moneyflow moneyflow_dc moneyflow_ths --dates ${TRADE_DATE}"
+                COMMIT_STOCK_BASIC="false"
+                ;;
+              "0 12 * * 1-5")
+                TRADE_DATE="$(python -c 'from src.utils import china_today; print(china_today().strftime("%Y%m%d"))')"
+                RUN_ARGS="--tasks daily --dates ${TRADE_DATE}"
+                COMMIT_STOCK_BASIC="false"
+                ;;
+              *)
+                echo "Unsupported schedule: ${{ github.event.schedule }}"
+                exit 1
+                ;;
+            esac
+          fi
+
+          echo "RUN_ARGS=${RUN_ARGS}" >> "${GITHUB_ENV}"
+          echo "COMMIT_STOCK_BASIC=${COMMIT_STOCK_BASIC}" >> "${GITHUB_ENV}"
+          echo "Resolved run args: ${RUN_ARGS}"
+
+      - name: Run Tushare task
+        run: python -m src.main ${RUN_ARGS}
+
+      - name: Commit stock_basic snapshot
+        if: env.COMMIT_STOCK_BASIC == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stock_basic/stock_basic.json
+
+          if git diff --cached --quiet; then
+            echo "No stock_basic snapshot changes to commit."
+            exit 0
+          fi
+
+          git commit -m "更新stock_basic股票基础信息快照"
+          git push

@@ -22,7 +22,18 @@
 - 数据表写入和读取复用逻辑在 `src/repositories/base.py`。
 - 已接入任务统一注册在 `src/tasks/registry.py`。
 - 单次执行入口是 `src/main.py`，支持 `--tasks` 多选和 `all`。
-- 定时任务入口是 `src/scheduler.py`，调度信息来自 `src/tasks/registry.py`。
+- 线上定时任务由 GitHub Actions 执行，workflow 文件是 `.github/workflows/tushare-tasks.yml`。
+- 本地调试只保留单次执行脚本 `run_once.bat`。
+
+## 当前 GitHub Actions 调度规则
+
+| 任务范围 | 北京时间 | GitHub Actions cron | 执行说明 |
+| --- | --- | --- | --- |
+| `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | 更新 `data/stock_basic/stock_basic.json`，并提交快照变更 |
+| `moneyflow_cnt_ths`、`moneyflow_ind_dc`、`moneyflow`、`moneyflow_dc`、`moneyflow_ths` | 每个工作日 `01:00` | `0 17 * * 0-4` | 按北京时间计算最近一个工作日，写入 Cloudflare D1 |
+| `daily` | 每个工作日 `20:00` | `0 12 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1 |
+
+`daily` 的实现不是全市场 `trade_date + limit + offset` 分页；它会先读取 `data/stock_basic/stock_basic.json` 中的 `ts_code` 股票池，再按多个 `ts_code + trade_date` 批量请求 Tushare `daily`，最后分批写入 Cloudflare D1。
 
 ## 新增 Tushare 接口最小变更
 
@@ -34,6 +45,7 @@
 - 新增 `src/tasks/<task_name>.py`
 - 更新 `src/tasks/registry.py`
 - 更新 `README.md` 的接口清单和 DDL 清单
+- 如需定时执行，更新 `.github/workflows/tushare-tasks.yml`
 - 可选新增 `src/read_<task_name>.py`
 
 数据库建表脚本是每次新增 Tushare 接口的必选改动，不是可选项。即使代码暂时只写入 Cloudflare D1，也要同时提供 MySQL 版和 D1 版 DDL，便于字段审查、迁移和后续数据库适配。
@@ -60,13 +72,16 @@
 - D1 版 DDL 使用 SQLite 语法，不使用 MySQL 的 `ENGINE`、`CHARSET`、`COMMENT`。
 - Repository 的 `source_to_db_field_map` 覆盖全部需要写入的字段。
 - Task 的 `fetch_page()` 使用正确的 Tushare 接口名和参数。
-- `src/tasks/registry.py` 已注册任务元数据和调度时间。
+- `src/tasks/registry.py` 已注册任务元数据。
+- 如需定时执行，`.github/workflows/tushare-tasks.yml` 已注册对应 GitHub Actions cron。
 - `python -m compileall src` 通过。
 - 单次验证命令可运行：`python -m src.main --tasks <task_name> --dates YYYYMMDD`。
 
 ## 注意事项
 
 - 当前任务基类主要适合支持 `trade_date`、`limit`、`offset` 的日频分页接口。
+- `daily` 是按股票代码批量请求的例外，不继承 `BaseMoneyflowTask`。
 - 如果后续接口是不依赖交易日且短期变化不大的快照类接口，可保存为仓库 JSON 文件，例如 `stock_basic` 写入 `data/stock_basic/stock_basic.json`。
 - 如果后续接口既不是日频分页，也不是快照模式，先扩展或新增任务基类，不要硬塞到 `BaseMoneyflowTask`。
 - 当前数据库写入目标是 Cloudflare D1；SQLite/MySQL 需要额外数据库适配层。
+- GitHub Actions runner 默认使用 UTC；涉及默认日期时必须显式按 `Asia/Shanghai` 计算。

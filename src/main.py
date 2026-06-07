@@ -46,7 +46,7 @@ def unique_dates(dates: Iterable[date]) -> List[date]:
 def parse_args() -> argparse.Namespace:
     task_choices = ["all", *available_task_names()]
     parser = argparse.ArgumentParser(
-        description="Fetch Tushare board moneyflow data and write rows into Cloudflare D1.",
+        description="Fetch Tushare data and write rows into the configured storage.",
     )
     parser.add_argument(
         "--tasks",

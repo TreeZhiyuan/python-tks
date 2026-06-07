@@ -45,11 +45,36 @@ class D1Client:
             params=list(params or []),
         )
 
-    def executemany(self, sql: str, rows: Iterable[Sequence[Any]]) -> List[Any]:
+    def executemany(
+        self,
+        sql: str,
+        rows: Iterable[Sequence[Any]],
+        batch_size: int = 100,
+    ) -> List[Any]:
         results: List[Any] = []
+        batch: list[dict[str, Any]] = []
+
         for row in rows:
-            results.append(self.execute(sql, row))
+            batch.append({"sql": sql, "params": list(row)})
+            if len(batch) >= batch_size:
+                results.extend(self.execute_batch(batch))
+                batch = []
+
+        if batch:
+            results.extend(self.execute_batch(batch))
+
         return results
+
+    def execute_batch(self, batch: Sequence[dict[str, Any]]) -> List[Any]:
+        if not batch:
+            return []
+
+        response = self.client.d1.database.query(
+            database_id=self.config.database_id,
+            account_id=self.config.account_id,
+            batch=batch,
+        )
+        return list(response)
 
     def fetch_all(self, sql: str, params: Sequence[Any] | None = None) -> list[dict[str, Any]]:
         response = self.execute(sql, params)
