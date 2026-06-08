@@ -92,11 +92,16 @@ jobs:
       - name: Run Tushare task
         run: python -m src.main ${RUN_ARGS}
 
-      - name: Commit stock_basic snapshot
-        if: env.COMMIT_STOCK_BASIC == 'true'
+      - name: Handle stock_basic snapshot commit
         shell: bash
         run: |
           set -euo pipefail
+
+          if [ "${COMMIT_STOCK_BASIC}" != "true" ]; then
+            echo "COMMIT_STOCK_BASIC=${COMMIT_STOCK_BASIC}; skip stock_basic snapshot commit."
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/stock_basic/stock_basic.json
