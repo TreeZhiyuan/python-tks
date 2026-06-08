@@ -6,8 +6,8 @@ on:
     - cron: "0 17 * * 6"
     # Asia/Shanghai Monday-Friday 01:00.
     - cron: "0 17 * * 0-4"
-    # Asia/Shanghai Monday-Friday 20:00.
-    - cron: "0 12 * * 1-5"
+    # Asia/Shanghai Monday-Friday 22:27.
+    - cron: "27 14 * * 1-5"
   workflow_dispatch:
     inputs:
       tasks:
@@ -121,7 +121,7 @@ jobs:
                 fi
                 COMMIT_STOCK_BASIC="false"
                 ;;
-              "0 12 * * 1-5")
+              "27 14 * * 1-5")
                 TRADE_DATE="$(python -c 'from src.utils import china_today; print(china_today().strftime("%Y%m%d"))')"
                 RUN_ARGS="--tasks daily --dates ${TRADE_DATE}"
                 COMMIT_STOCK_BASIC="false"

@@ -41,7 +41,7 @@
 | --- | --- | --- | --- |
 | `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | 更新 `data/stock_basic/stock_basic.json`，并提交快照变更 |
 | `moneyflow_cnt_ths`、`moneyflow_ind_dc`、`moneyflow`、`moneyflow_dc`、`moneyflow_ths` | 每个工作日 `01:00` | `0 17 * * 0-4` | 按北京时间计算最近一个工作日，写入 Cloudflare D1 |
-| `daily` | 每个工作日 `20:00` | `0 12 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1，并清理超过 1 年的 `daily` 历史数据 |
+| `daily` | 每个工作日 `22:27` | `27 14 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1，并清理超过 1 年的 `daily` 历史数据 |
 
 资金流任务组支持 GitHub Actions Repository Variables 单独开关：
 
