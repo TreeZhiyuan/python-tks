@@ -46,3 +46,12 @@ class DailyRepository(BaseD1Repository):
             ("vol", "vol"),
             ("amount", "amount"),
         )
+
+    def delete_older_than_trade_date(self, cutoff_trade_date: str) -> None:
+        self.d1_client.execute(
+            """
+DELETE FROM daily
+WHERE trade_date < ?
+""",
+            [cutoff_trade_date],
+        )

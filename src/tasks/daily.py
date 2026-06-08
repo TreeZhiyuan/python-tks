@@ -11,7 +11,7 @@ from src.db.d1 import D1Client
 from src.repositories.daily_repository import DailyRepository
 from src.storage.json_store import JsonSnapshotStore
 from src.tushare_client import TushareClientFactory
-from src.utils import yesterday
+from src.utils import one_year_ago, yesterday
 
 
 class DailyTask:
@@ -53,6 +53,7 @@ class DailyTask:
             rows,
             batch_size=self.write_batch_size,
         )
+        self.delete_expired_rows()
         return TaskRunResult(
             task_name=self.task_name,
             trade_date=trade_date_str,
@@ -89,3 +90,7 @@ class DailyTask:
             ts_code=",".join(stock_codes),
             trade_date=trade_date,
         )
+
+    def delete_expired_rows(self) -> None:
+        cutoff_trade_date = one_year_ago().strftime("%Y%m%d")
+        self.repository.delete_older_than_trade_date(cutoff_trade_date)

@@ -20,3 +20,11 @@ def previous_china_workday(reference_date: date | None = None) -> date:
     while target_date.weekday() >= 5:
         target_date -= timedelta(days=1)
     return target_date
+
+
+def one_year_ago(reference_date: date | None = None) -> date:
+    current_date = reference_date or china_today()
+    try:
+        return current_date.replace(year=current_date.year - 1)
+    except ValueError:
+        return current_date.replace(year=current_date.year - 1, day=28)

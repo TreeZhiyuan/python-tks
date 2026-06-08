@@ -14,7 +14,7 @@
 | `moneyflow` | `moneyflow` | 沪深A股个股每日资金流向 | [doc_id=170](https://tushare.pro/document/2?doc_id=170) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
 | `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | [doc_id=349](https://tushare.pro/document/2?doc_id=349) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
 | `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | [doc_id=348](https://tushare.pro/document/2?doc_id=348) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
-| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每个工作日 `20:00` | 日频接口；GitHub Actions 按北京时间当天日期执行；任务先读取 `stock_basic` 快照中的 `ts_code` 股票池，再按多股票代码批量拉取 `daily` 并分批写入 D1 |
+| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每个工作日 `20:00` | 日频接口；GitHub Actions 按北京时间当天日期执行；任务先读取 `stock_basic` 快照中的 `ts_code` 股票池，再按多股票代码批量拉取 `daily` 并分批写入 D1；写入完成后删除超过 1 年的 `daily` 历史数据 |
 
 ## 环境要求
 
@@ -184,6 +184,8 @@ python -m src.main --tasks stock_basic
 | `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | `python -m src.main --tasks stock_basic` |
 | 资金流任务组 | 每个工作日 `01:00` | `0 17 * * 0-4` | `python -m src.main --tasks moneyflow_cnt_ths moneyflow_ind_dc moneyflow moneyflow_dc moneyflow_ths --dates <最近一个工作日>` |
 | `daily` | 每个工作日 `20:00` | `0 12 * * 1-5` | `python -m src.main --tasks daily --dates <北京时间当天>` |
+
+`daily` 每次定时执行时还会清理 `daily` 表中超过 1 年的历史日线行情数据。清理规则为删除 `trade_date < <北京时间当天往前一年>` 的记录，例如北京时间 `2026-06-08` 执行时会删除 `trade_date < 20250608` 的数据。该清理逻辑不受资金流任务组 GitHub Actions 开关影响。
 
 资金流任务组包含：
 

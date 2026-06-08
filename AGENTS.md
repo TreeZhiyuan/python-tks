@@ -31,7 +31,7 @@
 | --- | --- | --- | --- |
 | `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | 更新 `data/stock_basic/stock_basic.json`，并提交快照变更 |
 | `moneyflow_cnt_ths`、`moneyflow_ind_dc`、`moneyflow`、`moneyflow_dc`、`moneyflow_ths` | 每个工作日 `01:00` | `0 17 * * 0-4` | 按北京时间计算最近一个工作日，写入 Cloudflare D1 |
-| `daily` | 每个工作日 `20:00` | `0 12 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1 |
+| `daily` | 每个工作日 `20:00` | `0 12 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1，并清理超过 1 年的 `daily` 历史数据 |
 
 资金流任务组支持 GitHub Actions Repository Variables 单独开关：
 
@@ -44,6 +44,8 @@
 变量值不区分大小写。配置为 `true`、`1`、`yes`、`on` 或 `enabled` 时执行；未配置、空值、`false`、`0`、`no`、`off` 或 `disabled` 时跳过对应任务。如果 5 个资金流任务全部未开启，GitHub Actions 会跳过本次资金流定时执行并正常结束。
 
 `daily` 的实现不是全市场 `trade_date + limit + offset` 分页；它会先读取 `data/stock_basic/stock_basic.json` 中的 `ts_code` 股票池，再按多个 `ts_code + trade_date` 批量请求 Tushare `daily`，最后分批写入 Cloudflare D1。
+
+`daily` 写入完成后会删除 `trade_date < <北京时间当天往前一年>` 的记录。该清理逻辑与 `daily` 定时规则一致，不受资金流任务组 GitHub Actions 开关控制。
 
 ## 新增 Tushare 接口最小变更
 
