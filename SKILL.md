@@ -80,8 +80,23 @@ Add a new Tushare task with the smallest maintainable change set:
 - Use JSON snapshot storage for Tushare interfaces that return current snapshot data, do not depend on `trade_date`, and do not need Cloudflare D1 persistence.
 - Use Repository through `BaseD1Repository` for shared D1 write/read behavior.
 - Use a code-batch task when an interface should first load a stock/code pool and then fetch by multiple `ts_code + trade_date`, such as `daily`.
+- Use Strategy classes in `src/strategies/` for stock screening logic that reads already-synced data and writes JSON results.
 - Use Task Registry in `src/tasks/registry.py` as the single source of truth for task discovery.
 - Use GitHub Actions workflow `.github/workflows/tushare-tasks.yml` as the source of truth for scheduled execution.
+
+## Adding Stock Screening Strategies
+
+Use this flow when adding a reusable stock screening strategy:
+
+1. Add a strategy class under `src/strategies/`.
+2. Inherit `BaseStrategy`.
+3. Implement `run(context)` and return `list[StrategyMatch]`.
+4. Prefer reading existing synced data from `StrategyContext`; do not call Tushare directly from a strategy.
+5. Register the strategy in `src/strategies/registry.py`.
+6. Update README “选股策略”.
+7. Verify with `python -m src.strategy_runner --strategies <strategy_name>`.
+
+Strategy result files are written to `data/strategy_results/` by default and are not committed except for `.gitkeep`.
 
 ## When Not To Use `BaseMoneyflowTask`
 

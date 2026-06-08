@@ -8,3 +8,6 @@ data/*
 !data/stock_basic/
 !data/stock_basic/.gitkeep
 !data/stock_basic/stock_basic.json
+!data/strategy_results/
+data/strategy_results/*
+!data/strategy_results/.gitkeep

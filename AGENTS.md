@@ -22,8 +22,18 @@
 - 数据表写入和读取复用逻辑在 `src/repositories/base.py`。
 - 已接入任务统一注册在 `src/tasks/registry.py`。
 - 单次执行入口是 `src/main.py`，支持 `--tasks` 多选和 `all`。
+- 选股策略执行入口是 `src/strategy_runner.py`，支持 `--strategies` 多选和 `--mode intersection|union`。
+- 选股策略统一注册在 `src/strategies/registry.py`。
 - 线上定时任务由 GitHub Actions 执行，workflow 文件是 `.github/workflows/tushare-tasks.yml`。
 - 本地调试只保留单次执行脚本 `run_once.bat`。
+
+## 当前已接入选股策略
+
+| 策略名 | 功能描述 | 数据来源 |
+| --- | --- | --- |
+| `stock_pool` | 当前股票基础信息快照中的全部股票 | `data/stock_basic/stock_basic.json` |
+| `has_industry` | 股票基础信息中已包含行业分类 | `data/stock_basic/stock_basic.json` |
+| `hs_connect` | 沪深股通标的股票 | `data/stock_basic/stock_basic.json` |
 
 ## 当前 GitHub Actions 调度规则
 
@@ -97,3 +107,5 @@
 - 如果后续接口既不是日频分页，也不是快照模式，先扩展或新增任务基类，不要硬塞到 `BaseMoneyflowTask`。
 - 当前数据库写入目标是 Cloudflare D1；SQLite/MySQL 需要额外数据库适配层。
 - GitHub Actions runner 默认使用 UTC；涉及默认日期时必须显式按 `Asia/Shanghai` 计算。
+- 新增选股策略时，优先复用已同步数据和 `StrategyContext`，不要在策略里直接调用 Tushare。
+- 选股策略结果当前保存到 `data/strategy_results/`，结果文件默认不提交仓库，仅提交 `.gitkeep`。

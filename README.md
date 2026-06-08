@@ -175,6 +175,54 @@ python -m src.read_daily --trade-date 20240506
 python -m src.main --tasks stock_basic
 ```
 
+## 选股策略
+
+项目支持独立执行选股策略，并将结果保存为 JSON 文件。策略执行默认只读取已同步的数据，不直接调用 Tushare。
+
+列出已注册策略：
+
+```bash
+python -m src.strategy_runner --list-strategies
+```
+
+执行单个策略：
+
+```bash
+python -m src.strategy_runner --strategies stock_pool
+```
+
+执行多个策略并取交集：
+
+```bash
+python -m src.strategy_runner --strategies has_industry hs_connect --mode intersection
+```
+
+执行多个策略并取并集：
+
+```bash
+python -m src.strategy_runner --strategies has_industry hs_connect --mode union
+```
+
+当前已内置的示例策略：
+
+| 策略名 | 说明 | 数据来源 |
+| --- | --- | --- |
+| `stock_pool` | 当前股票基础信息快照中的全部股票 | `data/stock_basic/stock_basic.json` |
+| `has_industry` | 股票基础信息中已包含行业分类 | `data/stock_basic/stock_basic.json` |
+| `hs_connect` | 沪深股通标的股票 | `data/stock_basic/stock_basic.json` |
+
+执行结果默认输出到：
+
+```text
+data/strategy_results/
+```
+
+结果文件不会默认提交到仓库，目录中仅保留 `.gitkeep`。如果需要指定运行日期或输出目录：
+
+```bash
+python -m src.strategy_runner --strategies has_industry hs_connect --mode intersection --run-date 20260608 --output-dir data/strategy_results
+```
+
 ## GitHub Actions 定时任务
 
 项目使用 GitHub Actions 负责线上定时执行，workflow 文件是 `.github/workflows/tushare-tasks.yml`。GitHub Actions 的 cron 使用 UTC，当前北京时间调度规则如下：
@@ -234,6 +282,9 @@ src/
   read_moneyflow_ths.py
   read_daily.py
   storage/             JSON 快照存储封装
+  strategies/          选股策略实现和策略注册表
+  screening/           选股结果 JSON 输出封装
+  strategy_runner.py   选股策略执行入口
 ```
 
 ## 设计说明
@@ -244,6 +295,7 @@ src/
 - `JSON Snapshot Task`：支持不依赖交易日、适合保存为仓库 JSON 快照的基础信息接口
 - `Repository`：统一数据库写入和查询操作
 - `Code Batch Task`：支持先读取股票池，再按多个 `ts_code + trade_date` 批量拉取数据的接口，例如 `daily`
+- `Strategy`：统一选股策略接口，支持单策略、多策略交集和多策略并集
 - `Task Registry`：统一管理已接入任务、接口描述和文档链接，供单次执行、GitHub Actions 和文档维护复用
 
 新增接口时，通常需要补：
@@ -274,3 +326,12 @@ src/
 - 字段需要覆盖 Tushare 文档的输出参数。
 - 主键需要能避免同一业务数据重复写入。
 - 索引需要覆盖常用查询字段，例如 `trade_date`、`ts_code`、`name` 或业务分类字段。
+
+## 新增选股策略步骤
+
+1. 在 `src/strategies/` 下新增策略文件。
+2. 继承 `BaseStrategy` 并实现 `run(context)`，返回 `StrategyMatch` 列表。
+3. 策略优先读取 `StrategyContext` 中已有数据，不直接调用 Tushare。
+4. 在 `src/strategies/registry.py` 注册策略。
+5. 更新 README 的“选股策略”清单。
+6. 使用 `python -m src.strategy_runner --strategies <strategy_name>` 验证 JSON 输出。
