@@ -193,6 +193,18 @@ python -m src.main --tasks stock_basic
 - `moneyflow_dc`
 - `moneyflow_ths`
 
+资金流任务组支持通过 GitHub Actions Repository Variables 单独开关。进入仓库 `Settings` -> `Secrets and variables` -> `Actions` -> `Variables`，可按需新增：
+
+| Variable | 控制任务 | 默认行为 |
+| --- | --- | --- |
+| `ENABLE_MONEYFLOW_CNT_THS` | `moneyflow_cnt_ths` | 未配置时不执行 |
+| `ENABLE_MONEYFLOW_IND_DC` | `moneyflow_ind_dc` | 未配置时不执行 |
+| `ENABLE_MONEYFLOW` | `moneyflow` | 未配置时不执行 |
+| `ENABLE_MONEYFLOW_DC` | `moneyflow_dc` | 未配置时不执行 |
+| `ENABLE_MONEYFLOW_THS` | `moneyflow_ths` | 未配置时不执行 |
+
+开关值不区分大小写。配置为 `true`、`1`、`yes`、`on` 或 `enabled` 时，对应任务会在定时执行中执行；未配置、空值、`false`、`0`、`no`、`off` 或 `disabled` 时会跳过。如果 5 个资金流任务全部未开启，本次资金流定时任务会直接跳过，不会报错。
+
 GitHub Actions 需要在仓库 `Settings` -> `Secrets and variables` -> `Actions` 中配置：
 
 - `TUSHARE_TOKEN`

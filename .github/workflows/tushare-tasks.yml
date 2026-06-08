@@ -37,6 +37,11 @@ jobs:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_DATABASE_ID }}
+      ENABLE_MONEYFLOW_CNT_THS: ${{ vars.ENABLE_MONEYFLOW_CNT_THS }}
+      ENABLE_MONEYFLOW_IND_DC: ${{ vars.ENABLE_MONEYFLOW_IND_DC }}
+      ENABLE_MONEYFLOW: ${{ vars.ENABLE_MONEYFLOW }}
+      ENABLE_MONEYFLOW_DC: ${{ vars.ENABLE_MONEYFLOW_DC }}
+      ENABLE_MONEYFLOW_THS: ${{ vars.ENABLE_MONEYFLOW_THS }}
 
     steps:
       - name: Checkout repository
@@ -55,6 +60,36 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          SKIP_TUSHARE_TASK="false"
+
+          is_enabled() {
+            local value="${1:-}"
+            value="$(echo "${value}" | tr '[:upper:]' '[:lower:]')"
+            case "${value}" in
+              "true"|"1"|"yes"|"on"|"enabled")
+                return 0
+                ;;
+              ""|"false"|"0"|"no"|"off"|"disabled")
+                return 1
+                ;;
+              *)
+                echo "Unsupported enable flag value '${value}', treat it as disabled."
+                return 1
+                ;;
+            esac
+          }
+
+          append_task_if_enabled() {
+            local task_name="$1"
+            local flag_name="$2"
+            local flag_value="$3"
+
+            if is_enabled "${flag_value}"; then
+              enabled_moneyflow_tasks+=("${task_name}")
+            else
+              echo "Skip ${task_name}: ${flag_name}=${flag_value}"
+            fi
+          }
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             RUN_ARGS="--tasks ${{ inputs.tasks }}"
@@ -70,7 +105,20 @@ jobs:
                 ;;
               "0 17 * * 0-4")
                 TRADE_DATE="$(python -c 'from src.utils import previous_china_workday; print(previous_china_workday().strftime("%Y%m%d"))')"
-                RUN_ARGS="--tasks moneyflow_cnt_ths moneyflow_ind_dc moneyflow moneyflow_dc moneyflow_ths --dates ${TRADE_DATE}"
+                enabled_moneyflow_tasks=()
+                append_task_if_enabled "moneyflow_cnt_ths" "ENABLE_MONEYFLOW_CNT_THS" "${ENABLE_MONEYFLOW_CNT_THS}"
+                append_task_if_enabled "moneyflow_ind_dc" "ENABLE_MONEYFLOW_IND_DC" "${ENABLE_MONEYFLOW_IND_DC}"
+                append_task_if_enabled "moneyflow" "ENABLE_MONEYFLOW" "${ENABLE_MONEYFLOW}"
+                append_task_if_enabled "moneyflow_dc" "ENABLE_MONEYFLOW_DC" "${ENABLE_MONEYFLOW_DC}"
+                append_task_if_enabled "moneyflow_ths" "ENABLE_MONEYFLOW_THS" "${ENABLE_MONEYFLOW_THS}"
+
+                if [ "${#enabled_moneyflow_tasks[@]}" -eq 0 ]; then
+                  RUN_ARGS=""
+                  SKIP_TUSHARE_TASK="true"
+                  echo "All moneyflow tasks are disabled; skip scheduled Tushare run."
+                else
+                  RUN_ARGS="--tasks ${enabled_moneyflow_tasks[*]} --dates ${TRADE_DATE}"
+                fi
                 COMMIT_STOCK_BASIC="false"
                 ;;
               "0 12 * * 1-5")
@@ -87,10 +135,20 @@ jobs:
 
           echo "RUN_ARGS=${RUN_ARGS}" >> "${GITHUB_ENV}"
           echo "COMMIT_STOCK_BASIC=${COMMIT_STOCK_BASIC}" >> "${GITHUB_ENV}"
+          echo "SKIP_TUSHARE_TASK=${SKIP_TUSHARE_TASK}" >> "${GITHUB_ENV}"
           echo "Resolved run args: ${RUN_ARGS}"
 
       - name: Run Tushare task
-        run: python -m src.main ${RUN_ARGS}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "${SKIP_TUSHARE_TASK}" = "true" ]; then
+            echo "SKIP_TUSHARE_TASK=true; skip running Tushare task."
+            exit 0
+          fi
+
+          python -m src.main ${RUN_ARGS}
 
       - name: Handle stock_basic snapshot commit
         shell: bash
