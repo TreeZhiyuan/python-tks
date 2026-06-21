@@ -4,12 +4,12 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any, Iterable, List, Sequence
 
-from src.db.d1 import D1Client
+from src.db.client import DatabaseClient
 
 
 @dataclass
 class BaseD1Repository(ABC):
-    d1_client: D1Client
+    db_client: DatabaseClient
 
     @property
     @abstractmethod
@@ -41,7 +41,7 @@ class BaseD1Repository(ABC):
         if not payload:
             return 0
 
-        self.d1_client.executemany(self.build_upsert_sql(), payload)
+        self.db_client.executemany(self.build_upsert_sql(), payload)
         return len(payload)
 
     def upsert_rows_in_batches(
@@ -65,7 +65,7 @@ class BaseD1Repository(ABC):
 
     def find_by_trade_date(self, trade_date: str) -> list[dict[str, Any]]:
         sql = self.build_select_by_trade_date_sql()
-        return self.d1_client.fetch_all(sql, [trade_date])
+        return self.db_client.fetch_all(sql, [trade_date])
 
     def build_upsert_sql(self) -> str:
         db_columns = [target_field for _, target_field in self.source_to_db_field_map]

@@ -3,13 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Sequence
 
-from src.db.d1 import D1Client
+from src.db.client import DatabaseClient
 from src.repositories.base import BaseD1Repository
 
 
 @dataclass
 class DailyRepository(BaseD1Repository):
-    d1_client: D1Client
+    db_client: DatabaseClient
 
     @property
     def table_name(self) -> str:
@@ -48,7 +48,7 @@ class DailyRepository(BaseD1Repository):
         )
 
     def delete_older_than_trade_date(self, cutoff_trade_date: str) -> None:
-        self.d1_client.execute(
+        self.db_client.execute(
             """
 DELETE FROM daily
 WHERE trade_date < ?

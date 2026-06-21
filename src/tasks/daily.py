@@ -7,7 +7,7 @@ from typing import Any, Iterable, List, Optional
 import pandas as pd
 
 from src.core.models import TaskRunResult
-from src.db.d1 import D1Client
+from src.db.client import DatabaseClient, build_database_client
 from src.repositories.daily_repository import DailyRepository
 from src.storage.json_store import JsonSnapshotStore
 from src.tushare_client import TushareClientFactory
@@ -22,10 +22,11 @@ class DailyTask:
     def __init__(
         self,
         repository: DailyRepository | None = None,
+        db_client: DatabaseClient | None = None,
         snapshot_store: JsonSnapshotStore | None = None,
         tushare_client_factory: TushareClientFactory | None = None,
     ) -> None:
-        self.repository = repository or DailyRepository(D1Client())
+        self.repository = repository or DailyRepository(db_client or build_database_client())
         self.snapshot_store = snapshot_store or JsonSnapshotStore(Path("data/stock_basic"))
         self.tushare_client_factory = tushare_client_factory or TushareClientFactory()
 

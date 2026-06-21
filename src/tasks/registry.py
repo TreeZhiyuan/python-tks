@@ -4,6 +4,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
+from src.db.client import DatabaseClient
 from src.tasks.daily import DailyTask
 from src.tasks.moneyflow import MoneyflowTask
 from src.tasks.moneyflow_cnt_ths import MoneyflowCntThsTask
@@ -13,7 +14,7 @@ from src.tasks.moneyflow_ths import MoneyflowThsTask
 from src.tasks.stock_basic import StockBasicTask
 
 
-TaskFactory = Callable[[], Any]
+TaskFactory = Callable[..., Any]
 
 
 @dataclass(frozen=True)
@@ -84,8 +85,11 @@ def get_task_definition(task_name: str) -> TaskDefinition:
         raise ValueError(f"Unknown task '{task_name}'. Available tasks: {available}") from exc
 
 
-def build_task(task_name: str) -> Any:
-    return get_task_definition(task_name).factory()
+def build_task(task_name: str, db_client: DatabaseClient | None = None) -> Any:
+    task_definition = get_task_definition(task_name)
+    if task_definition.uses_trade_date and db_client is not None:
+        return task_definition.factory(db_client=db_client)
+    return task_definition.factory()
 
 
 def resolve_task_names(task_names: list[str]) -> list[str]:

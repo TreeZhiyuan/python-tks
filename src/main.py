@@ -2,9 +2,12 @@ from __future__ import annotations
 
 import argparse
 from datetime import date, datetime, timedelta
+from pathlib import Path
 from typing import Iterable, List
 
 from src.core.models import TaskRunResult
+from src.db.client import build_database_client
+from src.db.sqlite import DEFAULT_SQLITE_DB_PATH
 from src.tasks.registry import (
     available_task_names,
     build_task,
@@ -76,6 +79,17 @@ def parse_args() -> argparse.Namespace:
         type=parse_trade_date,
         help="End date in YYYYMMDD format.",
     )
+    parser.add_argument(
+        "--local-sqlite",
+        action="store_true",
+        help=f"Read and write database-backed tasks from local SQLite instead of Cloudflare D1. Default path: {DEFAULT_SQLITE_DB_PATH}",
+    )
+    parser.add_argument(
+        "--sqlite-db-path",
+        type=Path,
+        default=DEFAULT_SQLITE_DB_PATH,
+        help="Local SQLite database path used with --local-sqlite.",
+    )
 
     args = parser.parse_args()
 
@@ -105,11 +119,20 @@ def main() -> None:
     args = parse_args()
     trade_dates = resolve_trade_dates(args)
     task_names = resolve_task_names(args.tasks)
+    uses_database = any(get_task_definition(task_name).uses_trade_date for task_name in task_names)
+    db_client = (
+        build_database_client(
+            use_local_sqlite=args.local_sqlite,
+            sqlite_db_path=args.sqlite_db_path,
+        )
+        if uses_database
+        else None
+    )
     completed_count = 0
 
     for task_name in task_names:
         task_definition = get_task_definition(task_name)
-        task = build_task(task_name)
+        task = build_task(task_name, db_client=db_client)
         results = task.run_many(trade_dates) if task_definition.uses_trade_date else [task.run()]
         completed_count += len(results)
 

@@ -14,7 +14,7 @@
 | `moneyflow` | `moneyflow` | 沪深A股个股每日资金流向 | [doc_id=170](https://tushare.pro/document/2?doc_id=170) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
 | `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | [doc_id=349](https://tushare.pro/document/2?doc_id=349) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
 | `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | [doc_id=348](https://tushare.pro/document/2?doc_id=348) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
-| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每个工作日 `22:27` | 日频接口；GitHub Actions 按北京时间当天日期执行；任务先读取 `stock_basic` 快照中的 `ts_code` 股票池，再按多股票代码批量拉取 `daily` 并分批写入 D1；写入完成后删除超过 1 年的 `daily` 历史数据 |
+| `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每个工作日 `19:19` | 日频接口；GitHub Actions 按北京时间当天日期执行；任务先读取 `stock_basic` 快照中的 `ts_code` 股票池，再按多股票代码批量拉取 `daily` 并分批写入 D1；写入完成后删除超过 1 年的 `daily` 历史数据 |
 
 ## 环境要求
 
@@ -44,6 +44,14 @@ CLOUDFLARE_API_TOKEN=REPLACE_WITH_YOUR_CLOUDFLARE_API_TOKEN
 CLOUDFLARE_ACCOUNT_ID=REPLACE_WITH_YOUR_CLOUDFLARE_ACCOUNT_ID
 CLOUDFLARE_D1_DATABASE_ID=REPLACE_WITH_YOUR_D1_DATABASE_ID
 ```
+
+数据库默认读写 Cloudflare D1。调试或本地落库时，可以在运行命令中增加 `--local-sqlite`，此时所有数据库表读写都会切换到本地 SQLite：
+
+```text
+D:\devtools\sqlite\dbs\tushare.db
+```
+
+如需使用其他 SQLite 文件，可同时传入 `--sqlite-db-path <path>`。
 
 ## 数据库准备
 
@@ -117,6 +125,13 @@ python -m src.main --tasks moneyflow_cnt_ths moneyflow_ind_dc --dates 20240506 2
 python -m src.main --tasks all --start-date 20240501 --end-date 20240531
 ```
 
+写入本地 SQLite：
+
+```bash
+python -m src.main --tasks daily --dates 20240506 --local-sqlite
+python -m src.main --tasks moneyflow_cnt_ths --dates 20240506 --local-sqlite
+```
+
 如果使用批处理脚本：
 
 ```bash
@@ -167,6 +182,13 @@ python -m src.read_moneyflow_ths --trade-date 20240506
 
 ```bash
 python -m src.read_daily --trade-date 20240506
+```
+
+读取本地 SQLite 中的数据时，给对应读取命令增加 `--local-sqlite`：
+
+```bash
+python -m src.read_daily --trade-date 20240506 --local-sqlite
+python -m src.read_moneyflow_cnt_ths --trade-date 20240506 --local-sqlite
 ```
 
 `daily` 写入逻辑会先读取 `data/stock_basic/stock_basic.json` 中的 `ts_code` 列表作为股票池，再按批次把多个股票代码用英文逗号拼接后请求 Tushare `daily`。如果该快照不存在，请先执行：
@@ -231,7 +253,7 @@ python -m src.strategy_runner --strategies has_industry hs_connect --mode inters
 | --- | --- | --- | --- |
 | `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | `python -m src.main --tasks stock_basic` |
 | 资金流任务组 | 每个工作日 `01:00` | `0 17 * * 0-4` | `python -m src.main --tasks moneyflow_cnt_ths moneyflow_ind_dc moneyflow moneyflow_dc moneyflow_ths --dates <最近一个工作日>` |
-| `daily` | 每个工作日 `22:27` | `27 14 * * 1-5` | `python -m src.main --tasks daily --dates <北京时间当天>` |
+| `daily` | 每个工作日 `19:19` | `19 11 * * 1-5` | `python -m src.main --tasks daily --dates <北京时间当天>` |
 
 `daily` 每次定时执行时还会清理 `daily` 表中超过 1 年的历史日线行情数据。清理规则为删除 `trade_date < <北京时间当天往前一年>` 的记录，例如北京时间 `2026-06-08` 执行时会删除 `trade_date < 20250608` 的数据。该清理逻辑不受资金流任务组 GitHub Actions 开关影响。
 
@@ -271,7 +293,7 @@ workflow 同时支持手动触发 `workflow_dispatch`。手动执行时可以填
 ```text
 src/
   core/                通用结果模型
-  db/                  Cloudflare D1 访问封装
+  db/                  Cloudflare D1 和本地 SQLite 访问封装
   repositories/        数据表仓储层
   tasks/               Tushare 任务实现和任务注册表
   main.py              单次执行入口
@@ -293,7 +315,7 @@ src/
 
 - `Template Method`：统一“分页抓取 Tushare -> 汇总 -> 写入 D1”的任务流程
 - `JSON Snapshot Task`：支持不依赖交易日、适合保存为仓库 JSON 快照的基础信息接口
-- `Repository`：统一数据库写入和查询操作
+- `Repository`：统一数据库写入和查询操作，默认连接 Cloudflare D1；命令行增加 `--local-sqlite` 时连接本地 SQLite
 - `Code Batch Task`：支持先读取股票池，再按多个 `ts_code + trade_date` 批量拉取数据的接口，例如 `daily`
 - `Strategy`：统一选股策略接口，支持单策略、多策略交集和多策略并集
 - `Task Registry`：统一管理已接入任务、接口描述和文档链接，供单次执行、GitHub Actions 和文档维护复用

@@ -19,6 +19,7 @@
 - Tushare 客户端创建逻辑在 `src/tushare_client.py`。
 - 日频资金流分页任务基类在 `src/tasks/base.py`。
 - D1 数据库访问封装在 `src/db/d1.py`。
+- 本地 SQLite 数据库访问封装在 `src/db/sqlite.py`，统一数据库客户端工厂在 `src/db/client.py`。
 - 数据表写入和读取复用逻辑在 `src/repositories/base.py`。
 - 已接入任务统一注册在 `src/tasks/registry.py`。
 - 单次执行入口是 `src/main.py`，支持 `--tasks` 多选和 `all`。
@@ -41,7 +42,7 @@
 | --- | --- | --- | --- |
 | `stock_basic` | 每周日 `01:00` | `0 17 * * 6` | 更新 `data/stock_basic/stock_basic.json`，并提交快照变更 |
 | `moneyflow_cnt_ths`、`moneyflow_ind_dc`、`moneyflow`、`moneyflow_dc`、`moneyflow_ths` | 每个工作日 `01:00` | `0 17 * * 0-4` | 按北京时间计算最近一个工作日，写入 Cloudflare D1 |
-| `daily` | 每个工作日 `22:27` | `27 14 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1，并清理超过 1 年的 `daily` 历史数据 |
+| `daily` | 每个工作日 `19:19` | `19 11 * * 1-5` | 按北京时间当天日期写入 Cloudflare D1，并清理超过 1 年的 `daily` 历史数据 |
 
 资金流任务组支持 GitHub Actions Repository Variables 单独开关：
 
@@ -106,6 +107,7 @@
 - 如果后续接口是不依赖交易日且短期变化不大的快照类接口，可保存为仓库 JSON 文件，例如 `stock_basic` 写入 `data/stock_basic/stock_basic.json`。
 - 如果后续接口既不是日频分页，也不是快照模式，先扩展或新增任务基类，不要硬塞到 `BaseMoneyflowTask`。
 - 当前数据库写入目标是 Cloudflare D1；SQLite/MySQL 需要额外数据库适配层。
+- 命令行传入 `--local-sqlite` 时，数据库表读写切换到本地 SQLite，默认路径是 `D:\devtools\sqlite\dbs\tushare.db`；未传入时仍使用 Cloudflare D1。
 - GitHub Actions runner 默认使用 UTC；涉及默认日期时必须显式按 `Asia/Shanghai` 计算。
 - 新增选股策略时，优先复用已同步数据和 `StrategyContext`，不要在策略里直接调用 Tushare。
 - 选股策略结果当前保存到 `data/strategy_results/`，结果文件默认不提交仓库，仅提交 `.gitkeep`。

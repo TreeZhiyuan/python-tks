@@ -79,6 +79,7 @@ Add a new Tushare task with the smallest maintainable change set:
 - Use Template Method through `BaseMoneyflowTask` for shared Tushare pagination flow.
 - Use JSON snapshot storage for Tushare interfaces that return current snapshot data, do not depend on `trade_date`, and do not need Cloudflare D1 persistence.
 - Use Repository through `BaseD1Repository` for shared D1 write/read behavior.
+- Database-backed commands use Cloudflare D1 by default. When `--local-sqlite` is passed, the same repository layer reads and writes local SQLite at `D:\devtools\sqlite\dbs\tushare.db`; D1 DDL files are reused to initialize local SQLite tables.
 - Use a code-batch task when an interface should first load a stock/code pool and then fetch by multiple `ts_code + trade_date`, such as `daily`.
 - Use Strategy classes in `src/strategies/` for stock screening logic that reads already-synced data and writes JSON results.
 - Use Task Registry in `src/tasks/registry.py` as the single source of truth for task discovery.

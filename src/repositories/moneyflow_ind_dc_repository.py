@@ -3,13 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Sequence
 
-from src.db.d1 import D1Client
+from src.db.client import DatabaseClient
 from src.repositories.base import BaseD1Repository
 
 
 @dataclass
 class MoneyflowIndDcRepository(BaseD1Repository):
-    d1_client: D1Client
+    db_client: DatabaseClient
 
     @property
     def table_name(self) -> str:
