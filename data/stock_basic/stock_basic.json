@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-06-20T18:04:22",
+  "generated_at": "2026-06-27T17:55:13",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4598,
+  "row_count": 4599,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -71,12 +71,12 @@
     {
       "ts_code": "000004.SZ",
       "symbol": "000004",
-      "name": "*ST国华",
-      "area": "深圳",
-      "industry": "软件服务",
+      "name": "国华退",
+      "area": null,
+      "industry": null,
       "fullname": "深圳国华网安科技股份有限公司",
       "enname": "Shenzhen Guohua Network Security Technology Co., Ltd.",
-      "cnspell": "*STGH",
+      "cnspell": "GHT",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -1489,7 +1489,7 @@
       "list_status": "L",
       "list_date": "19960812",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "合肥市人民政府国有资产管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -1679,7 +1679,7 @@
       "list_status": "L",
       "list_date": "19960829",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张家界市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -1869,7 +1869,7 @@
       "list_status": "L",
       "list_date": "19930507",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘江东",
       "act_ent_type": "自然人"
     },
@@ -2401,7 +2401,7 @@
       "list_status": "L",
       "list_date": "19931215",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "赵璧生",
       "act_ent_type": "自然人"
     },
@@ -2800,7 +2800,7 @@
       "list_status": "L",
       "list_date": "19940525",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王文锋",
       "act_ent_type": "自然人"
     },
@@ -3009,7 +3009,7 @@
       "list_status": "L",
       "list_date": "19960312",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "孙维佳",
       "act_ent_type": "自然人"
     },
@@ -3104,7 +3104,7 @@
       "list_status": "L",
       "list_date": "19960430",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "青岛市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -3731,7 +3731,7 @@
       "list_status": "L",
       "list_date": "19961203",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -4168,7 +4168,7 @@
       "list_status": "L",
       "list_date": "19970325",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "四川省政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -4529,7 +4529,7 @@
       "list_status": "L",
       "list_date": "19970509",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "国务院国有资产监督管理委员会",
       "act_ent_type": "中央国企"
     },
@@ -5669,7 +5669,7 @@
       "list_status": "L",
       "list_date": "19970818",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "罗韶宇",
       "act_ent_type": "自然人"
     },
@@ -7987,7 +7987,7 @@
       "list_status": "L",
       "list_date": "20210623",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "吴晓林,吴晓强",
       "act_ent_type": "自然人"
     },
@@ -8253,7 +8253,7 @@
       "list_status": "L",
       "list_date": "20221212",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "胡坚晟",
       "act_ent_type": "自然人"
     },
@@ -8671,7 +8671,7 @@
       "list_status": "L",
       "list_date": "20220606",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘建伟",
       "act_ent_type": "自然人"
     },
@@ -9108,7 +9108,7 @@
       "list_status": "L",
       "list_date": "20220624",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘俊锋,张奇志,刘宇仑",
       "act_ent_type": null
     },
@@ -9317,7 +9317,7 @@
       "list_status": "L",
       "list_date": "20220908",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "朱冬",
       "act_ent_type": "自然人"
     },
@@ -9887,7 +9887,7 @@
       "list_status": "L",
       "list_date": "20250424",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张理罡",
       "act_ent_type": "自然人"
     },
@@ -10837,7 +10837,7 @@
       "list_status": "L",
       "list_date": "20050531",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "珠海市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -11338,12 +11338,12 @@
     {
       "ts_code": "002076.SZ",
       "symbol": "002076",
-      "name": "*ST星光",
+      "name": "星光股份",
       "area": "广东",
       "industry": "家用电器",
       "fullname": "广东星光发展股份有限公司",
       "enname": "CNLIGHT CO.,LTD.",
-      "cnspell": "*STXG",
+      "cnspell": "XGGF",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -11996,7 +11996,7 @@
       "list_status": "L",
       "list_date": "20070208",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "浙江省三门县人民政府",
       "act_ent_type": "地方国企"
     },
@@ -12832,7 +12832,7 @@
       "list_status": "L",
       "list_date": "20070821",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "济南市国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -13516,7 +13516,7 @@
       "list_status": "L",
       "list_date": "20071212",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "湖州莫干山高新技术产业开发区管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -13839,7 +13839,7 @@
       "list_status": "L",
       "list_date": "20080201",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "连宗敏",
       "act_ent_type": "自然人"
     },
@@ -13903,19 +13903,19 @@
     {
       "ts_code": "002217.SZ",
       "symbol": "002217",
-      "name": "合力泰",
+      "name": "ST合力泰",
       "area": "福建",
       "industry": "元器件",
       "fullname": "合力泰科技股份有限公司",
       "enname": "Holitech Technology Co., Ltd.",
-      "cnspell": "HLT",
+      "cnspell": "STHLT",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20080220",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "福建省人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -14105,7 +14105,7 @@
       "list_status": "L",
       "list_date": "20080508",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "许晓荣,许晓光,许天津,吕秀英",
       "act_ent_type": "自然人"
     },
@@ -14219,7 +14219,7 @@
       "list_status": "L",
       "list_date": "20080516",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "林旭曦",
       "act_ent_type": "自然人"
     },
@@ -14549,12 +14549,12 @@
     {
       "ts_code": "002253.SZ",
       "symbol": "002253",
-      "name": "*ST智胜",
+      "name": "川大智胜",
       "area": "四川",
       "industry": "软件服务",
       "fullname": "四川川大智胜软件股份有限公司",
       "enname": "Wisesoft Co.,Ltd.",
-      "cnspell": "*STZS",
+      "cnspell": "CDZS",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -15157,12 +15157,12 @@
     {
       "ts_code": "002289.SZ",
       "symbol": "002289",
-      "name": "*ST宇顺",
+      "name": "宇顺电子",
       "area": "深圳",
       "industry": "元器件",
       "fullname": "深圳市宇顺电子股份有限公司",
       "enname": "Shenzhen Success Electronics Co., Ltd",
-      "cnspell": "*STYS",
+      "cnspell": "YSDZ",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -15321,7 +15321,7 @@
       "list_status": "L",
       "list_date": "20090929",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "湖南省人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -15378,7 +15378,7 @@
       "list_status": "L",
       "list_date": "20091021",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘秀萍,李文亮",
       "act_ent_type": "自然人"
     },
@@ -15872,7 +15872,7 @@
       "list_status": "L",
       "list_date": "20091230",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "宋琳",
       "act_ent_type": "自然人"
     },
@@ -16062,7 +16062,7 @@
       "list_status": "L",
       "list_date": "20100122",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -16214,7 +16214,7 @@
       "list_status": "L",
       "list_date": "20100203",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王帆",
       "act_ent_type": "自然人"
     },
@@ -16252,7 +16252,7 @@
       "list_status": "L",
       "list_date": "20100203",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "付小东",
       "act_ent_type": "自然人"
     },
@@ -16404,7 +16404,7 @@
       "list_status": "L",
       "list_date": "20100210",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "河南省财政厅",
       "act_ent_type": "地方国企"
     },
@@ -16613,7 +16613,7 @@
       "list_status": "L",
       "list_date": "20100316",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "邱中勋",
       "act_ent_type": "自然人"
     },
@@ -17240,7 +17240,7 @@
       "list_status": "L",
       "list_date": "20100511",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "林菊香,陈文君,陈灵巧,陈合林",
       "act_ent_type": "自然人"
     },
@@ -17487,7 +17487,7 @@
       "list_status": "L",
       "list_date": "20100601",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "解直锟",
       "act_ent_type": "自然人"
     },
@@ -18057,7 +18057,7 @@
       "list_status": "L",
       "list_date": "20100720",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "马孝武",
       "act_ent_type": "自然人"
     },
@@ -18437,7 +18437,7 @@
       "list_status": "L",
       "list_date": "20100915",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "鲁峰",
       "act_ent_type": "自然人"
     },
@@ -19216,7 +19216,7 @@
       "list_status": "L",
       "list_date": "20101210",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "常德市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -19919,7 +19919,7 @@
       "list_status": "L",
       "list_date": "20110303",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "马红菊",
       "act_ent_type": "自然人"
     },
@@ -20148,7 +20148,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "江淦钧",
+      "act_name": "柯建生",
       "act_ent_type": "自然人"
     },
     {
@@ -20337,7 +20337,7 @@
       "list_status": "L",
       "list_date": "20110520",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "石聚彬",
       "act_ent_type": "自然人"
     },
@@ -20470,7 +20470,7 @@
       "list_status": "L",
       "list_date": "20110610",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张仁华",
       "act_ent_type": "自然人"
     },
@@ -20603,7 +20603,7 @@
       "list_status": "L",
       "list_date": "20110707",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张海林,张艺林",
       "act_ent_type": "自然人"
     },
@@ -20774,7 +20774,7 @@
       "list_status": "L",
       "list_date": "20110805",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "应坚",
       "act_ent_type": "自然人"
     },
@@ -20945,7 +20945,7 @@
       "list_status": "L",
       "list_date": "20110920",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "何启强,麦正辉",
       "act_ent_type": "自然人"
     },
@@ -21097,7 +21097,7 @@
       "list_status": "L",
       "list_date": "20111103",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "宜昌市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -21173,7 +21173,7 @@
       "list_status": "L",
       "list_date": "20111111",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "汝继勇",
       "act_ent_type": "自然人"
     },
@@ -21306,7 +21306,7 @@
       "list_status": "L",
       "list_date": "20111125",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李俊锋",
       "act_ent_type": "自然人"
     },
@@ -21629,7 +21629,7 @@
       "list_status": "L",
       "list_date": "20120217",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "周思远",
       "act_ent_type": "自然人"
     },
@@ -22693,7 +22693,7 @@
       "list_status": "L",
       "list_date": "20140128",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "施其明",
       "act_ent_type": "自然人"
     },
@@ -23403,12 +23403,12 @@
     {
       "ts_code": "002762.SZ",
       "symbol": "002762",
-      "name": "*ST金比",
+      "name": "金发拉比",
       "area": "广东",
       "industry": "服饰",
       "fullname": "金发拉比妇婴童用品股份有限公司",
       "enname": "Jinfa Labi Maternity & Baby Articles Co., Ltd.",
-      "cnspell": "*STJB",
+      "cnspell": "JFLB",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -23567,7 +23567,7 @@
       "list_status": "L",
       "list_date": "20150626",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陶军",
       "act_ent_type": "自然人"
     },
@@ -23795,7 +23795,7 @@
       "list_status": "L",
       "list_date": "20151231",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李志聪",
       "act_ent_type": "自然人"
     },
@@ -23814,7 +23814,7 @@
       "list_status": "L",
       "list_date": "20160218",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "吴金祥",
       "act_ent_type": "自然人"
     },
@@ -23947,7 +23947,7 @@
       "list_status": "L",
       "list_date": "20160510",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "韩裕玉",
       "act_ent_type": "自然人"
     },
@@ -24099,7 +24099,7 @@
       "list_status": "L",
       "list_date": "20160707",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "赵光辉",
       "act_ent_type": "自然人"
     },
@@ -24144,12 +24144,12 @@
     {
       "ts_code": "002808.SZ",
       "symbol": "002808",
-      "name": "*ST恒久",
-      "area": "江苏",
-      "industry": "元器件",
+      "name": "恒久退",
+      "area": null,
+      "industry": null,
       "fullname": "苏州恒久光电科技股份有限公司",
       "enname": "Suzhou Goldengreen Technologies Ltd.",
-      "cnspell": "*STHJ",
+      "cnspell": "HJT",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -24536,7 +24536,7 @@
       "list_status": "L",
       "list_date": "20161213",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "迟家升",
       "act_ent_type": "自然人"
     },
@@ -24764,7 +24764,7 @@
       "list_status": "L",
       "list_date": "20170119",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈启丰,陈宏音",
       "act_ent_type": "自然人"
     },
@@ -24973,7 +24973,7 @@
       "list_status": "L",
       "list_date": "20170321",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "赵晓群",
       "act_ent_type": "自然人"
     },
@@ -25220,7 +25220,7 @@
       "list_status": "L",
       "list_date": "20170503",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王钻",
       "act_ent_type": "自然人"
     },
@@ -25258,7 +25258,7 @@
       "list_status": "L",
       "list_date": "20170515",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王剑峰",
       "act_ent_type": "自然人"
     },
@@ -25524,7 +25524,7 @@
       "list_status": "L",
       "list_date": "20170627",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张立品",
       "act_ent_type": "自然人"
     },
@@ -25740,12 +25740,12 @@
     {
       "ts_code": "002898.SZ",
       "symbol": "002898",
-      "name": "*ST赛隆",
-      "area": "广东",
-      "industry": "化学制药",
+      "name": "赛隆退",
+      "area": null,
+      "industry": null,
       "fullname": "赛隆药业集团股份有限公司",
       "enname": "Sailong Pharmaceutical Group Co.,Ltd.",
-      "cnspell": "*STSL",
+      "cnspell": "SLT",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -26113,7 +26113,7 @@
       "list_status": "L",
       "list_date": "20171218",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈勤发",
       "act_ent_type": "自然人"
     },
@@ -26322,7 +26322,7 @@
       "list_status": "L",
       "list_date": "20180403",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "周剑",
       "act_ent_type": "自然人"
     },
@@ -26740,7 +26740,7 @@
       "list_status": "L",
       "list_date": "20190619",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "谢庆奎,胡日红,XIE LILING,谢金菱,LI JI",
       "act_ent_type": null
     },
@@ -26968,7 +26968,7 @@
       "list_status": "L",
       "list_date": "20191202",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "俞浩",
       "act_ent_type": "自然人"
     },
@@ -27158,7 +27158,7 @@
       "list_status": "L",
       "list_date": "20200415",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "袁剑敏",
       "act_ent_type": "自然人"
     },
@@ -27197,7 +27197,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邢卫民",
+      "act_name": "喻自文",
       "act_ent_type": "自然人"
     },
     {
@@ -27215,7 +27215,7 @@
       "list_status": "L",
       "list_date": "20200428",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "彭友,王玲丽",
       "act_ent_type": "自然人"
     },
@@ -27538,7 +27538,7 @@
       "list_status": "L",
       "list_date": "20201013",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "王立建",
       "act_ent_type": "自然人"
     },
@@ -27842,7 +27842,7 @@
       "list_status": "L",
       "list_date": "20201106",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈金培",
       "act_ent_type": "自然人"
     },
@@ -28108,7 +28108,7 @@
       "list_status": "L",
       "list_date": "20210111",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "金玉谟,金雪芝",
       "act_ent_type": "自然人"
     },
@@ -28146,7 +28146,7 @@
       "list_status": "L",
       "list_date": "20210128",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈其新",
       "act_ent_type": "自然人"
     },
@@ -28241,7 +28241,7 @@
       "list_status": "L",
       "list_date": "20210406",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "黎展",
       "act_ent_type": "自然人"
     },
@@ -28374,7 +28374,7 @@
       "list_status": "L",
       "list_date": "20091030",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "佛山市南海区国有资产监督管理局",
       "act_ent_type": "地方国企"
     },
@@ -28412,7 +28412,7 @@
       "list_status": "L",
       "list_date": "20091030",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "广西壮族自治区人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -28602,7 +28602,7 @@
       "list_status": "L",
       "list_date": "20091030",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王代雪",
       "act_ent_type": "自然人"
     },
@@ -28640,7 +28640,7 @@
       "list_status": "L",
       "list_date": "20091030",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "朱双全,朱顺全,朱梦茜",
       "act_ent_type": "自然人"
     },
@@ -29305,7 +29305,7 @@
       "list_status": "L",
       "list_date": "20100226",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -29400,7 +29400,7 @@
       "list_status": "L",
       "list_date": "20100319",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈曼虹",
       "act_ent_type": "自然人"
     },
@@ -29799,7 +29799,7 @@
       "list_status": "L",
       "list_date": "20100520",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "范中华",
       "act_ent_type": "自然人"
     },
@@ -30673,7 +30673,7 @@
       "list_status": "L",
       "list_date": "20101105",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "姚国瑞",
       "act_ent_type": "自然人"
     },
@@ -31060,12 +31060,12 @@
     {
       "ts_code": "300159.SZ",
       "symbol": "300159",
-      "name": "*ST新研",
+      "name": "新研股份",
       "area": "新疆",
       "industry": "农用机械",
       "fullname": "新疆机械研究院股份有限公司",
       "enname": "Xinjiang Machinery Research Institute Co., Ltd",
-      "cnspell": "*STXY",
+      "cnspell": "XYGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -31167,7 +31167,7 @@
       "list_status": "L",
       "list_date": "20110113",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张国桉",
       "act_ent_type": "自然人"
     },
@@ -31604,7 +31604,7 @@
       "list_status": "L",
       "list_date": "20110316",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "曹欧劼",
       "act_ent_type": "自然人"
     },
@@ -31813,7 +31813,7 @@
       "list_status": "L",
       "list_date": "20110407",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "熊海涛",
       "act_ent_type": "自然人"
     },
@@ -32060,7 +32060,7 @@
       "list_status": "L",
       "list_date": "20110511",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "胡醇",
       "act_ent_type": "自然人"
     },
@@ -32155,7 +32155,7 @@
       "list_status": "L",
       "list_date": "20110525",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -32269,7 +32269,7 @@
       "list_status": "L",
       "list_date": "20110608",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "曾三林",
       "act_ent_type": "自然人"
     },
@@ -32288,7 +32288,7 @@
       "list_status": "L",
       "list_date": "20110608",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -32706,7 +32706,7 @@
       "list_status": "L",
       "list_date": "20110803",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "洪爱金",
       "act_ent_type": "自然人"
     },
@@ -32877,7 +32877,7 @@
       "list_status": "L",
       "list_date": "20110831",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "费战波",
       "act_ent_type": "自然人"
     },
@@ -32972,7 +32972,7 @@
       "list_status": "L",
       "list_date": "20110916",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张强",
       "act_ent_type": "自然人"
     },
@@ -33181,7 +33181,7 @@
       "list_status": "L",
       "list_date": "20111123",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "杭州市人民政府",
       "act_ent_type": "地方国企"
     },
@@ -33561,7 +33561,7 @@
       "list_status": "L",
       "list_date": "20120319",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "平潭综合实验区投资促进局",
       "act_ent_type": "地方国企"
     },
@@ -33758,12 +33758,12 @@
     {
       "ts_code": "300313.SZ",
       "symbol": "300313",
-      "name": "*ST天山",
+      "name": "天山生物",
       "area": "新疆",
       "industry": "农业综合",
       "fullname": "新疆天山畜牧生物工程股份有限公司",
       "enname": "Xinjiang Tianshan Animal Husbandry Bio-Engineering Co.,Ltd",
-      "cnspell": "*STTS",
+      "cnspell": "TSSW",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -35233,7 +35233,7 @@
       "list_status": "L",
       "list_date": "20141010",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陕西有色金属控股集团有限责任公司",
       "act_ent_type": "地方国企"
     },
@@ -35708,7 +35708,7 @@
       "list_status": "L",
       "list_date": "20150217",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "杨保田",
       "act_ent_type": "自然人"
     },
@@ -36069,7 +36069,7 @@
       "list_status": "L",
       "list_date": "20150422",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈祥楼",
       "act_ent_type": "自然人"
     },
@@ -36088,7 +36088,7 @@
       "list_status": "L",
       "list_date": "20150424",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "茅庆江",
       "act_ent_type": "自然人"
     },
@@ -36335,7 +36335,7 @@
       "list_status": "L",
       "list_date": "20150519",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "肖永富",
       "act_ent_type": "自然人"
     },
@@ -36449,7 +36449,7 @@
       "list_status": "L",
       "list_date": "20150527",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -36525,7 +36525,7 @@
       "list_status": "L",
       "list_date": "20150611",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王季文",
       "act_ent_type": "自然人"
     },
@@ -36563,7 +36563,7 @@
       "list_status": "L",
       "list_date": "20150612",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李毅",
       "act_ent_type": "自然人"
     },
@@ -36753,7 +36753,7 @@
       "list_status": "L",
       "list_date": "20150630",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘庆礼,刘晋礼",
       "act_ent_type": null
     },
@@ -36886,7 +36886,7 @@
       "list_status": "L",
       "list_date": "20151231",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "黄文宝",
       "act_ent_type": "自然人"
     },
@@ -37779,7 +37779,7 @@
       "list_status": "L",
       "list_date": "20160823",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "四川省政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -37969,7 +37969,7 @@
       "list_status": "L",
       "list_date": "20161018",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "徐迎辉",
       "act_ent_type": "自然人"
     },
@@ -38159,7 +38159,7 @@
       "list_status": "L",
       "list_date": "20161117",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈喆",
       "act_ent_type": "自然人"
     },
@@ -39470,7 +39470,7 @@
       "list_status": "L",
       "list_date": "20170406",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "林文坤",
       "act_ent_type": "自然人"
     },
@@ -39775,8 +39775,8 @@
       "list_date": "20170505",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "葛荣",
-      "act_ent_type": "自然人"
+      "act_name": "无实际控制人",
+      "act_ent_type": "无"
     },
     {
       "ts_code": "300650.SZ",
@@ -39945,7 +39945,7 @@
       "list_status": "L",
       "list_date": "20170602",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "谢继华",
       "act_ent_type": "自然人"
     },
@@ -40743,7 +40743,7 @@
       "list_status": "L",
       "list_date": "20170912",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "段志明",
       "act_ent_type": "自然人"
     },
@@ -40990,7 +40990,7 @@
       "list_status": "L",
       "list_date": "20171026",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "钱林弟",
       "act_ent_type": "自然人"
     },
@@ -41085,7 +41085,7 @@
       "list_status": "L",
       "list_date": "20171106",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "邓永议",
       "act_ent_type": "自然人"
     },
@@ -41352,7 +41352,7 @@
       "list_date": "20180109",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "刘铁峰",
+      "act_name": "陈铸",
       "act_ent_type": "自然人"
     },
     {
@@ -41484,7 +41484,7 @@
       "list_status": "L",
       "list_date": "20180523",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "吴壬华,毛丽萍",
       "act_ent_type": "自然人"
     },
@@ -41997,7 +41997,7 @@
       "list_status": "L",
       "list_date": "20210804",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "权秋红",
       "act_ent_type": "自然人"
     },
@@ -42757,7 +42757,7 @@
       "list_status": "L",
       "list_date": "20200210",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘屹",
       "act_ent_type": "自然人"
     },
@@ -42795,7 +42795,7 @@
       "list_status": "L",
       "list_date": "20200212",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "郑昊",
       "act_ent_type": "自然人"
     },
@@ -42814,7 +42814,7 @@
       "list_status": "L",
       "list_date": "20200312",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "仲鸿天,陆玉珍,仲湘聚",
       "act_ent_type": "自然人"
     },
@@ -43023,7 +43023,7 @@
       "list_status": "L",
       "list_date": "20200506",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "黎峰",
       "act_ent_type": "自然人"
     },
@@ -43099,7 +43099,7 @@
       "list_status": "L",
       "list_date": "20220113",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈雁升,陈创煌",
       "act_ent_type": "自然人"
     },
@@ -43137,7 +43137,7 @@
       "list_status": "L",
       "list_date": "20200528",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "肖朝蓬",
       "act_ent_type": "自然人"
     },
@@ -43745,7 +43745,7 @@
       "list_status": "L",
       "list_date": "20200824",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "谌建平",
       "act_ent_type": "自然人"
     },
@@ -44125,7 +44125,7 @@
       "list_status": "L",
       "list_date": "20200916",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "谢明武",
       "act_ent_type": "自然人"
     },
@@ -44715,7 +44715,7 @@
       "list_date": "20201222",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "蒋小明",
+      "act_name": "陈树林",
       "act_ent_type": "自然人"
     },
     {
@@ -45094,7 +45094,7 @@
       "list_status": "L",
       "list_date": "20210210",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "杨广宇",
       "act_ent_type": "自然人"
     },
@@ -45455,7 +45455,7 @@
       "list_status": "L",
       "list_date": "20210805",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "董晓俊",
       "act_ent_type": "自然人"
     },
@@ -45797,7 +45797,7 @@
       "list_status": "L",
       "list_date": "20210420",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "施泽淞,叶阳,余志峰,陈磊,杨立峰",
       "act_ent_type": "自然人"
     },
@@ -46158,7 +46158,7 @@
       "list_status": "L",
       "list_date": "20210607",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "田年斌,王宗友",
       "act_ent_type": "自然人"
     },
@@ -46348,7 +46348,7 @@
       "list_status": "L",
       "list_date": "20210622",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "聂琨林",
       "act_ent_type": "自然人"
     },
@@ -46405,7 +46405,7 @@
       "list_status": "L",
       "list_date": "20210630",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘俊",
       "act_ent_type": "自然人"
     },
@@ -46880,7 +46880,7 @@
       "list_status": "L",
       "list_date": "20210805",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "徐进",
       "act_ent_type": "自然人"
     },
@@ -47051,7 +47051,7 @@
       "list_status": "L",
       "list_date": "20210830",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "路金波",
       "act_ent_type": "自然人"
     },
@@ -47355,7 +47355,7 @@
       "list_status": "L",
       "list_date": "20210923",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "卢小波",
       "act_ent_type": "自然人"
     },
@@ -47412,7 +47412,7 @@
       "list_status": "L",
       "list_date": "20210930",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "吴启元",
       "act_ent_type": "自然人"
     },
@@ -47431,7 +47431,7 @@
       "list_status": "L",
       "list_date": "20210929",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "崔子浩",
       "act_ent_type": "自然人"
     },
@@ -47469,7 +47469,7 @@
       "list_status": "L",
       "list_date": "20210930",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王世杰,陈奕",
       "act_ent_type": "自然人"
     },
@@ -47479,8 +47479,8 @@
       "name": "孩子王",
       "area": "江苏",
       "industry": "其他商业",
-      "fullname": "孩子王儿童用品股份有限公司",
-      "enname": "Kidswant Children Products Co.,Ltd.",
+      "fullname": "孩子王数智科技股份有限公司",
+      "enname": "Kidswant Digital Technology Co., Ltd.",
       "cnspell": "HZW",
       "market": "创业板",
       "exchange": "SZSE",
@@ -47735,7 +47735,7 @@
       "list_status": "L",
       "list_date": "20211102",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "沈建华",
       "act_ent_type": "自然人"
     },
@@ -48153,7 +48153,7 @@
       "list_status": "L",
       "list_date": "20220117",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王进",
       "act_ent_type": "自然人"
     },
@@ -48515,7 +48515,7 @@
       "list_date": "20211215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "包贺林",
+      "act_name": "温世旭",
       "act_ent_type": "自然人"
     },
     {
@@ -48571,7 +48571,7 @@
       "list_status": "L",
       "list_date": "20220421",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王如顺,董正军",
       "act_ent_type": "自然人"
     },
@@ -48590,7 +48590,7 @@
       "list_status": "L",
       "list_date": "20211110",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "韩志刚",
       "act_ent_type": "自然人"
     },
@@ -48913,7 +48913,7 @@
       "list_status": "L",
       "list_date": "20211210",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "严荣飞,孙小芬,严华,李前进",
       "act_ent_type": "自然人"
     },
@@ -49008,7 +49008,7 @@
       "list_status": "L",
       "list_date": "20250303",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "吴军,吴宏洋,吴雨洋",
       "act_ent_type": "自然人"
     },
@@ -49160,7 +49160,7 @@
       "list_status": "L",
       "list_date": "20211223",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈海刚,韩留才",
       "act_ent_type": "自然人"
     },
@@ -49255,7 +49255,7 @@
       "list_status": "L",
       "list_date": "20211111",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "高元坤",
       "act_ent_type": "自然人"
     },
@@ -49274,7 +49274,7 @@
       "list_status": "L",
       "list_date": "20211228",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "吴世杰,吴斌,吴承辉",
       "act_ent_type": "自然人"
     },
@@ -49483,7 +49483,7 @@
       "list_status": "L",
       "list_date": "20220120",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "葛建利",
       "act_ent_type": "自然人"
     },
@@ -49692,7 +49692,7 @@
       "list_status": "L",
       "list_date": "20211206",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "魏强",
       "act_ent_type": "自然人"
     },
@@ -49939,7 +49939,7 @@
       "list_status": "L",
       "list_date": "20220128",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "杨进,吴耀华",
       "act_ent_type": "自然人"
     },
@@ -49977,7 +49977,7 @@
       "list_status": "L",
       "list_date": "20221101",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "PING CHEN",
       "act_ent_type": "自然人"
     },
@@ -50015,7 +50015,7 @@
       "list_status": "L",
       "list_date": "20230615",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张友君",
       "act_ent_type": "自然人"
     },
@@ -50072,7 +50072,7 @@
       "list_status": "L",
       "list_date": "20220128",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "谭平涛,胡小艳",
       "act_ent_type": "自然人"
     },
@@ -50186,7 +50186,7 @@
       "list_status": "L",
       "list_date": "20220420",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "孙超",
       "act_ent_type": "自然人"
     },
@@ -50224,7 +50224,7 @@
       "list_status": "L",
       "list_date": "20230525",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张良灿,张天泓,张情怡",
       "act_ent_type": "自然人"
     },
@@ -50414,7 +50414,7 @@
       "list_status": "L",
       "list_date": "20221216",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张军,沙越",
       "act_ent_type": "自然人"
     },
@@ -50699,7 +50699,7 @@
       "list_status": "L",
       "list_date": "20220826",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李继林",
       "act_ent_type": "自然人"
     },
@@ -51098,7 +51098,7 @@
       "list_status": "L",
       "list_date": "20220726",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李泽新",
       "act_ent_type": "自然人"
     },
@@ -51345,7 +51345,7 @@
       "list_status": "L",
       "list_date": "20220929",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "廖高兵,陈运华",
       "act_ent_type": "自然人"
     },
@@ -51744,7 +51744,7 @@
       "list_status": "L",
       "list_date": "20220909",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "尹洪涛",
       "act_ent_type": "自然人"
     },
@@ -51915,7 +51915,7 @@
       "list_status": "L",
       "list_date": "20230804",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "谢祖华",
       "act_ent_type": "自然人"
     },
@@ -51953,7 +51953,7 @@
       "list_status": "L",
       "list_date": "20221122",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王冠",
       "act_ent_type": "自然人"
     },
@@ -52105,7 +52105,7 @@
       "list_status": "L",
       "list_date": "20230208",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "胡颖妮,胡湘仲",
       "act_ent_type": "自然人"
     },
@@ -52295,7 +52295,7 @@
       "list_status": "L",
       "list_date": "20230418",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "马增龙",
       "act_ent_type": "自然人"
     },
@@ -52789,7 +52789,7 @@
       "list_status": "L",
       "list_date": "20230724",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李海生",
       "act_ent_type": "自然人"
     },
@@ -52980,7 +52980,7 @@
       "list_date": "20230921",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "孙雁军",
+      "act_name": "何雪娟",
       "act_ent_type": "自然人"
     },
     {
@@ -53245,7 +53245,7 @@
       "list_status": "L",
       "list_date": "20230803",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "顾仁发,张秀芬",
       "act_ent_type": "自然人"
     },
@@ -53492,7 +53492,7 @@
       "list_status": "L",
       "list_date": "20230920",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "周少华",
       "act_ent_type": "自然人"
     },
@@ -53606,7 +53606,7 @@
       "list_status": "L",
       "list_date": "20250304",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "刘文叶,包涵寓,刘文君",
       "act_ent_type": "自然人"
     },
@@ -53758,7 +53758,7 @@
       "list_status": "L",
       "list_date": "20231128",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈志忠,姚征远,张健",
       "act_ent_type": "自然人"
     },
@@ -54062,7 +54062,7 @@
       "list_status": "L",
       "list_date": "20250519",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "石正兵",
       "act_ent_type": "自然人"
     },
@@ -54499,7 +54499,7 @@
       "list_status": "L",
       "list_date": "20241107",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "向爱国",
       "act_ent_type": "自然人"
     },
@@ -55658,7 +55658,7 @@
       "list_status": "L",
       "list_date": "19970508",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "韩国龙,薛黎曦",
       "act_ent_type": "自然人"
     },
@@ -55772,7 +55772,7 @@
       "list_status": "L",
       "list_date": "19970627",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "李星星",
       "act_ent_type": "自然人"
     },
@@ -56627,7 +56627,7 @@
       "list_status": "L",
       "list_date": "19980122",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "国务院国有资产监督管理委员会",
       "act_ent_type": "中央国企"
     },
@@ -56817,7 +56817,7 @@
       "list_status": "L",
       "list_date": "19980609",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "何承命",
       "act_ent_type": "自然人"
     },
@@ -57083,7 +57083,7 @@
       "list_status": "L",
       "list_date": "19980427",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "武汉市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -57444,7 +57444,7 @@
       "list_status": "L",
       "list_date": "19981210",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "宋民松",
       "act_ent_type": "自然人"
     },
@@ -57938,7 +57938,7 @@
       "list_status": "L",
       "list_date": "20000221",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "丁林洪",
       "act_ent_type": "自然人"
     },
@@ -58128,7 +58128,7 @@
       "list_status": "L",
       "list_date": "20000609",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "铜陵市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -60180,7 +60180,7 @@
       "list_status": "L",
       "list_date": "20010118",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "张伟标,张坚力",
       "act_ent_type": "自然人"
     },
@@ -60351,7 +60351,7 @@
       "list_status": "L",
       "list_date": "20010328",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "中国华电集团有限公司",
       "act_ent_type": "中央国企"
     },
@@ -60654,7 +60654,7 @@
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20040607",
-      "delist_date": null,
+      "delist_date": "20260626",
       "is_hs": "N",
       "act_name": "楼永良",
       "act_ent_type": "自然人"
@@ -61149,7 +61149,7 @@
       "list_status": "L",
       "list_date": "20031021",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "国务院国有资产监督管理委员会",
       "act_ent_type": "中央国企"
     },
@@ -61263,7 +61263,7 @@
       "list_status": "L",
       "list_date": "20040312",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "株洲市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -62289,7 +62289,7 @@
       "list_status": "L",
       "list_date": "20031203",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "潘雪平",
       "act_ent_type": "自然人"
     },
@@ -62479,7 +62479,7 @@
       "list_status": "L",
       "list_date": "20010227",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "自贡市国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -63068,7 +63068,7 @@
       "list_status": "L",
       "list_date": "20020711",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "大连市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -63181,7 +63181,7 @@
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20010828",
-      "delist_date": null,
+      "delist_date": "20260626",
       "is_hs": "N",
       "act_name": "赵伟平",
       "act_ent_type": "自然人"
@@ -63751,7 +63751,7 @@
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "19930316",
-      "delist_date": null,
+      "delist_date": "20260629",
       "is_hs": "N",
       "act_name": "国务院国有资产监督管理委员会",
       "act_ent_type": "中央国企"
@@ -64455,7 +64455,7 @@
       "list_status": "L",
       "list_date": "19931025",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "北京市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -64663,7 +64663,7 @@
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "19931206",
-      "delist_date": null,
+      "delist_date": "20260629",
       "is_hs": "N",
       "act_name": "韩啸",
       "act_ent_type": "自然人"
@@ -64930,7 +64930,7 @@
       "list_status": "L",
       "list_date": "19960606",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "国家电力投资集团有限公司",
       "act_ent_type": "中央国企"
     },
@@ -65082,7 +65082,7 @@
       "list_status": "L",
       "list_date": "19960626",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "河北省国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -65120,7 +65120,7 @@
       "list_status": "L",
       "list_date": "19960702",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "云南省人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -65861,7 +65861,7 @@
       "list_status": "L",
       "list_date": "19961101",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "武汉东湖新技术开发区管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -65982,12 +65982,12 @@
     {
       "ts_code": "600777.SH",
       "symbol": "600777",
-      "name": "*ST新潮",
+      "name": "新潮能源",
       "area": "山东",
       "industry": "石油开采",
       "fullname": "山东新潮能源股份有限公司",
       "enname": "Shandong Xinchao Energy Corporation Limited",
-      "cnspell": "*STXC",
+      "cnspell": "XCNY",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -66355,7 +66355,7 @@
       "list_status": "L",
       "list_date": "19931206",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "天津市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -68768,7 +68768,7 @@
       "list_status": "L",
       "list_date": "20040707",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陕西煤业化工集团有限责任公司",
       "act_ent_type": "地方国企"
     },
@@ -69072,7 +69072,7 @@
       "list_status": "L",
       "list_date": "20070126",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "蔡永龙,蔡雯婷,蔡林玉华,蔡晋彰",
       "act_ent_type": "自然人"
     },
@@ -69851,7 +69851,7 @@
       "list_status": "L",
       "list_date": "20110509",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "郑期中",
       "act_ent_type": "自然人"
     },
@@ -70478,7 +70478,7 @@
       "list_status": "L",
       "list_date": "20110506",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "包士金",
       "act_ent_type": "自然人"
     },
@@ -73404,7 +73404,7 @@
       "list_status": "L",
       "list_date": "20160826",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "徐良",
       "act_ent_type": "自然人"
     },
@@ -73499,7 +73499,7 @@
       "list_status": "L",
       "list_date": "20150320",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "石良希",
       "act_ent_type": "自然人"
     },
@@ -73537,7 +73537,7 @@
       "list_status": "L",
       "list_date": "20250519",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陈学利",
       "act_ent_type": "自然人"
     },
@@ -73575,7 +73575,7 @@
       "list_status": "L",
       "list_date": "20160701",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "无锡市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -74791,7 +74791,7 @@
       "list_status": "L",
       "list_date": "20160831",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "钮玉霞",
       "act_ent_type": "自然人"
     },
@@ -74868,7 +74868,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "王君垚",
+      "act_name": "韩明海",
       "act_ent_type": "自然人"
     },
     {
@@ -74905,7 +74905,7 @@
       "list_status": "L",
       "list_date": "20220512",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "张孝金",
       "act_ent_type": "自然人"
     },
@@ -75209,7 +75209,7 @@
       "list_status": "L",
       "list_date": "20190809",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "严季新,施克俭",
       "act_ent_type": "自然人"
     },
@@ -75342,7 +75342,7 @@
       "list_status": "L",
       "list_date": "20220216",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -75608,7 +75608,7 @@
       "list_status": "L",
       "list_date": "20170306",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陈志敏",
       "act_ent_type": "自然人"
     },
@@ -75741,7 +75741,7 @@
       "list_status": "L",
       "list_date": "20150320",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "蒋学真,董晓燕",
       "act_ent_type": "自然人"
     },
@@ -75836,7 +75836,7 @@
       "list_status": "L",
       "list_date": "20221013",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -76406,7 +76406,7 @@
       "list_status": "L",
       "list_date": "20170531",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "梁丰",
       "act_ent_type": "自然人"
     },
@@ -76767,7 +76767,7 @@
       "list_status": "L",
       "list_date": "20211215",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "余静渊,范小珍",
       "act_ent_type": "自然人"
     },
@@ -76786,7 +76786,7 @@
       "list_status": "L",
       "list_date": "20190620",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "刘修华",
       "act_ent_type": "自然人"
     },
@@ -77052,7 +77052,7 @@
       "list_status": "L",
       "list_date": "20170421",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陆海天,孔令钢",
       "act_ent_type": "自然人"
     },
@@ -77166,7 +77166,7 @@
       "list_status": "L",
       "list_date": "20161230",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "台州市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -77394,7 +77394,7 @@
       "list_status": "L",
       "list_date": "20150319",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陈建华,范红卫",
       "act_ent_type": "自然人"
     },
@@ -77679,7 +77679,7 @@
       "list_status": "L",
       "list_date": "20240705",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "朱剑波",
       "act_ent_type": "自然人"
     },
@@ -77698,7 +77698,7 @@
       "list_status": "L",
       "list_date": "20170627",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "是蓉珠",
       "act_ent_type": "自然人"
     },
@@ -78060,7 +78060,7 @@
       "list_date": "20240111",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "PAN SHU XIN",
+      "act_name": "SHENG JIAN HUA",
       "act_ent_type": "自然人"
     },
     {
@@ -78097,7 +78097,7 @@
       "list_status": "L",
       "list_date": "20150424",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "吕世平",
       "act_ent_type": "自然人"
     },
@@ -78496,7 +78496,7 @@
       "list_status": "L",
       "list_date": "20161124",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "叶桃,刘扬,苏州资产投资管理集团有限公司",
       "act_ent_type": null
     },
@@ -78705,7 +78705,7 @@
       "list_status": "L",
       "list_date": "20200407",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "赵忠",
       "act_ent_type": "自然人"
     },
@@ -78857,7 +78857,7 @@
       "list_status": "L",
       "list_date": "20171120",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "谢秋花,李裕陆,李裕高,李来斌",
       "act_ent_type": "自然人"
     },
@@ -79256,7 +79256,7 @@
       "list_status": "L",
       "list_date": "20240731",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "何俊南",
       "act_ent_type": "自然人"
     },
@@ -79332,7 +79332,7 @@
       "list_status": "L",
       "list_date": "20171018",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "李义升",
       "act_ent_type": "自然人"
     },
@@ -79522,7 +79522,7 @@
       "list_status": "L",
       "list_date": "20161011",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "曾繁忆",
       "act_ent_type": "自然人"
     },
@@ -79845,7 +79845,7 @@
       "list_status": "L",
       "list_date": "20171106",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "胡震,卜春华",
       "act_ent_type": "自然人"
     },
@@ -80605,7 +80605,7 @@
       "list_status": "L",
       "list_date": "20150527",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "罗衍记,蒋丽",
       "act_ent_type": "自然人"
     },
@@ -80662,7 +80662,7 @@
       "list_status": "L",
       "list_date": "20150122",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "郭茂",
       "act_ent_type": "自然人"
     },
@@ -81270,7 +81270,7 @@
       "list_status": "L",
       "list_date": "20161201",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陈冬根",
       "act_ent_type": "自然人"
     },
@@ -81346,7 +81346,7 @@
       "list_status": "L",
       "list_date": "20170313",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "张间芳,张家地",
       "act_ent_type": "自然人"
     },
@@ -81593,7 +81593,7 @@
       "list_status": "L",
       "list_date": "20171127",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "丁闵",
       "act_ent_type": "自然人"
     },
@@ -81631,7 +81631,7 @@
       "list_status": "L",
       "list_date": "20190726",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "方吾校,方能斌,方聪艺",
       "act_ent_type": "自然人"
     },
@@ -81821,7 +81821,7 @@
       "list_status": "L",
       "list_date": "20160412",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "宁波市镇海区国有资产管理服务中心",
       "act_ent_type": "地方国企"
     },
@@ -81840,7 +81840,7 @@
       "list_status": "L",
       "list_date": "20150423",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "徐凤娟,叶利明",
       "act_ent_type": "自然人"
     },
@@ -82316,7 +82316,7 @@
       "list_date": "20170711",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "王国良",
+      "act_name": "韩元平",
       "act_ent_type": "自然人"
     },
     {
@@ -82486,7 +82486,7 @@
       "list_status": "L",
       "list_date": "20151231",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "吴君,高飞",
       "act_ent_type": "自然人"
     },
@@ -82695,7 +82695,7 @@
       "list_status": "L",
       "list_date": "20170630",
       "delist_date": null,
-      "is_hs": "H",
+      "is_hs": "N",
       "act_name": "孙志勇",
       "act_ent_type": "自然人"
     },
@@ -82714,8 +82714,8 @@
       "list_status": "L",
       "list_date": "20170420",
       "delist_date": null,
-      "is_hs": "N",
-      "act_name": "任建宏",
+      "is_hs": "H",
+      "act_name": "李月杰",
       "act_ent_type": "自然人"
     },
     {
@@ -83702,7 +83702,7 @@
       "list_status": "L",
       "list_date": "20170510",
       "delist_date": null,
-      "is_hs": "H",
+      "is_hs": "N",
       "act_name": "朱惠照,李明焱",
       "act_ent_type": "自然人"
     },
@@ -83892,7 +83892,7 @@
       "list_status": "L",
       "list_date": "20171101",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "何根林",
       "act_ent_type": "自然人"
     },
@@ -84386,7 +84386,7 @@
       "list_status": "L",
       "list_date": "20170125",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "金红萍,陶峰华",
       "act_ent_type": "自然人"
     },
@@ -84519,7 +84519,7 @@
       "list_status": "L",
       "list_date": "20170807",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陈学敏",
       "act_ent_type": "自然人"
     },
@@ -84728,7 +84728,7 @@
       "list_status": "L",
       "list_date": "20170308",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "王强",
       "act_ent_type": "自然人"
     },
@@ -84918,7 +84918,7 @@
       "list_status": "L",
       "list_date": "20200903",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "山东省国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -85431,7 +85431,7 @@
       "list_status": "L",
       "list_date": "20200811",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "徐华东,CHUI LAP LAM",
       "act_ent_type": null
     },
@@ -85754,7 +85754,7 @@
       "list_status": "L",
       "list_date": "20210726",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "沈斌强,沈翾",
       "act_ent_type": "自然人"
     },
@@ -85830,7 +85830,7 @@
       "list_status": "L",
       "list_date": "20200821",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "宫殿海",
       "act_ent_type": "自然人"
     },
@@ -85935,8 +85935,8 @@
       "name": "富春染织",
       "area": "安徽",
       "industry": "纺织",
-      "fullname": "芜湖富春染织股份有限公司",
-      "enname": "Wuhu Fuchun Dye and Weave Co.,Ltd.",
+      "fullname": "富春染织集团股份有限公司",
+      "enname": "Fuchun Dye and Weave Group Co., Ltd.",
       "cnspell": "FCRZ",
       "market": "主板",
       "exchange": "SSE",
@@ -86172,7 +86172,7 @@
       "list_status": "L",
       "list_date": "20210224",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "王跃斌,陈晓君,王琛",
       "act_ent_type": "自然人"
     },
@@ -86229,7 +86229,7 @@
       "list_status": "L",
       "list_date": "20210706",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "叶德才",
       "act_ent_type": "自然人"
     },
@@ -86324,7 +86324,7 @@
       "list_status": "L",
       "list_date": "20201215",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "张维建,杨双珠",
       "act_ent_type": "自然人"
     },
@@ -86400,7 +86400,7 @@
       "list_status": "L",
       "list_date": "20200803",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "沈正华,王雪娟",
       "act_ent_type": "自然人"
     },
@@ -86571,7 +86571,7 @@
       "list_status": "L",
       "list_date": "20200812",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "纪金树,林庆松,杨荣坤",
       "act_ent_type": "自然人"
     },
@@ -87065,7 +87065,7 @@
       "list_status": "L",
       "list_date": "20260421",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王内利,王学林,王恩伟",
       "act_ent_type": "自然人"
     },
@@ -87103,7 +87103,7 @@
       "list_status": "L",
       "list_date": "20260515",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "黄浩云",
       "act_ent_type": "自然人"
     },
@@ -87122,7 +87122,7 @@
       "list_status": "L",
       "list_date": "20260417",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "金旭东",
       "act_ent_type": "自然人"
     },
@@ -87141,7 +87141,7 @@
       "list_status": "L",
       "list_date": "20260511",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "韩卫东",
       "act_ent_type": "自然人"
     },
@@ -87160,7 +87160,7 @@
       "list_status": "L",
       "list_date": "20260430",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陆浩东",
       "act_ent_type": "自然人"
     },
@@ -87390,6 +87390,25 @@
       "delist_date": null,
       "is_hs": "N",
       "act_name": "叶森然",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "001399.SZ",
+      "symbol": "001399",
+      "name": "惠科股份",
+      "area": "深圳",
+      "industry": "元器件",
+      "fullname": "惠科股份有限公司",
+      "enname": "HKC Corporation Limited",
+      "cnspell": "HKGF",
+      "market": "主板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260626",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "王智勇",
       "act_ent_type": "自然人"
     }
   ]
