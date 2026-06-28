@@ -5,6 +5,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
+from src.db.sqlite import DEFAULT_SQLITE_DB_PATH
 from src.screening.result_store import StrategyResultStore
 from src.strategies.base import BaseStrategy, StrategyContext, StrategyMatch
 from src.strategies.registry import (
@@ -52,6 +53,12 @@ def parse_args() -> argparse.Namespace:
         help="Directory for JSON strategy result files.",
     )
     parser.add_argument(
+        "--sqlite-db-path",
+        type=Path,
+        default=DEFAULT_SQLITE_DB_PATH,
+        help=f"Local SQLite database path for daily-based strategies. Default: {DEFAULT_SQLITE_DB_PATH}",
+    )
+    parser.add_argument(
         "--list-strategies",
         action="store_true",
         help="List available strategies and exit.",
@@ -69,8 +76,8 @@ def main() -> None:
 
     strategy_names = resolve_strategy_names(args.strategies)
     strategies = [get_strategy(strategy_name) for strategy_name in strategy_names]
-    context = StrategyContext()
     run_date = (args.run_date or china_today()).strftime("%Y%m%d")
+    context = StrategyContext(sqlite_db_path=args.sqlite_db_path, run_date=run_date)
 
     rows = combine_strategy_results(strategies, context, args.mode)
     output_file = StrategyResultStore(Path(args.output_dir)).write_result(

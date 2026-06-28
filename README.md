@@ -238,6 +238,18 @@ python -m src.strategy_runner --list-strategies
 python -m src.strategy_runner --strategies stock_pool
 ```
 
+执行基于本地 SQLite `daily` 表的日线形态策略：
+
+```bash
+python -m src.strategy_runner --strategies box_consolidation
+```
+
+如需指定本地 SQLite 文件：
+
+```bash
+python -m src.strategy_runner --strategies box_consolidation --sqlite-db-path D:\devtools\sqlite\dbs\tushare.db
+```
+
 执行多个策略并取交集：
 
 ```bash
@@ -257,6 +269,15 @@ python -m src.strategy_runner --strategies has_industry hs_connect --mode union
 | `stock_pool` | 当前股票基础信息快照中的全部股票 | `data/stock_basic/stock_basic.json` |
 | `has_industry` | 股票基础信息中已包含行业分类 | `data/stock_basic/stock_basic.json` |
 | `hs_connect` | 沪深股通标的股票 | `data/stock_basic/stock_basic.json` |
+| `box_consolidation` | 近60个交易日处于窄幅箱体横盘的股票 | 本地 SQLite `daily` 表 |
+| `volume_dry_up_consolidation` | 近60个交易日横盘且后半段成交量明显萎缩的股票 | 本地 SQLite `daily` 表 |
+| `half_year_bottom_consolidation` | 近120个交易日价格位于半年底部区域并低位盘整的股票 | 本地 SQLite `daily` 表 |
+
+日线形态策略默认读取本地 SQLite 数据库 `D:\devtools\sqlite\dbs\tushare.db`，数据表结构来自 `DDL/007_create_daily_d1.sql`。三个策略可以单独运行，也可以用 `--mode union` 表达“箱体横盘 or 成交量萎缩横盘 or 近半年底部盘整”：
+
+```bash
+python -m src.strategy_runner --strategies box_consolidation volume_dry_up_consolidation half_year_bottom_consolidation --mode union
+```
 
 执行结果默认输出到：
 
