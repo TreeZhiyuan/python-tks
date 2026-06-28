@@ -107,7 +107,7 @@
 - 如果后续接口是不依赖交易日且短期变化不大的快照类接口，可保存为仓库 JSON 文件，例如 `stock_basic` 写入 `data/stock_basic/stock_basic.json`。
 - 如果后续接口既不是日频分页，也不是快照模式，先扩展或新增任务基类，不要硬塞到 `BaseMoneyflowTask`。
 - 当前数据库写入目标是 Cloudflare D1；SQLite/MySQL 需要额外数据库适配层。
-- 命令行传入 `--local-sqlite` 时，数据库表读写切换到本地 SQLite，默认路径是 `D:\devtools\sqlite\dbs\tushare.db`；未传入时仍使用 Cloudflare D1。
+- 命令行传入 `--local-sqlite` 时，数据库表读写切换到本地 SQLite；默认路径来自 `.env` 的 `LOCAL_SQLITE_DB_PATH`，未配置时使用 `D:/devtools/sqlite/dbs/tushare.db`；未传入时仍使用 Cloudflare D1。
 - GitHub Actions runner 默认使用 UTC；涉及默认日期时必须显式按 `Asia/Shanghai` 计算。
 - 新增选股策略时，优先复用已同步数据和 `StrategyContext`，不要在策略里直接调用 Tushare。
 - 选股策略结果当前保存到 `data/strategy_results/`，结果文件默认不提交仓库，仅提交 `.gitkeep`。

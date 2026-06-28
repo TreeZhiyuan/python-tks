@@ -43,15 +43,14 @@ TUSHARE_TOKEN=REPLACE_WITH_YOUR_TUSHARE_TOKEN
 CLOUDFLARE_API_TOKEN=REPLACE_WITH_YOUR_CLOUDFLARE_API_TOKEN
 CLOUDFLARE_ACCOUNT_ID=REPLACE_WITH_YOUR_CLOUDFLARE_ACCOUNT_ID
 CLOUDFLARE_D1_DATABASE_ID=REPLACE_WITH_YOUR_D1_DATABASE_ID
+LOCAL_SQLITE_DB_PATH=D:/devtools/sqlite/dbs/tushare.db
 ```
 
-数据库默认读写 Cloudflare D1。调试或本地落库时，可以在运行命令中增加 `--local-sqlite`，此时所有数据库表读写都会切换到本地 SQLite：
+数据库默认读写 Cloudflare D1。调试或本地落库时，可以在运行命令中增加 `--local-sqlite`，此时所有数据库表读写都会切换到本地 SQLite。
 
-```text
-D:\devtools\sqlite\dbs\tushare.db
-```
+本地 SQLite 默认路径由 `.env` 中的 `LOCAL_SQLITE_DB_PATH` 配置，未配置时使用 `D:/devtools/sqlite/dbs/tushare.db`。
 
-如需使用其他 SQLite 文件，可同时传入 `--sqlite-db-path <path>`。
+如需为单次命令临时使用其他 SQLite 文件，可同时传入 `--sqlite-db-path <path>`，命令行参数优先于 `.env` 配置。
 
 ## 数据库准备
 

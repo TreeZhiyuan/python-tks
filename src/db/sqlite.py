@@ -5,9 +5,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, List, Sequence
 
+from src.config import LOCAL_SQLITE_DB_PATH
+
 
 BASE_DIR = Path(__file__).resolve().parents[2]
-DEFAULT_SQLITE_DB_PATH = Path("D:/devtools/sqlite/dbs/tushare.db")
+DEFAULT_SQLITE_DB_PATH = LOCAL_SQLITE_DB_PATH
 DEFAULT_SQLITE_DDL_FILES = (
     BASE_DIR / "DDL/001_create_moneyflow_cnt_ths_d1.sql",
     BASE_DIR / "DDL/002_create_moneyflow_ind_dc_d1.sql",

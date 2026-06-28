@@ -60,7 +60,7 @@ python -m src.localdebug.run_daily_month --help
 
 - `start_date`：需要同步的单个日期，或日期范围开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
 - `end_date`：可选，日期范围结束日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。不传时只同步 `start_date` 当天。
-- `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `src.db.sqlite.DEFAULT_SQLITE_DB_PATH`。
+- `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
 - `--batch-size`：每批写入 SQLite 的行数，默认 `100`。
 - `--continue-on-error`：某一天同步失败后继续后续日期。
 - `--debug-traceback`：发生错误时打印 Python traceback，便于定位本地环境、D1 配置或 SQL 问题。
@@ -129,11 +129,13 @@ CLOUDFLARE_ACCOUNT_ID=...
 CLOUDFLARE_D1_DATABASE_ID=...
 ```
 
-本地 SQLite 表结构会由 `src.db.sqlite.SQLiteClient` 按 `DDL/*_d1.sql` 自动初始化。默认 SQLite 文件路径是：
+本地 SQLite 表结构会由 `src.db.sqlite.SQLiteClient` 按 `DDL/*_d1.sql` 自动初始化。默认 SQLite 文件路径由 `.env` 中的 `LOCAL_SQLITE_DB_PATH` 配置：
 
-```text
-D:\devtools\sqlite\dbs\tushare.db
+```env
+LOCAL_SQLITE_DB_PATH=D:/devtools/sqlite/dbs/tushare.db
 ```
+
+如果未配置 `LOCAL_SQLITE_DB_PATH`，程序会使用 `D:/devtools/sqlite/dbs/tushare.db`。脚本参数 `--sqlite-db-path` 可临时覆盖该配置。
 
 `run_daily_month.py` 会读取 `data/stock_basic/stock_basic.json` 中的股票池。如果该文件不存在，请先执行：
 
