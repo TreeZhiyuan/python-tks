@@ -26,42 +26,95 @@ python -m src.main --tasks daily --dates YYYYMMDD --local-sqlite
 
 ### 用法示例
 
-执行 2024 年 5 月 1 日到 2024 年 5 月 31 日之间的工作日：
-
 ```powershell
 python -m src.localdebug.run_daily_month 20240501 20240531
-```
-
-也可以使用带短横线的日期格式：
-
-```powershell
 python -m src.localdebug.run_daily_month 2024-05-01 2024-05-31
+python -m src.localdebug.run_daily_month 20240501 20240503 --interval-seconds 0
+python -m src.localdebug.run_daily_month --help
 ```
 
-本地快速验证参数和日期循环时，可以把等待时间设为 `0`：
+## `run_moneyflow_tasks_to_sqlite.py`
+
+输入一个交易日期，按顺序分别执行资金流相关 Tushare 拉取任务，并把数据写入本地 SQLite。
+
+默认任务顺序：
+
+1. `moneyflow_cnt_ths`
+2. `moneyflow_ind_dc`
+3. `moneyflow`
+4. `moneyflow_dc`
+5. `moneyflow_ths`
+
+脚本会为每个任务分别执行一次：
 
 ```powershell
-python -m src.localdebug.run_daily_month 20240501 20240503 --interval-seconds 0
+python -m src.main --tasks <task_name> --dates YYYYMMDD --local-sqlite --sqlite-db-path <path>
+```
+
+### 参数
+
+- `trade_date`：交易日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
+- `--tasks`：可选，指定需要执行的资金流任务，默认执行全部 5 个任务。
+- `--interval-seconds`：相邻任务之间的等待秒数，默认 `180` 秒。
+- `--continue-on-error`：某个任务失败后继续执行后续任务。
+- `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
+
+### 用法示例
+
+执行指定日期的全部资金流任务：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506
+```
+
+使用带短横线的日期格式：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 2024-05-06
+```
+
+本地快速验证参数和执行顺序时，可以把等待时间设为 `0`：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --interval-seconds 0
+```
+
+只执行部分任务：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --tasks moneyflow moneyflow_dc moneyflow_ths
+```
+
+某个任务失败后继续执行后续任务：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --continue-on-error
+```
+
+指定本地 SQLite 路径：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --sqlite-db-path D:\devtools\sqlite\dbs\tushare.db
 ```
 
 查看脚本帮助：
 
 ```powershell
-python -m src.localdebug.run_daily_month --help
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite --help
 ```
 
 ## `run_ths_index_to_sqlite.py`
 
 请求 Tushare `ths_index` 接口，并将返回数据写入本地 SQLite 的 `ths_index` 表。
 
-该脚本保留接口入参：
+### 参数
 
 - `--ts-code`：指数代码，例如 `885835.TI`。
 - `--exchange`：市场类型，例如 `A`、`HK`、`US`。
 - `--type`：指数类型，例如 `N`、`I`、`R`、`S`、`ST`、`TH`、`BB`。
 - `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
 
-用法示例：
+### 用法示例
 
 ```powershell
 python -m src.localdebug.run_ths_index_to_sqlite
@@ -73,7 +126,7 @@ python -m src.localdebug.run_ths_index_to_sqlite --ts-code 885835.TI
 
 请求 Tushare `dc_index` 接口，并将返回数据写入本地 SQLite 的 `dc_index` 表。
 
-该脚本保留接口入参：
+### 参数
 
 - `--ts-code`：指数代码，支持多个代码用英文逗号分隔。
 - `--name`：板块名称，例如 `人形机器人`。
@@ -83,7 +136,7 @@ python -m src.localdebug.run_ths_index_to_sqlite --ts-code 885835.TI
 - `--idx-type`：板块类型，默认 `概念板块`。
 - `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
 
-用法示例：
+### 用法示例
 
 ```powershell
 python -m src.localdebug.run_dc_index_to_sqlite
@@ -118,39 +171,12 @@ python -m src.localdebug.run_dc_index_to_sqlite --trade-date 20250103 --idx-type
 
 ### 用法示例
 
-同步单个日期：
-
 ```powershell
 python -m src.localdebug.sync_daily_d1_to_sqlite 20240506
-```
-
-同步日期范围：
-
-```powershell
 python -m src.localdebug.sync_daily_d1_to_sqlite 20240501 20240531
-```
-
-使用带短横线的日期格式：
-
-```powershell
 python -m src.localdebug.sync_daily_d1_to_sqlite 2024-05-01 2024-05-31
-```
-
-指定本地 SQLite 路径：
-
-```powershell
 python -m src.localdebug.sync_daily_d1_to_sqlite 20240506 --sqlite-db-path D:\devtools\sqlite\dbs\tushare.db
-```
-
-某一天失败后继续同步后续日期，并打印详细 traceback：
-
-```powershell
 python -m src.localdebug.sync_daily_d1_to_sqlite 20240501 20240531 --continue-on-error --debug-traceback
-```
-
-查看脚本帮助：
-
-```powershell
 python -m src.localdebug.sync_daily_d1_to_sqlite --help
 ```
 
