@@ -6,12 +6,14 @@ from typing import Any
 
 from src.db.client import DatabaseClient
 from src.tasks.daily import DailyTask
+from src.tasks.dc_index import DcIndexTask
 from src.tasks.moneyflow import MoneyflowTask
 from src.tasks.moneyflow_cnt_ths import MoneyflowCntThsTask
 from src.tasks.moneyflow_dc import MoneyflowDcTask
 from src.tasks.moneyflow_ind_dc import MoneyflowIndDcTask
 from src.tasks.moneyflow_ths import MoneyflowThsTask
 from src.tasks.stock_basic import StockBasicTask
+from src.tasks.ths_index import ThsIndexTask
 
 
 TaskFactory = Callable[..., Any]
@@ -24,6 +26,8 @@ class TaskDefinition:
     doc_url: str
     factory: TaskFactory
     uses_trade_date: bool = True
+    uses_database: bool = True
+    include_in_all: bool = True
 
 
 TASK_REGISTRY: dict[str, TaskDefinition] = {
@@ -63,6 +67,7 @@ TASK_REGISTRY: dict[str, TaskDefinition] = {
         doc_url="https://tushare.pro/document/2?doc_id=25",
         factory=StockBasicTask,
         uses_trade_date=False,
+        uses_database=False,
     ),
     "daily": TaskDefinition(
         name="daily",
@@ -70,11 +75,35 @@ TASK_REGISTRY: dict[str, TaskDefinition] = {
         doc_url="https://tushare.pro/document/2?doc_id=27",
         factory=DailyTask,
     ),
+    "ths_index": TaskDefinition(
+        name="ths_index",
+        description="同花顺概念和行业指数分类",
+        doc_url="https://tushare.pro/document/2?doc_id=259",
+        factory=ThsIndexTask,
+        uses_trade_date=False,
+        include_in_all=False,
+    ),
+    "dc_index": TaskDefinition(
+        name="dc_index",
+        description="东方财富概念板块分类",
+        doc_url="https://tushare.pro/document/2?doc_id=362",
+        factory=DcIndexTask,
+        uses_trade_date=False,
+        include_in_all=False,
+    ),
 }
 
 
 def available_task_names() -> list[str]:
     return list(TASK_REGISTRY.keys())
+
+
+def all_task_names() -> list[str]:
+    return [
+        task_name
+        for task_name, task_definition in TASK_REGISTRY.items()
+        if task_definition.include_in_all
+    ]
 
 
 def get_task_definition(task_name: str) -> TaskDefinition:
@@ -87,14 +116,14 @@ def get_task_definition(task_name: str) -> TaskDefinition:
 
 def build_task(task_name: str, db_client: DatabaseClient | None = None) -> Any:
     task_definition = get_task_definition(task_name)
-    if task_definition.uses_trade_date and db_client is not None:
+    if task_definition.uses_database and db_client is not None:
         return task_definition.factory(db_client=db_client)
     return task_definition.factory()
 
 
 def resolve_task_names(task_names: list[str]) -> list[str]:
     if "all" in task_names:
-        return available_task_names()
+        return all_task_names()
 
     seen: set[str] = set()
     resolved: list[str] = []

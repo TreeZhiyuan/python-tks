@@ -56,7 +56,7 @@ def parse_args() -> argparse.Namespace:
         nargs="+",
         choices=task_choices,
         default=["moneyflow_cnt_ths"],
-        help="One or more tasks to run. Use 'all' to run every registered task.",
+        help="One or more tasks to run. Use 'all' to run every all-enabled task.",
     )
     parser.add_argument(
         "--task",
@@ -119,7 +119,7 @@ def main() -> None:
     args = parse_args()
     trade_dates = resolve_trade_dates(args)
     task_names = resolve_task_names(args.tasks)
-    uses_database = any(get_task_definition(task_name).uses_trade_date for task_name in task_names)
+    uses_database = any(get_task_definition(task_name).uses_database for task_name in task_names)
     db_client = (
         build_database_client(
             use_local_sqlite=args.local_sqlite,

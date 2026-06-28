@@ -13,6 +13,8 @@
 | `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | https://tushare.pro/document/2?doc_id=349 |
 | `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | https://tushare.pro/document/2?doc_id=348 |
 | `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | https://tushare.pro/document/2?doc_id=27 |
+| `ths_index` | `ths_index` | 同花顺概念和行业指数分类，本地调试入口写入 SQLite | https://tushare.pro/document/2?doc_id=259 |
+| `dc_index` | `dc_index` | 东方财富概念板块分类，本地调试入口按交易日写入 SQLite | https://tushare.pro/document/2?doc_id=362 |
 
 ## 架构约定
 
@@ -27,6 +29,7 @@
 - 选股策略统一注册在 `src/strategies/registry.py`。
 - 线上定时任务由 GitHub Actions 执行，workflow 文件是 `.github/workflows/tushare-tasks.yml`。
 - 本地调试只保留单次执行脚本 `run_once.bat`。
+- 本地调试补充脚本在 `src/localdebug/`，`run_ths_index_to_sqlite.py` 和 `run_dc_index_to_sqlite.py` 用于直接请求 Tushare 并写入本地 SQLite，不接入线上定时任务。
 
 ## 当前已接入选股策略
 

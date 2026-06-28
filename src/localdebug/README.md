@@ -50,6 +50,47 @@ python -m src.localdebug.run_daily_month 20240501 20240503 --interval-seconds 0
 python -m src.localdebug.run_daily_month --help
 ```
 
+## `run_ths_index_to_sqlite.py`
+
+请求 Tushare `ths_index` 接口，并将返回数据写入本地 SQLite 的 `ths_index` 表。
+
+该脚本保留接口入参：
+
+- `--ts-code`：指数代码，例如 `885835.TI`。
+- `--exchange`：市场类型，例如 `A`、`HK`、`US`。
+- `--type`：指数类型，例如 `N`、`I`、`R`、`S`、`ST`、`TH`、`BB`。
+- `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
+
+用法示例：
+
+```powershell
+python -m src.localdebug.run_ths_index_to_sqlite
+python -m src.localdebug.run_ths_index_to_sqlite --exchange A --type N
+python -m src.localdebug.run_ths_index_to_sqlite --ts-code 885835.TI
+```
+
+## `run_dc_index_to_sqlite.py`
+
+请求 Tushare `dc_index` 接口，并将返回数据写入本地 SQLite 的 `dc_index` 表。
+
+该脚本保留接口入参：
+
+- `--ts-code`：指数代码，支持多个代码用英文逗号分隔。
+- `--name`：板块名称，例如 `人形机器人`。
+- `--trade-date`：交易日期，未传时默认使用北京时间当天。
+- `--start-date`：开始日期。
+- `--end-date`：结束日期。
+- `--idx-type`：板块类型，默认 `概念板块`。
+- `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
+
+用法示例：
+
+```powershell
+python -m src.localdebug.run_dc_index_to_sqlite
+python -m src.localdebug.run_dc_index_to_sqlite --trade-date 20250103
+python -m src.localdebug.run_dc_index_to_sqlite --trade-date 20250103 --idx-type 概念板块
+```
+
 ## `sync_daily_d1_to_sqlite.py`
 
 从 Cloudflare D1 的 `daily` 表读取指定日期的数据，并同步写入本地 SQLite 的 `daily` 表。

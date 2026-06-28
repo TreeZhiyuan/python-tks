@@ -15,6 +15,8 @@
 | `moneyflow_dc` | `moneyflow_dc` | 东方财富个股每日资金流向 | [doc_id=349](https://tushare.pro/document/2?doc_id=349) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
 | `moneyflow_ths` | `moneyflow_ths` | 同花顺个股每日资金流向 | [doc_id=348](https://tushare.pro/document/2?doc_id=348) | 每个工作日 `01:00` | 日频接口；GitHub Actions 按北京时间计算最近一个工作日并写入 D1 |
 | `daily` | `daily` | A股日线行情，未复权行情，停牌期间不提供数据 | [doc_id=27](https://tushare.pro/document/2?doc_id=27) | 每个工作日 `19:19` | 日频接口；GitHub Actions 按北京时间当天日期执行；任务先读取 `stock_basic` 快照中的 `ts_code` 股票池，再按多股票代码批量拉取 `daily` 并分批写入 D1；写入完成后删除超过 1 年的 `daily` 历史数据 |
+| `ths_index` | `ths_index` | 同花顺概念和行业指数分类 | [doc_id=259](https://tushare.pro/document/2?doc_id=259) | 暂无 | 本地调试入口直接请求 Tushare 并写入本地 SQLite；保留接口入参 `ts_code`、`exchange`、`type` |
+| `dc_index` | `dc_index` | 东方财富概念板块分类 | [doc_id=362](https://tushare.pro/document/2?doc_id=362) | 暂无 | 本地调试入口直接请求 Tushare 并写入本地 SQLite；保留接口入参，`trade_date` 默认使用北京时间当天 |
 
 ## 环境要求
 
@@ -70,6 +72,10 @@ LOCAL_SQLITE_DB_PATH=D:/devtools/sqlite/dbs/tushare.db
 - `DDL/006_create_moneyflow_ths_d1.sql`
 - `DDL/007_create_daily.sql`
 - `DDL/007_create_daily_d1.sql`
+- `DDL/008_create_ths_index.sql`
+- `DDL/008_create_ths_index_d1.sql`
+- `DDL/009_create_dc_index.sql`
+- `DDL/009_create_dc_index_d1.sql`
 
 当前程序写入的目标表：
 
@@ -79,6 +85,8 @@ LOCAL_SQLITE_DB_PATH=D:/devtools/sqlite/dbs/tushare.db
 - `moneyflow_dc`
 - `moneyflow_ths`
 - `daily`
+- `ths_index`
+- `dc_index`
 
 `stock_basic` 不写入 Cloudflare D1，也不需要建表脚本。它会保存为仓库内 JSON 文件：
 
@@ -110,6 +118,8 @@ python -m src.main --tasks moneyflow_cnt_ths moneyflow_ind_dc
 python -m src.main --tasks all
 ```
 
+`ths_index` 和 `dc_index` 当前只作为本地调试入库任务接入，不随 `all` 执行，也不接入 GitHub Actions 定时任务。
+
 `stock_basic` 是快照类接口，不按交易日拉取。即使命令中传入 `--dates`，该任务也只会执行一次当前基础信息快照。默认请求入参为 `list_status=L`，并只保存 `market` 为主板/创业板的上市股票到 `data/stock_basic/stock_basic.json`。
 
 指定多个日期：
@@ -129,6 +139,22 @@ python -m src.main --tasks all --start-date 20240501 --end-date 20240531
 ```bash
 python -m src.main --tasks daily --dates 20240506 --local-sqlite
 python -m src.main --tasks moneyflow_cnt_ths --dates 20240506 --local-sqlite
+```
+
+本地调试 THS 概念板块分类，并写入本地 SQLite：
+
+```bash
+python -m src.localdebug.run_ths_index_to_sqlite
+python -m src.localdebug.run_ths_index_to_sqlite --exchange A --type N
+python -m src.localdebug.run_ths_index_to_sqlite --ts-code 885835.TI
+```
+
+本地调试 DC 概念板块分类，并写入本地 SQLite。未传 `--trade-date` 时默认使用北京时间当天：
+
+```bash
+python -m src.localdebug.run_dc_index_to_sqlite
+python -m src.localdebug.run_dc_index_to_sqlite --trade-date 20250103
+python -m src.localdebug.run_dc_index_to_sqlite --trade-date 20250103 --idx-type 概念板块
 ```
 
 如果使用批处理脚本：
@@ -302,6 +328,7 @@ src/
   read_moneyflow_dc.py
   read_moneyflow_ths.py
   read_daily.py
+  localdebug/           本地调试和数据回填脚本
   storage/             JSON 快照存储封装
   strategies/          选股策略实现和策略注册表
   screening/           选股结果 JSON 输出封装

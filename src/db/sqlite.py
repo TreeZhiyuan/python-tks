@@ -17,6 +17,8 @@ DEFAULT_SQLITE_DDL_FILES = (
     BASE_DIR / "DDL/005_create_moneyflow_dc_d1.sql",
     BASE_DIR / "DDL/006_create_moneyflow_ths_d1.sql",
     BASE_DIR / "DDL/007_create_daily_d1.sql",
+    BASE_DIR / "DDL/008_create_ths_index_d1.sql",
+    BASE_DIR / "DDL/009_create_dc_index_d1.sql",
 )
 
 
