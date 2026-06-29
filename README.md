@@ -272,11 +272,18 @@ python -m src.strategy_runner --strategies has_industry hs_connect --mode union
 | `box_consolidation` | 近60个交易日处于窄幅箱体横盘的股票 | 本地 SQLite `daily` 表 |
 | `volume_dry_up_consolidation` | 近60个交易日横盘且后半段成交量明显萎缩的股票 | 本地 SQLite `daily` 表 |
 | `half_year_bottom_consolidation` | 近120个交易日价格位于半年底部区域并低位盘整的股票 | 本地 SQLite `daily` 表 |
+| `bottom_box_consolidation` | 线性回归综合评分识别近60日平台整理且长期趋势不弱的股票 | 本地 SQLite `daily` 表 |
 
-日线形态策略默认读取本地 SQLite 数据库 `D:\devtools\sqlite\dbs\tushare.db`，数据表结构来自 `DDL/007_create_daily_d1.sql`。三个策略可以单独运行，也可以用 `--mode union` 表达“箱体横盘 or 成交量萎缩横盘 or 近半年底部盘整”：
+日线形态策略默认读取本地 SQLite 数据库 `D:\devtools\sqlite\dbs\tushare.db`，数据表结构来自 `DDL/007_create_daily_d1.sql`。这些策略可以单独运行，也可以用 `--mode union` 表达“箱体横盘 or 成交量萎缩横盘 or 近半年底部盘整 or 综合评分平台整理”：
 
 ```bash
-python -m src.strategy_runner --strategies box_consolidation volume_dry_up_consolidation half_year_bottom_consolidation --mode union
+python -m src.strategy_runner --strategies box_consolidation volume_dry_up_consolidation half_year_bottom_consolidation bottom_box_consolidation --mode union
+```
+
+执行参考大位科技 `600589.SH` 的水平横盘特征、并进一步过滤长期趋势和平台位置的综合评分策略：
+
+```bash
+python -m src.strategy_runner --strategies bottom_box_consolidation --run-date 20251231
 ```
 
 执行结果默认输出到：

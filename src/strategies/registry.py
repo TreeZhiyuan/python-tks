@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from src.strategies.base import BaseStrategy
 from src.strategies.daily_patterns import (
+    BottomBoxConsolidationStrategy,
     BoxConsolidationStrategy,
     HalfYearBottomConsolidationStrategy,
     VolumeDryUpConsolidationStrategy,
@@ -18,6 +19,7 @@ STRATEGY_REGISTRY: dict[str, BaseStrategy] = {
         BoxConsolidationStrategy(),
         VolumeDryUpConsolidationStrategy(),
         HalfYearBottomConsolidationStrategy(),
+        BottomBoxConsolidationStrategy(),
     )
 }
 
