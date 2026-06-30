@@ -141,6 +141,16 @@ python -m src.main --tasks daily --dates 20240506 --local-sqlite
 python -m src.main --tasks moneyflow_cnt_ths --dates 20240506 --local-sqlite
 ```
 
+本地按自然日期范围回填资金流任务到 SQLite：
+
+```bash
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --task moneyflow moneyflow_dc
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --interval-seconds 0
+```
+
+`run_moneyflow_tasks_to_sqlite.py` 会按北京时间自然日跳过周六、周日；未指定 `--task` 或 `--tasks` 时默认执行全部 5 个资金流任务。默认 `--interval-seconds` 为 `80` 秒，且每个日期/任务执行后都会等待再进入下一次执行。更多本地调试脚本说明见 `src/localdebug/README.md`。
+
 本地调试 THS 概念板块分类，并写入本地 SQLite：
 
 ```bash

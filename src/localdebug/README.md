@@ -35,7 +35,9 @@ python -m src.localdebug.run_daily_month --help
 
 ## `run_moneyflow_tasks_to_sqlite.py`
 
-输入一个交易日期，按顺序分别执行资金流相关 Tushare 拉取任务，并把数据写入本地 SQLite。
+按输入的自然日期范围逐日执行资金流相关 Tushare 拉取任务，并把数据写入本地 SQLite。
+
+脚本会按北京时间自然日判断周末。如果某一天是周六或周日，会直接跳过，不执行 Tushare 拉取。
 
 默认任务顺序：
 
@@ -45,7 +47,7 @@ python -m src.localdebug.run_daily_month --help
 4. `moneyflow_dc`
 5. `moneyflow_ths`
 
-脚本会为每个任务分别执行一次：
+每个非周末日期会为每个任务分别执行一次：
 
 ```powershell
 python -m src.main --tasks <task_name> --dates YYYYMMDD --local-sqlite --sqlite-db-path <path>
@@ -53,48 +55,59 @@ python -m src.main --tasks <task_name> --dates YYYYMMDD --local-sqlite --sqlite-
 
 ### 参数
 
-- `trade_date`：交易日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
-- `--tasks`：可选，指定需要执行的资金流任务，默认执行全部 5 个任务。
-- `--interval-seconds`：相邻任务之间的等待秒数，默认 `180` 秒。
-- `--continue-on-error`：某个任务失败后继续执行后续任务。
+- `start_date`：开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
+- `end_date`：结束日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
+- `--task`：可选，指定需要执行的资金流任务，支持一个或多个任务名，也支持 `all`。
+- `--tasks`：`--task` 的同义参数，支持一个或多个任务名，也支持 `all`。
+- `--interval-seconds`：每个日期、每个任务执行后的等待秒数，默认 `80` 秒。即同一天的不同任务之间会等待，不同日期的任务之间也会等待。
+- `--continue-on-error`：某个日期/任务失败后继续执行后续日期/任务。
 - `--sqlite-db-path`：本地 SQLite 文件路径，默认来自 `.env` 的 `LOCAL_SQLITE_DB_PATH` 配置。
+
+`start_date` 必须小于或等于 `end_date`。日期范围包含开始日期和结束日期。
 
 ### 用法示例
 
-执行指定日期的全部资金流任务：
+执行指定日期范围内全部非周末日期的全部资金流任务：
 
 ```powershell
-python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531
 ```
 
 使用带短横线的日期格式：
 
 ```powershell
-python -m src.localdebug.run_moneyflow_tasks_to_sqlite 2024-05-06
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 2024-05-01 2024-05-31
 ```
 
-本地快速验证参数和执行顺序时，可以把等待时间设为 `0`：
+本地快速验证参数和执行顺序时，可以把每次执行后的等待时间设为 `0`：
 
 ```powershell
-python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --interval-seconds 0
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240503 --interval-seconds 0
 ```
 
 只执行部分任务：
 
 ```powershell
-python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --tasks moneyflow moneyflow_dc moneyflow_ths
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --task moneyflow moneyflow_dc moneyflow_ths
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --tasks moneyflow moneyflow_dc moneyflow_ths
 ```
 
-某个任务失败后继续执行后续任务：
+显式执行全部任务：
 
 ```powershell
-python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --continue-on-error
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --task all
+```
+
+某个日期/任务失败后继续执行后续日期/任务：
+
+```powershell
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --continue-on-error
 ```
 
 指定本地 SQLite 路径：
 
 ```powershell
-python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240506 --sqlite-db-path D:\devtools\sqlite\dbs\tushare.db
+python -m src.localdebug.run_moneyflow_tasks_to_sqlite 20240501 20240531 --sqlite-db-path D:\devtools\sqlite\dbs\tushare.db
 ```
 
 查看脚本帮助：
