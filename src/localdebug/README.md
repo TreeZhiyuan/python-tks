@@ -18,7 +18,7 @@ python -m src.main --tasks daily --dates YYYYMMDD --local-sqlite
 
 - `start_date`：开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
 - `end_date`：结束日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`。
-- `--interval-seconds`：相邻执行日期之间的等待秒数，默认 `180` 秒。
+- `--interval-seconds`：相邻执行日期之间的等待秒数，默认 `80` 秒。
 
 `start_date` 必须小于或等于 `end_date`。日期范围包含开始日期和结束日期。
 

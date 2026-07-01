@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import List
 
 
-DEFAULT_INTERVAL_SECONDS = 180
+DEFAULT_INTERVAL_SECONDS = 80
 
 
 def parse_date(value: str) -> date:
@@ -51,7 +51,7 @@ def parse_args() -> argparse.Namespace:
         "--interval-seconds",
         type=parse_non_negative_int,
         default=DEFAULT_INTERVAL_SECONDS,
-        help="Seconds to wait between dates. Default: 180.",
+        help=f"Seconds to wait between dates. Default: {DEFAULT_INTERVAL_SECONDS}.",
     )
     args = parser.parse_args()
     if args.start_date > args.end_date:
