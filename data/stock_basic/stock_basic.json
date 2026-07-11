@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-07-04T17:55:34",
+  "generated_at": "2026-07-11T17:45:21",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4600,
+  "row_count": 4593,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -16357,8 +16357,8 @@
       "name": "赫美集团",
       "area": "深圳",
       "industry": "其他商业",
-      "fullname": "深圳赫美集团股份有限公司",
-      "enname": "Shenzhen Hemei Group Co.,Ltd.",
+      "fullname": "深圳鹏飞绿能能源发展股份有限公司",
+      "enname": "Shenzhen Pengfei GreenEnergy Development Co., Ltd.",
       "cnspell": "HMJT",
       "market": "主板",
       "exchange": "SZSE",
@@ -19901,8 +19901,8 @@
       "list_date": "20110303",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "无实际控制人",
-      "act_ent_type": "无"
+      "act_name": "扬州市人民政府国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "002560.SZ",
@@ -22909,12 +22909,12 @@
     {
       "ts_code": "002731.SZ",
       "symbol": "002731",
-      "name": "ST萃华",
+      "name": "*ST萃华",
       "area": "辽宁",
       "industry": "服饰",
       "fullname": "沈阳萃华金银珠宝股份有限公司",
       "enname": "Shenyang Cuihua Gold and Silver Jewelry Co., Ltd.",
-      "cnspell": "STCH",
+      "cnspell": "*STCH",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -27197,7 +27197,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "喻自文",
+      "act_name": "邢卫民",
       "act_ent_type": "自然人"
     },
     {
@@ -28795,25 +28795,6 @@
       "is_hs": "N",
       "act_name": "王忠军",
       "act_ent_type": "自然人"
-    },
-    {
-      "ts_code": "300029.SZ",
-      "symbol": "300029",
-      "name": "天龙退",
-      "area": null,
-      "industry": null,
-      "fullname": "江苏华盛天龙光电设备股份有限公司",
-      "enname": "Jiangsu Huasheng Tianlong Photoelectric Co.,Ltd.",
-      "cnspell": "TLT",
-      "market": "创业板",
-      "exchange": "SZSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "20091225",
-      "delist_date": null,
-      "is_hs": "N",
-      "act_name": "无实际控制人",
-      "act_ent_type": "无"
     },
     {
       "ts_code": "300030.SZ",
@@ -39490,7 +39471,7 @@
       "list_date": "20170406",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "吴坤祥",
+      "act_name": "陈志强",
       "act_ent_type": "自然人"
     },
     {
@@ -44715,7 +44696,7 @@
       "list_date": "20201222",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "蒋小明",
+      "act_name": "陈树林",
       "act_ent_type": "自然人"
     },
     {
@@ -52980,7 +52961,7 @@
       "list_date": "20230921",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "何雪娟",
+      "act_name": "孙雁军",
       "act_ent_type": "自然人"
     },
     {
@@ -57468,25 +57449,6 @@
       "act_ent_type": "地方国企"
     },
     {
-      "ts_code": "600193.SH",
-      "symbol": "600193",
-      "name": "退市创兴",
-      "area": null,
-      "industry": null,
-      "fullname": "上海创兴资源开发股份有限公司",
-      "enname": "Shanghai Prosolar Resources Development Co.,Ltd",
-      "cnspell": "TSCX",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "19990527",
-      "delist_date": "20260706",
-      "is_hs": "N",
-      "act_name": "王相荣",
-      "act_ent_type": "自然人"
-    },
-    {
       "ts_code": "600195.SH",
       "symbol": "600195",
       "name": "中牧股份",
@@ -60641,25 +60603,6 @@
       "act_ent_type": "中央国企"
     },
     {
-      "ts_code": "600421.SH",
-      "symbol": "600421",
-      "name": "退市华嵘",
-      "area": null,
-      "industry": null,
-      "fullname": "湖北华嵘控股股份有限公司",
-      "enname": "Wuhan National Pharmaceutical Technology Co.Ltd.",
-      "cnspell": "TSHR",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "20040607",
-      "delist_date": "20260626",
-      "is_hs": "N",
-      "act_name": "楼永良",
-      "act_ent_type": "自然人"
-    },
-    {
       "ts_code": "600422.SH",
       "symbol": "600422",
       "name": "昆药集团",
@@ -63168,25 +63111,6 @@
       "act_ent_type": "中央国企"
     },
     {
-      "ts_code": "600599.SH",
-      "symbol": "600599",
-      "name": "退市熊猫",
-      "area": null,
-      "industry": null,
-      "fullname": "熊猫金控股份有限公司",
-      "enname": "Panda Financial Holding Corp., Ltd.",
-      "cnspell": "TSXM",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "20010828",
-      "delist_date": "20260626",
-      "is_hs": "N",
-      "act_name": "赵伟平",
-      "act_ent_type": "自然人"
-    },
-    {
       "ts_code": "600600.SH",
       "symbol": "600600",
       "name": "青岛啤酒",
@@ -63318,25 +63242,6 @@
       "is_hs": "H",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
-    },
-    {
-      "ts_code": "600608.SH",
-      "symbol": "600608",
-      "name": "退市沪科",
-      "area": null,
-      "industry": null,
-      "fullname": "上海宽频科技股份有限公司",
-      "enname": "Shanghai Broadband Technology Co.,Ltd",
-      "cnspell": "TSHK",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "19920327",
-      "delist_date": "20260703",
-      "is_hs": "N",
-      "act_name": "昆明市人民政府国有资产监督管理委员会",
-      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "600609.SH",
@@ -63736,25 +63641,6 @@
       "is_hs": "H",
       "act_name": "上海大众企业管理有限公司职工持股会",
       "act_ent_type": "工会性质"
-    },
-    {
-      "ts_code": "600636.SH",
-      "symbol": "600636",
-      "name": "退市国化",
-      "area": null,
-      "industry": null,
-      "fullname": "国新文化控股股份有限公司",
-      "enname": "China Reform Culture Holdings Co., Ltd",
-      "cnspell": "TSGH",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "19930316",
-      "delist_date": "20260629",
-      "is_hs": "N",
-      "act_name": "国务院国有资产监督管理委员会",
-      "act_ent_type": "中央国企"
     },
     {
       "ts_code": "600637.SH",
@@ -64351,8 +64237,8 @@
       "name": "交运股份",
       "area": "上海",
       "industry": "汽车配件",
-      "fullname": "上海交运集团股份有限公司",
-      "enname": "Shanghai Jiao Yun Group Co., Ltd.",
+      "fullname": "上海久事动娱文旅集团股份有限公司",
+      "enname": "Shanghai Juss Sports & Entertainment Group Co., Ltd.",
       "cnspell": "JYGF",
       "market": "主板",
       "exchange": "SSE",
@@ -64647,25 +64533,6 @@
       "delist_date": null,
       "is_hs": "H",
       "act_name": "牛钢",
-      "act_ent_type": "自然人"
-    },
-    {
-      "ts_code": "600696.SH",
-      "symbol": "600696",
-      "name": "退市岩石",
-      "area": null,
-      "industry": null,
-      "fullname": "上海君道酒企业发展股份有限公司",
-      "enname": "Shanghai Jundao Liquor Enterprise Development Co., Ltd.",
-      "cnspell": "TSYS",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "19931206",
-      "delist_date": "20260629",
-      "is_hs": "N",
-      "act_name": "韩啸",
       "act_ent_type": "自然人"
     },
     {
@@ -74868,7 +74735,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "韩明海",
+      "act_name": "王君垚",
       "act_ent_type": "自然人"
     },
     {
@@ -82316,7 +82183,7 @@
       "list_date": "20170711",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "韩元平",
+      "act_name": "王国良",
       "act_ent_type": "自然人"
     },
     {
@@ -82715,7 +82582,7 @@
       "list_date": "20170420",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "李月杰",
+      "act_name": "任建宏",
       "act_ent_type": "自然人"
     },
     {
@@ -83266,7 +83133,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明森",
+      "act_name": "胡明聪",
       "act_ent_type": "自然人"
     },
     {
@@ -85281,25 +85148,6 @@
       "delist_date": null,
       "is_hs": "N",
       "act_name": "夏永辉,陈甜敏",
-      "act_ent_type": "自然人"
-    },
-    {
-      "ts_code": "605081.SH",
-      "symbol": "605081",
-      "name": "退市太和",
-      "area": null,
-      "industry": null,
-      "fullname": "上海太和水科技发展股份有限公司",
-      "enname": "Shanghai Taihe Water Technology Development Co., Ltd.",
-      "cnspell": "TSTH",
-      "market": "主板",
-      "exchange": "SSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "20210209",
-      "delist_date": "20260703",
-      "is_hs": "N",
-      "act_name": "何凡,蒋利顺,董津",
       "act_ent_type": "自然人"
     },
     {
@@ -87370,7 +87218,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄泽忠",
+      "act_name": "黄炎煌",
       "act_ent_type": "自然人"
     },
     {
@@ -87414,12 +87262,12 @@
     {
       "ts_code": "001248.SZ",
       "symbol": "001248",
-      "name": "C华润新能源",
+      "name": "华润新能源",
       "area": "深圳",
       "industry": "新型电力",
       "fullname": "华润新能源控股有限公司",
       "enname": "China Resources New Energy Holdings Company Limited",
-      "cnspell": "CHRXNY",
+      "cnspell": "HRXNY",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87429,6 +87277,25 @@
       "is_hs": "N",
       "act_name": "中国华润有限公司",
       "act_ent_type": "中央国企"
+    },
+    {
+      "ts_code": "301583.SZ",
+      "symbol": "301583",
+      "name": "托伦斯",
+      "area": "江苏",
+      "industry": "机械基件",
+      "fullname": "托伦斯精密制造(江苏)股份有限公司",
+      "enname": "Tolerance Technology (Jiangsu)Co., Ltd.",
+      "cnspell": "TLS",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260710",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "钱珂",
+      "act_ent_type": "自然人"
     }
   ]
 }
