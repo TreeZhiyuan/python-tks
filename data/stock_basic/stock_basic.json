@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-07-11T17:45:21",
+  "generated_at": "2026-07-18T17:46:21",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4593,
+  "row_count": 4590,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -67,25 +67,6 @@
       "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
-    },
-    {
-      "ts_code": "000004.SZ",
-      "symbol": "000004",
-      "name": "国华退",
-      "area": null,
-      "industry": null,
-      "fullname": "深圳国华网安科技股份有限公司",
-      "enname": "Shenzhen Guohua Network Security Technology Co., Ltd.",
-      "cnspell": "GHT",
-      "market": "主板",
-      "exchange": "SZSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "19901201",
-      "delist_date": null,
-      "is_hs": "N",
-      "act_name": "李映彤",
-      "act_ent_type": "自然人"
     },
     {
       "ts_code": "000006.SZ",
@@ -3016,12 +2997,12 @@
     {
       "ts_code": "000595.SZ",
       "symbol": "000595",
-      "name": "宝塔实业",
+      "name": "新能股份",
       "area": "宁夏",
       "industry": "新型电力",
       "fullname": "宁夏国运新能源股份有限公司",
       "enname": "Ningxia Guoyun New Energy Co., Ltd.",
-      "cnspell": "BTSY",
+      "cnspell": "XNGF",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -10065,12 +10046,12 @@
     {
       "ts_code": "002005.SZ",
       "symbol": "002005",
-      "name": "ST德豪",
+      "name": "德豪润达",
       "area": "安徽",
       "industry": "家用电器",
       "fullname": "安徽德豪润达电气股份有限公司",
       "enname": "Elec-Tech International Co., Ltd.",
-      "cnspell": "STDH",
+      "cnspell": "DHRD",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -15797,7 +15778,7 @@
       "list_date": "20091218",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "枣庄市国有资产监督管理委员会",
+      "act_name": "枣庄市财政局",
       "act_ent_type": "地方国企"
     },
     {
@@ -16354,12 +16335,12 @@
     {
       "ts_code": "002356.SZ",
       "symbol": "002356",
-      "name": "赫美集团",
+      "name": "鹏飞绿能",
       "area": "深圳",
       "industry": "其他商业",
       "fullname": "深圳鹏飞绿能能源发展股份有限公司",
       "enname": "Shenzhen Pengfei GreenEnergy Development Co., Ltd.",
-      "cnspell": "HMJT",
+      "cnspell": "PFLN",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -23346,19 +23327,19 @@
     {
       "ts_code": "002759.SZ",
       "symbol": "002759",
-      "name": "天际股份",
+      "name": "ST天际",
       "area": "广东",
       "industry": "电气设备",
       "fullname": "天际新能源科技股份有限公司",
       "enname": "Tonze New Energy Technology Co.,Ltd.",
-      "cnspell": "TJGF",
+      "cnspell": "STTJ",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20150528",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "吴锡盾,池锦华",
       "act_ent_type": null
     },
@@ -24140,25 +24121,6 @@
       "is_hs": "S",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
-    },
-    {
-      "ts_code": "002808.SZ",
-      "symbol": "002808",
-      "name": "恒久退",
-      "area": null,
-      "industry": null,
-      "fullname": "苏州恒久光电科技股份有限公司",
-      "enname": "Suzhou Goldengreen Technologies Ltd.",
-      "cnspell": "HJT",
-      "market": "主板",
-      "exchange": "SZSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "20160812",
-      "delist_date": null,
-      "is_hs": "N",
-      "act_name": "余荣清",
-      "act_ent_type": "自然人"
     },
     {
       "ts_code": "002809.SZ",
@@ -25738,25 +25700,6 @@
       "act_ent_type": "无"
     },
     {
-      "ts_code": "002898.SZ",
-      "symbol": "002898",
-      "name": "赛隆退",
-      "area": null,
-      "industry": null,
-      "fullname": "赛隆药业集团股份有限公司",
-      "enname": "Sailong Pharmaceutical Group Co.,Ltd.",
-      "cnspell": "SLT",
-      "market": "主板",
-      "exchange": "SZSE",
-      "curr_type": "CNY",
-      "list_status": "L",
-      "list_date": "20170912",
-      "delist_date": null,
-      "is_hs": "N",
-      "act_name": "无实际控制人",
-      "act_ent_type": "无"
-    },
-    {
       "ts_code": "002899.SZ",
       "symbol": "002899",
       "name": "英派斯",
@@ -27197,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邢卫民",
+      "act_name": "喻自文",
       "act_ent_type": "自然人"
     },
     {
@@ -39471,7 +39414,7 @@
       "list_date": "20170406",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "陈志强",
+      "act_name": "吴坤祥",
       "act_ent_type": "自然人"
     },
     {
@@ -40060,7 +40003,7 @@
       "list_date": "20170613",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "章卫国",
+      "act_name": "王建绘,王建纲,王新,王科",
       "act_ent_type": "自然人"
     },
     {
@@ -40383,7 +40326,7 @@
       "list_date": "20170801",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "徐长军,郑新标",
+      "act_name": "徐长军",
       "act_ent_type": "自然人"
     },
     {
@@ -48496,7 +48439,7 @@
       "list_date": "20211215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "温世旭",
+      "act_name": "包贺林",
       "act_ent_type": "自然人"
     },
     {
@@ -51859,7 +51802,7 @@
       "list_date": "20230425",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "钱曙光",
+      "act_name": "汪炉生",
       "act_ent_type": "自然人"
     },
     {
@@ -74735,7 +74678,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "王君垚",
+      "act_name": "韩明海",
       "act_ent_type": "自然人"
     },
     {
@@ -78896,8 +78839,8 @@
       "list_date": "20160205",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "徐雄",
-      "act_ent_type": "自然人"
+      "act_name": "无实际控制人",
+      "act_ent_type": "无"
     },
     {
       "ts_code": "603378.SH",
@@ -79151,7 +79094,7 @@
       "symbol": "603393",
       "name": "新天然气",
       "area": "新疆",
-      "industry": "供气供热",
+      "industry": "石油开采",
       "fullname": "新疆鑫泰天然气股份有限公司",
       "enname": "Xinjiang Xintai Natural Gas Co.,Ltd.",
       "cnspell": "XTRQ",
@@ -82183,7 +82126,7 @@
       "list_date": "20170711",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "王国良",
+      "act_name": "韩元再",
       "act_ent_type": "自然人"
     },
     {
@@ -82582,7 +82525,7 @@
       "list_date": "20170420",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "任建宏",
+      "act_name": "李月杰",
       "act_ent_type": "自然人"
     },
     {
@@ -83133,7 +83076,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明聪",
+      "act_name": "胡明森",
       "act_ent_type": "自然人"
     },
     {
@@ -84254,8 +84197,8 @@
       "list_date": "20170125",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "金红萍,陶峰华",
-      "act_ent_type": "自然人"
+      "act_name": "无锡市新吴区人民政府",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "603967.SH",
@@ -87218,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄炎煌",
+      "act_name": "黄泽忠",
       "act_ent_type": "自然人"
     },
     {
