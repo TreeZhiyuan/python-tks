@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-07-18T17:46:21",
+  "generated_at": "2026-07-25T17:49:53",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -2440,8 +2440,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "国务院国有资产监督管理委员会",
-      "act_ent_type": "中央国企"
+      "act_name": "南昌市国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "000551.SZ",
@@ -6676,7 +6676,7 @@
       "list_status": "L",
       "list_date": "19990203",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "蔡东晨",
       "act_ent_type": "自然人"
     },
@@ -7418,7 +7418,7 @@
       "list_date": "20000406",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "天津港保税区国有资产管理局",
+      "act_name": "天津港保税区管理委员会(天津空港经济区管理委员会)",
       "act_ent_type": "地方国企"
     },
     {
@@ -13099,7 +13099,7 @@
       "list_date": "20071012",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "李斌",
+      "act_name": "王建英",
       "act_ent_type": "自然人"
     },
     {
@@ -13542,12 +13542,12 @@
     {
       "ts_code": "002199.SZ",
       "symbol": "002199",
-      "name": "*ST东晶",
+      "name": "东晶电子",
       "area": "浙江",
       "industry": "元器件",
       "fullname": "浙江东晶电子股份有限公司",
       "enname": "Zhejiang East Crystal Electronic Co., Ltd.",
-      "cnspell": "*STDJ",
+      "cnspell": "DJDZ",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -15150,7 +15150,7 @@
       "list_status": "L",
       "list_date": "20090903",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张建云",
       "act_ent_type": "自然人"
     },
@@ -20129,7 +20129,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "江淦钧",
+      "act_name": "柯建生",
       "act_ent_type": "自然人"
     },
     {
@@ -21617,12 +21617,12 @@
     {
       "ts_code": "002656.SZ",
       "symbol": "002656",
-      "name": "*ST摩登",
+      "name": "摩登大道",
       "area": "广东",
       "industry": "服饰",
       "fullname": "摩登大道时尚集团股份有限公司",
       "enname": "Modern Avenue Group Co., Ltd.",
-      "cnspell": "*STMD",
+      "cnspell": "MDDD",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -22567,12 +22567,12 @@
     {
       "ts_code": "002713.SZ",
       "symbol": "002713",
-      "name": "*ST东易",
+      "name": "东易日盛",
       "area": "北京",
       "industry": "装修装饰",
       "fullname": "东易日盛家居装饰集团股份有限公司",
       "enname": "Dong Yi Ri Sheng Home Decoration Group Co.,Ltd.",
-      "cnspell": "*STDY",
+      "cnspell": "DYRS",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -27140,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "喻自文",
+      "act_name": "邢卫民",
       "act_ent_type": "自然人"
     },
     {
@@ -29856,7 +29856,7 @@
       "list_status": "L",
       "list_date": "20100708",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张栋梁",
       "act_ent_type": "自然人"
     },
@@ -30996,7 +30996,7 @@
       "list_status": "L",
       "list_date": "20110107",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "新疆维吾尔自治区人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -34207,7 +34207,7 @@
       "list_status": "L",
       "list_date": "20120801",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "李洪国",
       "act_ent_type": "自然人"
     },
@@ -37095,7 +37095,7 @@
       "list_status": "L",
       "list_date": "20160324",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "吴立群",
       "act_ent_type": "自然人"
     },
@@ -59705,7 +59705,7 @@
       "list_status": "L",
       "list_date": "20010316",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "吉林省人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -67477,8 +67477,8 @@
       "list_date": "19960130",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "郑永刚",
-      "act_ent_type": "自然人"
+      "act_name": "安徽省人民政府国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "600885.SH",
@@ -73917,7 +73917,7 @@
       "list_status": "L",
       "list_date": "20250605",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "仇建平,仇菲",
       "act_ent_type": "自然人"
     },
@@ -79199,7 +79199,7 @@
       "list_status": "L",
       "list_date": "20250620",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "陆亚洲",
       "act_ent_type": "自然人"
     },
@@ -82316,8 +82316,8 @@
       "list_date": "20160516",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "闫鹏飞",
-      "act_ent_type": "自然人"
+      "act_name": "淄博市财政局",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "603786.SH",
@@ -82525,7 +82525,7 @@
       "list_date": "20170420",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "李月杰",
+      "act_name": "任建宏",
       "act_ent_type": "自然人"
     },
     {
@@ -83076,7 +83076,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明森",
+      "act_name": "胡明聪",
       "act_ent_type": "自然人"
     },
     {
@@ -86818,7 +86818,7 @@
       "list_status": "L",
       "list_date": "20260522",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "陈越鹏",
       "act_ent_type": "自然人"
     },
@@ -86875,7 +86875,7 @@
       "list_status": "L",
       "list_date": "20260518",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "广州市人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
@@ -86989,7 +86989,7 @@
       "list_status": "L",
       "list_date": "20260609",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "徐剑虹",
       "act_ent_type": "自然人"
     },
