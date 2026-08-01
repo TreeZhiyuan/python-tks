@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-07-25T17:49:53",
+  "generated_at": "2026-08-01T17:52:08",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4590,
+  "row_count": 4591,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -2440,8 +2440,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "南昌市国有资产监督管理委员会",
-      "act_ent_type": "地方国企"
+      "act_name": "国务院国有资产监督管理委员会",
+      "act_ent_type": "中央国企"
     },
     {
       "ts_code": "000551.SZ",
@@ -5315,12 +5315,12 @@
     {
       "ts_code": "000793.SZ",
       "symbol": "000793",
-      "name": "*ST华闻",
+      "name": "ST华闻",
       "area": "海南",
       "industry": "出版业",
       "fullname": "华闻传媒投资集团股份有限公司",
       "enname": "Huawen Media Group",
-      "cnspell": "*STHW",
+      "cnspell": "STHW",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -5695,12 +5695,12 @@
     {
       "ts_code": "000820.SZ",
       "symbol": "000820",
-      "name": "*ST节能",
+      "name": "神雾节能",
       "area": "江西",
       "industry": "综合类",
       "fullname": "神雾节能股份有限公司",
       "enname": "Shenwu Energy Saving Co., Ltd.",
-      "cnspell": "*STJN",
+      "cnspell": "SWJN",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -27140,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邢卫民",
+      "act_name": "喻自文",
       "act_ent_type": "自然人"
     },
     {
@@ -39414,7 +39414,7 @@
       "list_date": "20170406",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "吴坤祥",
+      "act_name": "陈志强",
       "act_ent_type": "自然人"
     },
     {
@@ -44639,7 +44639,7 @@
       "list_date": "20201222",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "陈树林",
+      "act_name": "蒋小明",
       "act_ent_type": "自然人"
     },
     {
@@ -48439,7 +48439,7 @@
       "list_date": "20211215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "包贺林",
+      "act_name": "温世旭",
       "act_ent_type": "自然人"
     },
     {
@@ -52904,7 +52904,7 @@
       "list_date": "20230921",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "孙雁军",
+      "act_name": "何雪娟",
       "act_ent_type": "自然人"
     },
     {
@@ -64177,12 +64177,12 @@
     {
       "ts_code": "600676.SH",
       "symbol": "600676",
-      "name": "交运股份",
+      "name": "久事动娱",
       "area": "上海",
       "industry": "汽车配件",
       "fullname": "上海久事动娱文旅集团股份有限公司",
       "enname": "Shanghai Juss Sports & Entertainment Group Co., Ltd.",
-      "cnspell": "JYGF",
+      "cnspell": "JSDY",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -69149,7 +69149,7 @@
       "list_date": "20160316",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "刘建军",
+      "act_name": "卢军亮",
       "act_ent_type": "自然人"
     },
     {
@@ -74678,7 +74678,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "韩明海",
+      "act_name": "王君垚",
       "act_ent_type": "自然人"
     },
     {
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖庆",
+      "act_name": "周祖伟",
       "act_ent_type": "自然人"
     },
     {
@@ -82126,7 +82126,7 @@
       "list_date": "20170711",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "韩元再",
+      "act_name": "王国良",
       "act_ent_type": "自然人"
     },
     {
@@ -83076,7 +83076,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明聪",
+      "act_name": "胡明森",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄泽忠",
+      "act_name": "黄炎煌",
       "act_ent_type": "自然人"
     },
     {
@@ -87238,6 +87238,25 @@
       "delist_date": null,
       "is_hs": "N",
       "act_name": "钱珂",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301677.SZ",
+      "symbol": "301677",
+      "name": "C欣兴工具",
+      "area": "浙江",
+      "industry": "机械基件",
+      "fullname": "浙江欣兴工具股份有限公司",
+      "enname": "Zhejiang Xinxing Tools Co., Ltd.",
+      "cnspell": "CXXGJ",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260730",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "朱冬伟,朱红梅,姚红飞,朱虎林,郁其娟",
       "act_ent_type": "自然人"
     }
   ]
