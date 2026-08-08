@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-08-01T17:52:08",
+  "generated_at": "2026-08-08T17:20:22",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4591,
+  "row_count": 4594,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -2440,8 +2440,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "国务院国有资产监督管理委员会",
-      "act_ent_type": "中央国企"
+      "act_name": "南昌市国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "000551.SZ",
@@ -13827,12 +13827,12 @@
     {
       "ts_code": "002214.SZ",
       "symbol": "002214",
-      "name": "*ST大立",
+      "name": "大立科技",
       "area": "浙江",
       "industry": "电器仪表",
       "fullname": "浙江大立科技股份有限公司",
       "enname": "Zhejiang Dali Technology Co.,Ltd",
-      "cnspell": "*STDL",
+      "cnspell": "DLKJ",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -20129,7 +20129,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "柯建生",
+      "act_name": "江淦钧",
       "act_ent_type": "自然人"
     },
     {
@@ -21734,8 +21734,8 @@
       "name": "峰璟股份",
       "area": "北京",
       "industry": "汽车配件",
-      "fullname": "北京峰璟汽车零部件股份有限公司",
-      "enname": "Beijing Fengjing Automotive Parts Co., Ltd.",
+      "fullname": "峰璟新能源科技股份有限公司",
+      "enname": "Fengjing New Energy Technology Co., Ltd.",
       "cnspell": "FJGF",
       "market": "主板",
       "exchange": "SZSE",
@@ -27140,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "喻自文",
+      "act_name": "邢卫民",
       "act_ent_type": "自然人"
     },
     {
@@ -27748,7 +27748,7 @@
       "list_date": "20201026",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "孙瑞鸿,孙孟慧,卓建荣,孙马宝玉",
+      "act_name": "孙瑞鸿,孙孟慧,卓建荣,孙柏豪",
       "act_ent_type": "自然人"
     },
     {
@@ -30357,12 +30357,12 @@
     {
       "ts_code": "300125.SZ",
       "symbol": "300125",
-      "name": "*ST聆达",
+      "name": "聆达股份",
       "area": "辽宁",
       "industry": "电气设备",
       "fullname": "聆达集团股份有限公司",
       "enname": "Lingda Group Co.,Ltd.",
-      "cnspell": "*STLD",
+      "cnspell": "LDGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -33663,12 +33663,12 @@
     {
       "ts_code": "300311.SZ",
       "symbol": "300311",
-      "name": "ST任子行",
+      "name": "任子行",
       "area": "深圳",
       "industry": "软件服务",
       "fullname": "任子行网络技术股份有限公司",
       "enname": "Surfilter Network Technology Co., Ltd",
-      "cnspell": "STRZX",
+      "cnspell": "RZX",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -45769,8 +45769,8 @@
       "name": "志特新材",
       "area": "江西",
       "industry": "建筑工程",
-      "fullname": "江西志特新材料股份有限公司",
-      "enname": "Jiangxi GETO New Materials Corporation Limited",
+      "fullname": "志特新材料集团股份有限公司",
+      "enname": "GETO New Materials Group Corporation Limited",
       "cnspell": "ZTXC",
       "market": "创业板",
       "exchange": "SZSE",
@@ -46919,7 +46919,7 @@
       "list_date": "20210824",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "李光荣",
+      "act_name": "高志江",
       "act_ent_type": "自然人"
     },
     {
@@ -47632,7 +47632,7 @@
       "area": "深圳",
       "industry": "建筑工程",
       "fullname": "深城交科技集团股份有限公司",
-      "enname": "Shenzhen Urban Transport Planning Center Co., Ltd",
+      "enname": "Shenzhen Urban Transport Technology Group Co.,Ltd.",
       "cnspell": "SCJ",
       "market": "创业板",
       "exchange": "SZSE",
@@ -58040,12 +58040,12 @@
     {
       "ts_code": "600238.SH",
       "symbol": "600238",
-      "name": "*ST椰岛",
+      "name": "ST椰岛",
       "area": "海南",
       "industry": "红黄酒",
       "fullname": "海南椰岛(集团)股份有限公司",
       "enname": "Hainan Yedao (Group)Co.,Ltd",
-      "cnspell": "*STYD",
+      "cnspell": "STYD",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -58167,7 +58167,7 @@
       "list_date": "20040130",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "柳州市人民政府国有资产监督管理委员会",
+      "act_name": "广西壮族自治区人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
     {
@@ -60371,7 +60371,7 @@
       "list_date": "20040401",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "何振亚",
+      "act_name": "陈志茂",
       "act_ent_type": "自然人"
     },
     {
@@ -60738,12 +60738,12 @@
     {
       "ts_code": "600439.SH",
       "symbol": "600439",
-      "name": "瑞贝卡",
+      "name": "ST瑞贝卡",
       "area": "河南",
       "industry": "服饰",
       "fullname": "河南瑞贝卡发制品股份有限公司",
       "enname": "Henan Rebecca Hair Products Co.,Ltd",
-      "cnspell": "RBK",
+      "cnspell": "STRBK",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -61973,19 +61973,19 @@
     {
       "ts_code": "600530.SH",
       "symbol": "600530",
-      "name": "交大昂立",
+      "name": "ST交昂",
       "area": "上海",
       "industry": "医疗保健",
       "fullname": "上海交大昂立股份有限公司",
       "enname": "Shanghai Jiaoda Onlly Co.,Ltd",
-      "cnspell": "JDAL",
+      "cnspell": "STJA",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20010702",
       "delist_date": null,
-      "is_hs": "H",
+      "is_hs": "N",
       "act_name": "嵇霖",
       "act_ent_type": "自然人"
     },
@@ -63553,8 +63553,8 @@
       "name": "浙数文化",
       "area": "浙江",
       "industry": "互联网",
-      "fullname": "浙报数字文化集团股份有限公司",
-      "enname": "Zhejiang Daily Digital Culture Group Co.,Ltd",
+      "fullname": "浙数文化科技集团股份有限公司",
+      "enname": "ZHEJIANG DIGITAL CULTURE TECHNOLOGYGROUP CO.,LTD.",
       "cnspell": "ZSWH",
       "market": "主板",
       "exchange": "SSE",
@@ -74678,7 +74678,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "王君垚",
+      "act_name": "韩明海",
       "act_ent_type": "自然人"
     },
     {
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖伟",
+      "act_name": "周祖庆",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄炎煌",
+      "act_name": "黄泽忠",
       "act_ent_type": "自然人"
     },
     {
@@ -87243,12 +87243,12 @@
     {
       "ts_code": "301677.SZ",
       "symbol": "301677",
-      "name": "C欣兴工具",
+      "name": "欣兴工具",
       "area": "浙江",
       "industry": "机械基件",
       "fullname": "浙江欣兴工具股份有限公司",
       "enname": "Zhejiang Xinxing Tools Co., Ltd.",
-      "cnspell": "CXXGJ",
+      "cnspell": "XXGJ",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87257,6 +87257,63 @@
       "delist_date": null,
       "is_hs": "N",
       "act_name": "朱冬伟,朱红梅,姚红飞,朱虎林,郁其娟",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "001232.SZ",
+      "symbol": "001232",
+      "name": "C嘉立创",
+      "area": "深圳",
+      "industry": "元器件",
+      "fullname": "深圳嘉立创科技集团股份有限公司",
+      "enname": "Shenzhen JLC Technology Group Co., Ltd",
+      "cnspell": "CJLC",
+      "market": "主板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260804",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "丁会,丁会响",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "603468.SH",
+      "symbol": "603468",
+      "name": "C津富",
+      "area": "天津",
+      "industry": "摩托车",
+      "fullname": "天津富士达自行车工业股份有限公司",
+      "enname": "TIANJIN FUJI-TA BICYCLE INDUSTRIAL CO., LTD.",
+      "cnspell": "CJF",
+      "market": "主板",
+      "exchange": "SSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260806",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "辛建生,赵丽琴",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301707.SZ",
+      "symbol": "301707",
+      "name": "展芯股份",
+      "area": "江苏",
+      "industry": "元器件",
+      "fullname": "江苏展芯半导体技术股份有限公司",
+      "enname": "Jiangsu X-chip Semiconductor Technology Co., Ltd.",
+      "cnspell": "ZXGF",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260807",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "温振霖,徐立刚",
       "act_ent_type": "自然人"
     }
   ]
