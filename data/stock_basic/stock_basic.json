@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-08-08T17:20:22",
+  "generated_at": "2026-08-15T17:11:50",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4594,
+  "row_count": 4595,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -2440,8 +2440,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "南昌市国有资产监督管理委员会",
-      "act_ent_type": "地方国企"
+      "act_name": "国务院国有资产监督管理委员会",
+      "act_ent_type": "中央国企"
     },
     {
       "ts_code": "000551.SZ",
@@ -30490,12 +30490,12 @@
     {
       "ts_code": "300132.SZ",
       "symbol": "300132",
-      "name": "青松股份",
+      "name": "诺斯贝尔",
       "area": "福建",
       "industry": "化工原料",
-      "fullname": "福建青松股份有限公司",
-      "enname": "Fujian Green Pine Co., Ltd",
-      "cnspell": "QSGF",
+      "fullname": "福建诺斯贝尔控股股份有限公司",
+      "enname": "FuJian Nox Bellcow Holdings Co., Ltd.",
+      "cnspell": "NSBE",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -32105,12 +32105,12 @@
     {
       "ts_code": "300223.SZ",
       "symbol": "300223",
-      "name": "北京君正",
+      "name": "君正股份",
       "area": "北京",
       "industry": "半导体",
       "fullname": "北京君正集成电路股份有限公司",
       "enname": "Ingenic Semiconductor Co., Ltd.",
-      "cnspell": "BJJZ",
+      "cnspell": "JZGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -46919,7 +46919,7 @@
       "list_date": "20210824",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "高志江",
+      "act_name": "李光荣",
       "act_ent_type": "自然人"
     },
     {
@@ -60133,8 +60133,8 @@
       "name": "龙净环保",
       "area": "福建",
       "industry": "环境保护",
-      "fullname": "福建龙净环保股份有限公司",
-      "enname": "Fujian Longking Co.,Ltd",
+      "fullname": "紫金龙净环保新能源股份有限公司",
+      "enname": "Zijin Longking Co.,Ltd.",
       "cnspell": "LJHB",
       "market": "主板",
       "exchange": "SSE",
@@ -65643,8 +65643,8 @@
       "name": "宁波富邦",
       "area": "浙江",
       "industry": "铝",
-      "fullname": "宁波富邦精业集团股份有限公司",
-      "enname": "Ningbo Fubang Jingye Group Co.,Ltd",
+      "fullname": "宁波富邦高新材料股份有限公司",
+      "enname": "NINGBO FUBANG HIGH-TECH MATERIALS CO.,LTD",
       "cnspell": "NBFB",
       "market": "主板",
       "exchange": "SSE",
@@ -69595,8 +69595,8 @@
       "name": "四川成渝",
       "area": "四川",
       "industry": "路桥",
-      "fullname": "四川成渝高速公路股份有限公司",
-      "enname": "Sichuan Expressway Company Limited",
+      "fullname": "四川成渝高速公路集团股份有限公司",
+      "enname": "CHUAN EXPRESSWAY GROUP COMPANY LIMITE",
       "cnspell": "SCCY",
       "market": "主板",
       "exchange": "SSE",
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖庆",
+      "act_name": "周祖伟",
       "act_ent_type": "自然人"
     },
     {
@@ -82392,8 +82392,8 @@
       "list_date": "20150427",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "无实际控制人",
-      "act_ent_type": "无"
+      "act_name": "叶进",
+      "act_ent_type": "自然人"
     },
     {
       "ts_code": "603790.SH",
@@ -84159,8 +84159,8 @@
       "list_date": "20160517",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "王立言,王海荣",
-      "act_ent_type": "自然人"
+      "act_name": "无实际控制人",
+      "act_ent_type": "无"
     },
     {
       "ts_code": "603960.SH",
@@ -86458,7 +86458,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "余元康",
+      "act_name": "陈恩乐",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄泽忠",
+      "act_name": "黄炎煌",
       "act_ent_type": "自然人"
     },
     {
@@ -87262,12 +87262,12 @@
     {
       "ts_code": "001232.SZ",
       "symbol": "001232",
-      "name": "C嘉立创",
+      "name": "嘉立创",
       "area": "深圳",
       "industry": "元器件",
       "fullname": "深圳嘉立创科技集团股份有限公司",
       "enname": "Shenzhen JLC Technology Group Co., Ltd",
-      "cnspell": "CJLC",
+      "cnspell": "JLC",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87281,12 +87281,12 @@
     {
       "ts_code": "603468.SH",
       "symbol": "603468",
-      "name": "C津富",
+      "name": "津富士达",
       "area": "天津",
       "industry": "摩托车",
       "fullname": "天津富士达自行车工业股份有限公司",
       "enname": "TIANJIN FUJI-TA BICYCLE INDUSTRIAL CO., LTD.",
-      "cnspell": "CJF",
+      "cnspell": "JFSD",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -87314,6 +87314,25 @@
       "delist_date": null,
       "is_hs": "N",
       "act_name": "温振霖,徐立刚",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301717.SZ",
+      "symbol": "301717",
+      "name": "C超纯应材",
+      "area": "四川",
+      "industry": "半导体",
+      "fullname": "成都超纯应用材料股份有限公司",
+      "enname": "Chengdu Ultra Pure Applied Materials Co., LTD.",
+      "cnspell": "CCCYC",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260811",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "柴杰",
       "act_ent_type": "自然人"
     }
   ]
