@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-08-15T17:11:50",
+  "generated_at": "2026-08-22T17:11:16",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4595,
+  "row_count": 4596,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -2440,8 +2440,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "国务院国有资产监督管理委员会",
-      "act_ent_type": "中央国企"
+      "act_name": "南昌市国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "000551.SZ",
@@ -14201,7 +14201,7 @@
       "list_date": "20080516",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "林旭曦",
+      "act_name": "李宁,王磊",
       "act_ent_type": "自然人"
     },
     {
@@ -22143,7 +22143,7 @@
       "list_date": "20120703",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "浙江省人民政府国有资产监督管理委员会",
+      "act_name": "桐乡市财政局",
       "act_ent_type": "地方国企"
     },
     {
@@ -27140,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邢卫民",
+      "act_name": "喻自文",
       "act_ent_type": "自然人"
     },
     {
@@ -41740,7 +41740,7 @@
       "symbol": "300765",
       "name": "石药创新",
       "area": "河北",
-      "industry": "食品",
+      "industry": "生物制药",
       "fullname": "石药创新制药股份有限公司",
       "enname": "CSPC Innovation Pharmaceutical Co.,Ltd.",
       "cnspell": "SYCX",
@@ -60130,12 +60130,12 @@
     {
       "ts_code": "600388.SH",
       "symbol": "600388",
-      "name": "龙净环保",
+      "name": "紫金龙净",
       "area": "福建",
       "industry": "环境保护",
       "fullname": "紫金龙净环保新能源股份有限公司",
       "enname": "Zijin Longking Co.,Ltd.",
-      "cnspell": "LJHB",
+      "cnspell": "ZJLJ",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -65640,12 +65640,12 @@
     {
       "ts_code": "600768.SH",
       "symbol": "600768",
-      "name": "宁波富邦",
+      "name": "富邦新材",
       "area": "浙江",
       "industry": "铝",
       "fullname": "宁波富邦高新材料股份有限公司",
       "enname": "NINGBO FUBANG HIGH-TECH MATERIALS CO.,LTD",
-      "cnspell": "NBFB",
+      "cnspell": "FBXC",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖伟",
+      "act_name": "周祖庆",
       "act_ent_type": "自然人"
     },
     {
@@ -82525,7 +82525,7 @@
       "list_date": "20170420",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "任建宏",
+      "act_name": "李月杰",
       "act_ent_type": "自然人"
     },
     {
@@ -86458,7 +86458,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "陈恩乐",
+      "act_name": "余元康",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄炎煌",
+      "act_name": "黄泽忠",
       "act_ent_type": "自然人"
     },
     {
@@ -87319,12 +87319,12 @@
     {
       "ts_code": "301717.SZ",
       "symbol": "301717",
-      "name": "C超纯应材",
+      "name": "超纯应材",
       "area": "四川",
       "industry": "半导体",
       "fullname": "成都超纯应用材料股份有限公司",
       "enname": "Chengdu Ultra Pure Applied Materials Co., LTD.",
-      "cnspell": "CCCYC",
+      "cnspell": "CCYC",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87333,6 +87333,25 @@
       "delist_date": null,
       "is_hs": "N",
       "act_name": "柴杰",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301655.SZ",
+      "symbol": "301655",
+      "name": "C绿控传动",
+      "area": "江苏",
+      "industry": "汽车配件",
+      "fullname": "苏州绿控传动科技股份有限公司",
+      "enname": "Suzhou Lvkon Transmission Technology Co., Ltd.",
+      "cnspell": "CLKCD",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260820",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "李磊",
       "act_ent_type": "自然人"
     }
   ]
