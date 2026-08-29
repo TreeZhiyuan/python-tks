@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-08-22T17:11:16",
+  "generated_at": "2026-08-29T19:33:56",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -2440,8 +2440,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "南昌市国有资产监督管理委员会",
-      "act_ent_type": "地方国企"
+      "act_name": "国务院国有资产监督管理委员会",
+      "act_ent_type": "中央国企"
     },
     {
       "ts_code": "000551.SZ",
@@ -3009,7 +3009,7 @@
       "list_status": "L",
       "list_date": "19960419",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "宁夏回族自治区人民政府",
       "act_ent_type": "地方国企"
     },
@@ -11015,12 +11015,12 @@
     {
       "ts_code": "002058.SZ",
       "symbol": "002058",
-      "name": "威尔泰",
+      "name": "紫竹高科",
       "area": "上海",
       "industry": "电气设备",
-      "fullname": "上海威尔泰工业自动化股份有限公司",
-      "enname": "Shanghai Welltech Automation Co.,Ltd.",
-      "cnspell": "WET",
+      "fullname": "上海紫竹高新科技股份有限公司",
+      "enname": "SHANGHAI ZIZHU HIGH-TECH SCIENCE AND TECHNOLOGY CO.,LTD.",
+      "cnspell": "ZZGK",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -20129,7 +20129,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "江淦钧",
+      "act_name": "柯建生",
       "act_ent_type": "自然人"
     },
     {
@@ -22579,7 +22579,7 @@
       "list_status": "L",
       "list_date": "20140219",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "张建华",
       "act_ent_type": "自然人"
     },
@@ -41656,8 +41656,8 @@
       "list_date": "20190128",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "Boliang Lou,郑北,楼小强",
-      "act_ent_type": null
+      "act_name": "Boliang Lou",
+      "act_ent_type": "自然人"
     },
     {
       "ts_code": "300760.SZ",
@@ -41932,7 +41932,7 @@
       "area": "陕西",
       "industry": "航空",
       "fullname": "西安三角防务股份有限公司",
-      "enname": "Xi'an Triangle Defense Incorporated Company",
+      "enname": "Xi'an Triangle Aviation Incorporated Company",
       "cnspell": "SJFW",
       "market": "创业板",
       "exchange": "SZSE",
@@ -44639,7 +44639,7 @@
       "list_date": "20201222",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "蒋小明",
+      "act_name": "陈树林",
       "act_ent_type": "自然人"
     },
     {
@@ -48065,19 +48065,19 @@
     {
       "ts_code": "301117.SZ",
       "symbol": "301117",
-      "name": "佳缘科技",
+      "name": "ST佳缘",
       "area": "四川",
       "industry": "软件服务",
       "fullname": "佳缘科技股份有限公司",
       "enname": "Jiayuan Science and Technology Co.,Ltd.",
-      "cnspell": "JYKJ",
+      "cnspell": "STJY",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20220117",
       "delist_date": null,
-      "is_hs": "S",
+      "is_hs": "N",
       "act_name": "王进",
       "act_ent_type": "自然人"
     },
@@ -48439,7 +48439,7 @@
       "list_date": "20211215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "温世旭",
+      "act_name": "包贺林",
       "act_ent_type": "自然人"
     },
     {
@@ -52819,7 +52819,7 @@
       "area": "广东",
       "industry": "元器件",
       "fullname": "广东思泉新材料股份有限公司",
-      "enname": "Guangdong Suqun New Material Co.,Ltd.",
+      "enname": "Guangdong SQ New Material Co., Ltd.",
       "cnspell": "SQXC",
       "market": "创业板",
       "exchange": "SZSE",
@@ -52904,7 +52904,7 @@
       "list_date": "20230921",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "何雪娟",
+      "act_name": "孙雁军",
       "act_ent_type": "自然人"
     },
     {
@@ -56938,12 +56938,12 @@
     {
       "ts_code": "600165.SH",
       "symbol": "600165",
-      "name": "ST宁科",
+      "name": "宁科生物",
       "area": "宁夏",
       "industry": "化工原料",
       "fullname": "宁夏中科生物科技股份有限公司",
       "enname": "Ningxia Zhongke Biotechnology Co., Ltd",
-      "cnspell": "STNK",
+      "cnspell": "NKSW",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -61878,12 +61878,12 @@
     {
       "ts_code": "600525.SH",
       "symbol": "600525",
-      "name": "ST长园",
+      "name": "长园集团",
       "area": "深圳",
       "industry": "电气设备",
       "fullname": "长园科技集团股份有限公司",
       "enname": "Changyuan Technology Group Ltd.",
-      "cnspell": "STCY",
+      "cnspell": "CYJT",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -65804,7 +65804,7 @@
       "list_status": "L",
       "list_date": "19961121",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "无实际控制人",
       "act_ent_type": "无"
     },
@@ -67989,7 +67989,7 @@
       "list_status": "L",
       "list_date": "20250716",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "中国华电集团有限公司",
       "act_ent_type": "中央国企"
     },
@@ -74678,7 +74678,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "韩明海",
+      "act_name": "王君垚",
       "act_ent_type": "自然人"
     },
     {
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖庆",
+      "act_name": "周祖伟",
       "act_ent_type": "自然人"
     },
     {
@@ -77147,7 +77147,7 @@
       "list_status": "L",
       "list_date": "20250723",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "H",
       "act_name": "周京石,龙玲",
       "act_ent_type": "自然人"
     },
@@ -86458,7 +86458,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "余元康",
+      "act_name": "陈恩乐",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄泽忠",
+      "act_name": "黄炎煌",
       "act_ent_type": "自然人"
     },
     {
@@ -87198,7 +87198,7 @@
       "list_status": "L",
       "list_date": "20260626",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "王智勇",
       "act_ent_type": "自然人"
     },
@@ -87217,7 +87217,7 @@
       "list_status": "L",
       "list_date": "20260702",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "中国华润有限公司",
       "act_ent_type": "中央国企"
     },
@@ -87236,7 +87236,7 @@
       "list_status": "L",
       "list_date": "20260710",
       "delist_date": null,
-      "is_hs": "N",
+      "is_hs": "S",
       "act_name": "钱珂",
       "act_ent_type": "自然人"
     },
@@ -87338,12 +87338,12 @@
     {
       "ts_code": "301655.SZ",
       "symbol": "301655",
-      "name": "C绿控传动",
+      "name": "绿控传动",
       "area": "江苏",
       "industry": "汽车配件",
       "fullname": "苏州绿控传动科技股份有限公司",
       "enname": "Suzhou Lvkon Transmission Technology Co., Ltd.",
-      "cnspell": "CLKCD",
+      "cnspell": "LKCD",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
