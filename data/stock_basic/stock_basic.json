@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-08-29T19:33:56",
+  "generated_at": "2026-09-05T18:40:10",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4596,
+  "row_count": 4599,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -4346,12 +4346,12 @@
     {
       "ts_code": "000711.SZ",
       "symbol": "000711",
-      "name": "ST京蓝",
+      "name": "京蓝科技",
       "area": "黑龙江",
       "industry": "环境保护",
       "fullname": "铟靶新材(哈尔滨)股份有限公司",
       "enname": "Indium Target Advanced Materials Technology Co., Ltd.",
-      "cnspell": "STJL",
+      "cnspell": "JLKJ",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -20382,12 +20382,12 @@
     {
       "ts_code": "002586.SZ",
       "symbol": "002586",
-      "name": "ST围海",
+      "name": "围海股份",
       "area": "浙江",
       "industry": "建筑工程",
       "fullname": "浙江省围海建设集团股份有限公司",
       "enname": "Zhejiang Reclaim Construction Group Co., Ltd.",
-      "cnspell": "STWH",
+      "cnspell": "WHGF",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -27140,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "喻自文",
+      "act_name": "邢卫民",
       "act_ent_type": "自然人"
     },
     {
@@ -36456,12 +36456,12 @@
     {
       "ts_code": "300472.SZ",
       "symbol": "300472",
-      "name": "*ST新元",
+      "name": "ST新元",
       "area": "江西",
       "industry": "专用机械",
       "fullname": "万向新元科技股份有限公司",
       "enname": "New Universal Science and Technology Co., Ltd.",
-      "cnspell": "*STXY",
+      "cnspell": "STXY",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -39414,7 +39414,7 @@
       "list_date": "20170406",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "陈志强",
+      "act_name": "吴坤祥",
       "act_ent_type": "自然人"
     },
     {
@@ -44639,7 +44639,7 @@
       "list_date": "20201222",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "陈树林",
+      "act_name": "蒋小明",
       "act_ent_type": "自然人"
     },
     {
@@ -48439,7 +48439,7 @@
       "list_date": "20211215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "包贺林",
+      "act_name": "温世旭",
       "act_ent_type": "自然人"
     },
     {
@@ -51802,7 +51802,7 @@
       "list_date": "20230425",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "汪炉生",
+      "act_name": "钱曙光",
       "act_ent_type": "自然人"
     },
     {
@@ -52904,7 +52904,7 @@
       "list_date": "20230921",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "孙雁军",
+      "act_name": "何雪娟",
       "act_ent_type": "自然人"
     },
     {
@@ -57179,8 +57179,8 @@
       "list_date": "19981104",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "无实际控制人",
-      "act_ent_type": "无"
+      "act_name": "招商局集团有限公司",
+      "act_ent_type": "中央国企"
     },
     {
       "ts_code": "600180.SH",
@@ -59886,8 +59886,8 @@
       "name": "万向德农",
       "area": "黑龙江",
       "industry": "种植业",
-      "fullname": "万向德农股份有限公司",
-      "enname": "Wanxiang Doneed Co.,ltd",
+      "fullname": "万向德农股份公司",
+      "enname": "WanXiang Doneed Co.Ltd.",
       "cnspell": "WXDN",
       "market": "主板",
       "exchange": "SSE",
@@ -69596,7 +69596,7 @@
       "area": "四川",
       "industry": "路桥",
       "fullname": "四川成渝高速公路集团股份有限公司",
-      "enname": "CHUAN EXPRESSWAY GROUP COMPANY LIMITE",
+      "enname": "SICHUAN EXPRESSWAY GROUP COMPANY LIMITED",
       "cnspell": "SCCY",
       "market": "主板",
       "exchange": "SSE",
@@ -74393,7 +74393,7 @@
       "list_date": "20170410",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "淄博市财政局",
+      "act_name": "上海市国有资产监督管理委员会",
       "act_ent_type": "地方国企"
     },
     {
@@ -74678,7 +74678,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "王君垚",
+      "act_name": "韩明海",
       "act_ent_type": "自然人"
     },
     {
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖伟",
+      "act_name": "周祖庆",
       "act_ent_type": "自然人"
     },
     {
@@ -82791,7 +82791,7 @@
       "list_date": "20170802",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "长沙市人民政府国有资产监督管理委员会",
+      "act_name": "湖南湘江新区管理委员会",
       "act_ent_type": "地方国企"
     },
     {
@@ -83076,7 +83076,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明森",
+      "act_name": "胡明高",
       "act_ent_type": "自然人"
     },
     {
@@ -86458,7 +86458,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "陈恩乐",
+      "act_name": "余元康",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄炎煌",
+      "act_name": "黄泽忠",
       "act_ent_type": "自然人"
     },
     {
@@ -87353,6 +87353,63 @@
       "is_hs": "N",
       "act_name": "李磊",
       "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301688.SZ",
+      "symbol": "301688",
+      "name": "C格林生物",
+      "area": "浙江",
+      "industry": "化工原料",
+      "fullname": "格林生物科技股份有限公司",
+      "enname": "Hangzhou Grascent Co., Ltd.",
+      "cnspell": "CGLSW",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260902",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "陆文聪",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301697.SZ",
+      "symbol": "301697",
+      "name": "C贝特利",
+      "area": "江苏",
+      "industry": "化工原料",
+      "fullname": "苏州市贝特利高分子材料股份有限公司",
+      "enname": "Suzhou Betely Polymer Materials Co., Ltd.",
+      "cnspell": "CBTL",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260901",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "王全",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "601123.SH",
+      "symbol": "601123",
+      "name": "C马矿",
+      "area": "福建",
+      "industry": "普钢",
+      "fullname": "福建马坑矿业股份有限公司",
+      "enname": "Fujian Makeng Mining Co., Ltd.",
+      "cnspell": "CMK",
+      "market": "主板",
+      "exchange": "SSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260901",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "福建省人民政府国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     }
   ]
 }
