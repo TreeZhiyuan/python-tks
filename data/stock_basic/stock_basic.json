@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-09-05T18:40:10",
+  "generated_at": "2026-09-12T18:51:16",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4599,
+  "row_count": 4602,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -15740,8 +15740,8 @@
       "list_date": "20091216",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "许水均",
-      "act_ent_type": "自然人"
+      "act_name": "信阳市财政局",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "002322.SZ",
@@ -23099,12 +23099,12 @@
     {
       "ts_code": "002743.SZ",
       "symbol": "002743",
-      "name": "富煌钢构",
+      "name": "ST富煌",
       "area": "安徽",
       "industry": "钢加工",
       "fullname": "安徽富煌钢构股份有限公司",
       "enname": "Anhui Fuhuang Steel Structure Co., Ltd",
-      "cnspell": "FHGG",
+      "cnspell": "STFH",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -27140,7 +27140,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邢卫民",
+      "act_name": "喻自文",
       "act_ent_type": "自然人"
     },
     {
@@ -34436,8 +34436,8 @@
       "list_date": "20140121",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "胡赓熙,陈燕霓",
-      "act_ent_type": null
+      "act_name": "陈燕霓",
+      "act_ent_type": "自然人"
     },
     {
       "ts_code": "300358.SZ",
@@ -38090,12 +38090,12 @@
     {
       "ts_code": "300562.SZ",
       "symbol": "300562",
-      "name": "乐心医疗",
+      "name": "乐心股份",
       "area": "广东",
       "industry": "医疗保健",
       "fullname": "广东乐心医疗电子股份有限公司",
       "enname": "Guangdong Transtek Medical Electronics Co.,Ltd",
-      "cnspell": "LXYL",
+      "cnspell": "LXGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -38578,7 +38578,7 @@
       "list_date": "20170105",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "何开文",
+      "act_name": "盛凝",
       "act_ent_type": "自然人"
     },
     {
@@ -39091,7 +39091,7 @@
       "list_date": "20170215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "石伟平",
+      "act_name": "刘杨",
       "act_ent_type": "自然人"
     },
     {
@@ -51802,7 +51802,7 @@
       "list_date": "20230425",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "钱曙光",
+      "act_name": "汪炉生",
       "act_ent_type": "自然人"
     },
     {
@@ -53575,12 +53575,12 @@
     {
       "ts_code": "301560.SZ",
       "symbol": "301560",
-      "name": "众捷汽车",
+      "name": "众捷股份",
       "area": "江苏",
       "industry": "汽车配件",
       "fullname": "苏州众捷汽车零部件股份有限公司",
       "enname": "PXI Auto Components (Suzhou) Co., Ltd.",
-      "cnspell": "ZJQC",
+      "cnspell": "ZJGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -82525,7 +82525,7 @@
       "list_date": "20170420",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "李月杰",
+      "act_name": "任建宏",
       "act_ent_type": "自然人"
     },
     {
@@ -83076,7 +83076,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明高",
+      "act_name": "胡明森",
       "act_ent_type": "自然人"
     },
     {
@@ -86458,7 +86458,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "余元康",
+      "act_name": "陈恩乐",
       "act_ent_type": "自然人"
     },
     {
@@ -87357,12 +87357,12 @@
     {
       "ts_code": "301688.SZ",
       "symbol": "301688",
-      "name": "C格林生物",
+      "name": "格林生物",
       "area": "浙江",
       "industry": "化工原料",
       "fullname": "格林生物科技股份有限公司",
       "enname": "Hangzhou Grascent Co., Ltd.",
-      "cnspell": "CGLSW",
+      "cnspell": "GLSW",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87376,12 +87376,12 @@
     {
       "ts_code": "301697.SZ",
       "symbol": "301697",
-      "name": "C贝特利",
+      "name": "贝特利",
       "area": "江苏",
       "industry": "化工原料",
       "fullname": "苏州市贝特利高分子材料股份有限公司",
       "enname": "Suzhou Betely Polymer Materials Co., Ltd.",
-      "cnspell": "CBTL",
+      "cnspell": "BTL",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87395,12 +87395,12 @@
     {
       "ts_code": "601123.SH",
       "symbol": "601123",
-      "name": "C马矿",
+      "name": "马矿股份",
       "area": "福建",
       "industry": "普钢",
       "fullname": "福建马坑矿业股份有限公司",
       "enname": "Fujian Makeng Mining Co., Ltd.",
-      "cnspell": "CMK",
+      "cnspell": "MKGF",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -87410,6 +87410,63 @@
       "is_hs": "N",
       "act_name": "福建省人民政府国有资产监督管理委员会",
       "act_ent_type": "地方国企"
+    },
+    {
+      "ts_code": "301699.SZ",
+      "symbol": "301699",
+      "name": "C洛轴股份",
+      "area": "河南",
+      "industry": "机械基件",
+      "fullname": "洛阳轴承集团股份有限公司",
+      "enname": "Luoyang Bearing Group Co., Ltd.",
+      "cnspell": "CLZGF",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260909",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "洛阳市人民政府国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
+    },
+    {
+      "ts_code": "603448.SH",
+      "symbol": "603448",
+      "name": "C天博",
+      "area": "山东",
+      "industry": "汽车配件",
+      "fullname": "天博智能科技(山东)股份有限公司",
+      "enname": "TEMB Intelligent Technology (Shandong) Co., Ltd.",
+      "cnspell": "CTB",
+      "market": "主板",
+      "exchange": "SSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260907",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "吕新民,吕亚玮",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301689.SZ",
+      "symbol": "301689",
+      "name": "C电科思仪",
+      "area": "山东",
+      "industry": "电器仪表",
+      "fullname": "中电科思仪科技股份有限公司",
+      "enname": "Ceyear Technologies Co., Ltd.",
+      "cnspell": "CDKSY",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260910",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "中国电子科技集团有限公司",
+      "act_ent_type": "中央国企"
     }
   ]
 }
