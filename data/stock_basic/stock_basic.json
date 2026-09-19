@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-09-12T18:51:16",
+  "generated_at": "2026-09-19T19:03:32",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,7 +28,7 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4602,
+  "row_count": 4603,
   "rows": [
     {
       "ts_code": "000001.SZ",
@@ -8795,8 +8795,8 @@
       "name": "陕西能源",
       "area": "陕西",
       "industry": "火力发电",
-      "fullname": "陕西能源投资股份有限公司",
-      "enname": "Shaanxi Energy Investment Co., Ltd.",
+      "fullname": "陕西能源投资集团股份有限公司",
+      "enname": "SHAANXI ENERGY INVESTMENT GROUP CO.,LTD.",
       "cnspell": "SXNY",
       "market": "主板",
       "exchange": "SZSE",
@@ -12538,7 +12538,7 @@
       "name": "钛能化学",
       "area": "甘肃",
       "industry": "化工原料",
-      "fullname": "钛能化学股份有限公司",
+      "fullname": "钛能化学集团股份有限公司",
       "enname": "Tinergy Chemical Co., Ltd.",
       "cnspell": "TNHX",
       "market": "主板",
@@ -18229,8 +18229,8 @@
       "list_date": "20100818",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "中国光大集团股份公司",
-      "act_ent_type": "中央国企"
+      "act_name": "北京市人民政府国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "002463.SZ",
@@ -20129,7 +20129,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "柯建生",
+      "act_name": "江淦钧",
       "act_ent_type": "自然人"
     },
     {
@@ -48220,8 +48220,8 @@
       "name": "达嘉维康",
       "area": "湖南",
       "industry": "医药商业",
-      "fullname": "湖南达嘉维康医药产业股份有限公司",
-      "enname": "Hunan Dajiaweikang Pharmaceutical Industry Co.,Ltd",
+      "fullname": "达嘉维康生物医药产业集团股份有限公司",
+      "enname": "TAT KA WAI HONG Pharmaceutical Industry Group Co., Ltd.",
       "cnspell": "DJWK",
       "market": "创业板",
       "exchange": "SZSE",
@@ -51802,7 +51802,7 @@
       "list_date": "20230425",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "汪炉生",
+      "act_name": "钱曙光",
       "act_ent_type": "自然人"
     },
     {
@@ -67562,8 +67562,8 @@
       "name": "*ST京化",
       "area": "江苏",
       "industry": "机械基件",
-      "fullname": "南京化纤股份有限公司",
-      "enname": "Nanjing Chemical Fibre Co.,Ltd",
+      "fullname": "南京工艺装备科技股份有限公司",
+      "enname": "Nanjing Technical Equipment Technology Co., Ltd.",
       "cnspell": "*STJH",
       "market": "主板",
       "exchange": "SSE",
@@ -74678,7 +74678,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "韩明海",
+      "act_name": "王君垚",
       "act_ent_type": "自然人"
     },
     {
@@ -75400,7 +75400,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖庆",
+      "act_name": "周祖伟",
       "act_ent_type": "自然人"
     },
     {
@@ -83076,7 +83076,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明森",
+      "act_name": "胡明聪",
       "act_ent_type": "自然人"
     },
     {
@@ -86458,7 +86458,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "陈恩乐",
+      "act_name": "余元康",
       "act_ent_type": "自然人"
     },
     {
@@ -87161,7 +87161,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄泽忠",
+      "act_name": "黄炎煌",
       "act_ent_type": "自然人"
     },
     {
@@ -87414,12 +87414,12 @@
     {
       "ts_code": "301699.SZ",
       "symbol": "301699",
-      "name": "C洛轴股份",
+      "name": "洛轴股份",
       "area": "河南",
       "industry": "机械基件",
       "fullname": "洛阳轴承集团股份有限公司",
       "enname": "Luoyang Bearing Group Co., Ltd.",
-      "cnspell": "CLZGF",
+      "cnspell": "LZGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87433,12 +87433,12 @@
     {
       "ts_code": "603448.SH",
       "symbol": "603448",
-      "name": "C天博",
+      "name": "天博智能",
       "area": "山东",
       "industry": "汽车配件",
       "fullname": "天博智能科技(山东)股份有限公司",
       "enname": "TEMB Intelligent Technology (Shandong) Co., Ltd.",
-      "cnspell": "CTB",
+      "cnspell": "TBZN",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
@@ -87452,12 +87452,12 @@
     {
       "ts_code": "301689.SZ",
       "symbol": "301689",
-      "name": "C电科思仪",
+      "name": "电科思仪",
       "area": "山东",
       "industry": "电器仪表",
       "fullname": "中电科思仪科技股份有限公司",
       "enname": "Ceyear Technologies Co., Ltd.",
-      "cnspell": "CDKSY",
+      "cnspell": "DKSY",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -87467,6 +87467,25 @@
       "is_hs": "N",
       "act_name": "中国电子科技集团有限公司",
       "act_ent_type": "中央国企"
+    },
+    {
+      "ts_code": "601091.SH",
+      "symbol": "601091",
+      "name": "C沈鼓",
+      "area": "辽宁",
+      "industry": "机械基件",
+      "fullname": "沈鼓集团股份有限公司",
+      "enname": "ShenGu Group Co.,Ltd.",
+      "cnspell": "CSG",
+      "market": "主板",
+      "exchange": "SSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260917",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "沈阳市铁西区人民政府国有资产监督管理局",
+      "act_ent_type": "地方国企"
     }
   ]
 }
