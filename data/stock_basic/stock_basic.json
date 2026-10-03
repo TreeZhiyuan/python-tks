@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-09-26T19:29:40",
+  "generated_at": "2026-10-03T19:35:31",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -28,17 +28,55 @@
       "act_ent_type"
     ]
   },
-  "row_count": 4604,
+  "row_count": 4606,
   "rows": [
+    {
+      "ts_code": "001246.SZ",
+      "symbol": "001246",
+      "name": "力勤资源",
+      "area": "浙江",
+      "industry": "小金属",
+      "fullname": "宁波力勤资源科技股份有限公司",
+      "enname": "Lygend Resources & Technology Co., Ltd.",
+      "cnspell": "LQZY",
+      "market": "主板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260930",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "蔡建勇",
+      "act_ent_type": "自然人"
+    },
+    {
+      "ts_code": "301716.SZ",
+      "symbol": "301716",
+      "name": "C鸿富诚",
+      "area": "深圳",
+      "industry": "半导体",
+      "fullname": "深圳市鸿富诚新材料股份有限公司",
+      "enname": "Shenzhen HFC Co., Ltd.",
+      "cnspell": "CHFC",
+      "market": "创业板",
+      "exchange": "SZSE",
+      "curr_type": "CNY",
+      "list_status": "L",
+      "list_date": "20260929",
+      "delist_date": null,
+      "is_hs": "N",
+      "act_name": "孙爱祥,赵建平",
+      "act_ent_type": "自然人"
+    },
     {
       "ts_code": "301686.SZ",
       "symbol": "301686",
-      "name": "C中塑股份",
+      "name": "中塑股份",
       "area": "广东",
       "industry": "塑料",
       "fullname": "广东中塑新材料股份有限公司",
       "enname": "Guangdong Sinoplast Advanced Material Co., Ltd.",
-      "cnspell": "CZSGF",
+      "cnspell": "ZSGF",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -388,7 +426,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄泽忠",
+      "act_name": "黄炎煌",
       "act_ent_type": "自然人"
     },
     {
@@ -1091,7 +1129,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "余元康",
+      "act_name": "陈恩乐",
       "act_ent_type": "自然人"
     },
     {
@@ -4473,7 +4511,7 @@
       "list_date": "20160322",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "胡明森",
+      "act_name": "胡明聪",
       "act_ent_type": "自然人"
     },
     {
@@ -5423,7 +5461,7 @@
       "list_date": "20170711",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "王国良",
+      "act_name": "韩元平",
       "act_ent_type": "自然人"
     },
     {
@@ -12149,7 +12187,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖庆",
+      "act_name": "周祖伟",
       "act_ent_type": "自然人"
     },
     {
@@ -15672,7 +15710,7 @@
       "symbol": "601777",
       "name": "千里科技",
       "area": "重庆",
-      "industry": "摩托车",
+      "industry": "汽车整车",
       "fullname": "重庆千里科技股份有限公司",
       "enname": "Chongqing Afari Technology Co., Ltd.",
       "cnspell": "QLKJ",
@@ -18894,8 +18932,8 @@
       "list_date": "20040414",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "李金阳",
-      "act_ent_type": "自然人"
+      "act_name": "上杭县财政局",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "600987.SH",
@@ -27773,19 +27811,19 @@
     {
       "ts_code": "600363.SH",
       "symbol": "600363",
-      "name": "联创光电",
+      "name": "ST联光",
       "area": "江西",
       "industry": "元器件",
       "fullname": "江西联创光电科技股份有限公司",
       "enname": "JIANGXI LIAN CHUANG OPTOELECTRONIC SCIENCE AND TECHNOLOGY CO.，LTd.",
-      "cnspell": "LCGD",
+      "cnspell": "STLG",
       "market": "主板",
       "exchange": "SSE",
       "curr_type": "CNY",
       "list_status": "L",
       "list_date": "20010329",
       "delist_date": null,
-      "is_hs": "H",
+      "is_hs": "N",
       "act_name": "伍锐",
       "act_ent_type": "自然人"
     },
@@ -33933,7 +33971,7 @@
       "area": "上海",
       "industry": "元器件",
       "fullname": "云汉芯城(上海)互联网科技股份有限公司",
-      "enname": "ICkey （Shanghai）Internet and Technology Co.,Ltd.",
+      "enname": "YH Group Internet and Technology Co., Ltd.",
       "cnspell": "YHXC",
       "market": "创业板",
       "exchange": "SZSE",
@@ -34645,7 +34683,7 @@
       "list_date": "20230921",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "何雪娟",
+      "act_name": "孙雁军",
       "act_ent_type": "自然人"
     },
     {
@@ -35924,12 +35962,12 @@
     {
       "ts_code": "301339.SZ",
       "symbol": "301339",
-      "name": "通行宝",
+      "name": "苏交数智",
       "area": "江苏",
       "industry": "IT设备",
-      "fullname": "江苏通行宝智慧交通科技股份有限公司",
-      "enname": "Jiangsu Tongxingbao Intelligent Transportation Technology Co., Ltd.",
-      "cnspell": "TXB",
+      "fullname": "江苏交通数智科技集团股份有限公司",
+      "enname": "Jiangsu Communications Digital Technology Group Co., Ltd.",
+      "cnspell": "SJSZ",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -39078,12 +39116,12 @@
     {
       "ts_code": "301139.SZ",
       "symbol": "301139",
-      "name": "*ST元道",
-      "area": "新疆",
-      "industry": "通信设备",
+      "name": "元道退",
+      "area": null,
+      "industry": null,
       "fullname": "元道通信股份有限公司",
       "enname": "Wintao Communications Co.,Ltd",
-      "cnspell": "*STYD",
+      "cnspell": "YDT",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -39110,7 +39148,7 @@
       "list_date": "20211215",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "温世旭",
+      "act_name": "包贺林",
       "act_ent_type": "自然人"
     },
     {
@@ -42910,7 +42948,7 @@
       "list_date": "20201222",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "蒋小明",
+      "act_name": "陈树林",
       "act_ent_type": "自然人"
     },
     {
@@ -48135,7 +48173,7 @@
       "list_date": "20170406",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "吴坤祥",
+      "act_name": "陈志强",
       "act_ent_type": "自然人"
     },
     {
@@ -49028,7 +49066,7 @@
       "list_date": "20161229",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "钱明飞",
+      "act_name": "陈扬",
       "act_ent_type": "自然人"
     },
     {
@@ -50079,12 +50117,12 @@
     {
       "ts_code": "300527.SZ",
       "symbol": "300527",
-      "name": "ST应急",
+      "name": "中船应急",
       "area": "湖北",
       "industry": "专用机械",
       "fullname": "中国船舶重工集团应急预警与救援装备股份有限公司",
       "enname": "China Harzone Industry Corp., Ltd",
-      "cnspell": "STYJ",
+      "cnspell": "ZCYJ",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -55627,12 +55665,12 @@
     {
       "ts_code": "300211.SZ",
       "symbol": "300211",
-      "name": "*ST亿通",
+      "name": "亿通科技",
       "area": "江苏",
       "industry": "通信设备",
       "fullname": "江苏亿通高科技股份有限公司",
       "enname": "Jiangsu Yitong High-Tech Co.,Ltd.",
-      "cnspell": "*STYT",
+      "cnspell": "YTKJ",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -57622,12 +57660,12 @@
     {
       "ts_code": "300096.SZ",
       "symbol": "300096",
-      "name": "ST易联众",
+      "name": "易联众",
       "area": "福建",
       "industry": "软件服务",
       "fullname": "易联众信息技术股份有限公司",
       "enname": "YLZ Information Technology Co.,Ltd",
-      "cnspell": "STYLZ",
+      "cnspell": "YLZ",
       "market": "创业板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -67420,7 +67458,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "柯建生",
+      "act_name": "江淦钧",
       "act_ent_type": "自然人"
     },
     {
@@ -67458,8 +67496,8 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "谢宏",
-      "act_ent_type": "自然人"
+      "act_name": "金华市人民政府国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "002569.SZ",
@@ -85109,8 +85147,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "南昌市国有资产监督管理委员会",
-      "act_ent_type": "地方国企"
+      "act_name": "国务院国有资产监督管理委员会",
+      "act_ent_type": "中央国企"
     },
     {
       "ts_code": "000548.SZ",
