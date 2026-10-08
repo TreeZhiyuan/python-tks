@@ -2,6 +2,8 @@
 
 这个项目用于拉取 Tushare 数据。日频资金流数据写入 Cloudflare D1，股票基础信息保存为仓库内 JSON 快照。
 
+这个项目目前不再更新，移步 [baostock-tks](https://github.com/TreeZhiyuan/baostock-tks)
+
 ## 已接入 Tushare 接口
 
 后续每新增一个 Tushare 接口，都需要在本清单中补充接口名称、功能描述、接口文档链接、定时执行时间和执行说明。
