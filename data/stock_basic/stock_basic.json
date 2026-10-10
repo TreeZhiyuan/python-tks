@@ -1,6 +1,6 @@
 {
   "task_name": "stock_basic",
-  "generated_at": "2026-10-03T19:35:31",
+  "generated_at": "2026-10-10T20:21:49",
   "request_params": {
     "exchange": "",
     "list_status": "L",
@@ -33,12 +33,12 @@
     {
       "ts_code": "001246.SZ",
       "symbol": "001246",
-      "name": "力勤资源",
+      "name": "C力勤资源",
       "area": "浙江",
       "industry": "小金属",
       "fullname": "宁波力勤资源科技股份有限公司",
       "enname": "Lygend Resources & Technology Co., Ltd.",
-      "cnspell": "LQZY",
+      "cnspell": "CLQZY",
       "market": "主板",
       "exchange": "SZSE",
       "curr_type": "CNY",
@@ -426,7 +426,7 @@
       "list_date": "20260522",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "黄炎煌",
+      "act_name": "黄泽忠",
       "act_ent_type": "自然人"
     },
     {
@@ -1129,7 +1129,7 @@
       "list_date": "20210412",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "陈恩乐",
+      "act_name": "余元康",
       "act_ent_type": "自然人"
     },
     {
@@ -3219,7 +3219,7 @@
       "list_date": "20170615",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邵伯金",
+      "act_name": "苏尔田",
       "act_ent_type": "自然人"
     },
     {
@@ -5461,7 +5461,7 @@
       "list_date": "20170711",
       "delist_date": null,
       "is_hs": "H",
-      "act_name": "韩元平",
+      "act_name": "王国良",
       "act_ent_type": "自然人"
     },
     {
@@ -12187,7 +12187,7 @@
       "list_date": "20230419",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "周祖伟",
+      "act_name": "周祖庆",
       "act_ent_type": "自然人"
     },
     {
@@ -12909,7 +12909,7 @@
       "list_date": "20200415",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "王君垚",
+      "act_name": "韩明海",
       "act_ent_type": "自然人"
     },
     {
@@ -60447,7 +60447,7 @@
       "list_date": "20200424",
       "delist_date": null,
       "is_hs": "N",
-      "act_name": "邢卫民",
+      "act_name": "喻自文",
       "act_ent_type": "自然人"
     },
     {
@@ -67458,7 +67458,7 @@
       "list_date": "20110412",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "江淦钧",
+      "act_name": "柯建生",
       "act_ent_type": "自然人"
     },
     {
@@ -83275,8 +83275,8 @@
       "name": "中信特钢",
       "area": "湖北",
       "industry": "特种钢",
-      "fullname": "中信泰富特钢集团股份有限公司",
-      "enname": "Citic Pacific Special Steel Group Co., Ltd",
+      "fullname": "中信特钢集团股份有限公司",
+      "enname": "CITIC SPECIAL STEEL GROUP CO.,LTD",
       "cnspell": "ZXTG",
       "market": "主板",
       "exchange": "SZSE",
@@ -85147,8 +85147,8 @@
       "list_date": "19931201",
       "delist_date": null,
       "is_hs": "S",
-      "act_name": "国务院国有资产监督管理委员会",
-      "act_ent_type": "中央国企"
+      "act_name": "南昌市国有资产监督管理委员会",
+      "act_ent_type": "地方国企"
     },
     {
       "ts_code": "000548.SZ",
